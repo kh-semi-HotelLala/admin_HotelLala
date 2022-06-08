@@ -1,0 +1,125 @@
+
+#side-bar{
+    width: 20%;
+    height: 100vh;
+
+    background-color: #003458;
+
+
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+#side-bar>div:nth-child(1){
+    height: 10%;
+    display: block;
+}
+#logo{
+   /*  border: 2px solid red; */
+    height: 80%;
+    display: block;
+    margin: 20px auto;
+}
+#side-bar>div:nth-child(2){
+    height: 13%;
+    display: block;
+}
+.admin-info > *{
+    display: flex;
+    justify-content: center;
+}
+.admin-info:nth-child(1){
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.admin-info>img{
+    width: 60px;
+}
+#admin-name{
+    font-size:24px;
+    font-weight: bold;
+    color: white;
+    margin: auto;
+}
+#admin-email{ 
+    font-size: 14px;
+    color: gray;
+}
+#side-bar>div:nth-child(3){
+    height: 68%;
+    margin:10px auto;
+}
+#menu-bar  ul{
+    list-style: none;
+    display: block;
+    color: ivory;
+}
+#menu-bar  ul:first-child{
+    padding-top: 30px;
+}
+
+.menu{
+    width: 80%;
+    font-size: 30px;
+    margin-top: 15px;
+    text-align: center;
+    cursor: pointer;
+    
+    border-top: 1px solid ivory;
+}
+.menu>ul{
+    padding-left: 0;
+}
+.board-list> a{
+    text-decoration:none;
+    color: antiquewhite;
+    display: none;
+    /* visibility: hidden; */
+    height: 0;
+    font-size: 2px;
+}
+.board-list{
+    margin-top:8px;
+    height: 0;
+    transition-duration: 0.5s;
+}
+.menu:hover{
+    font-size: 35px;
+    color: white;
+    transition-duration: 0.2s;
+    
+}
+
+.menu:hover > ul > .board-list{ 
+    height: 50px;
+}
+
+.menu:hover > ul a{ 
+    font-size: 20px;
+    /* visibility: visible; */
+    /* transition-duration: 0.5s; */
+    height: 30px;
+    display: block;
+}
+.menu:hover > ul a:hover{
+    font-size: 25px;
+    font-weight: bold;
+    height: 80px;
+}
+
+#side-bar>div:nth-child(4){
+    height: 4%;
+    display: block;
+    border: 1px solid gray;
+}
+#side-bar>div:nth-child(4)>a{
+    height: 100;
+    text-decoration: none;
+    font-size: 17px;
+    color:ivory;
+    
+    border-top: 3px solid ivory;
+    margin: 10px;
+}
