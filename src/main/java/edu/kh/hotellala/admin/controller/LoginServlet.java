@@ -14,9 +14,11 @@ public class LoginServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
-		String path = "/WEB-INF/views/admin/mainPage.jsp";
-		req.getRequestDispatcher(path).forward(req, resp);
+		
+		//String path = "/WEB-INF/views/admin/mainPage.jsp";
+		//path = "list?type="+type; //해당 게시판 목록 1페이지
+		String path = "mainPage";
+		resp.sendRedirect(path);
+		//req.getRequestDispatcher(path).forward(req, resp);
 	}
-
 }
