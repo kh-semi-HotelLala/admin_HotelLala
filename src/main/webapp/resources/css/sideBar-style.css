@@ -1,29 +1,37 @@
+* {box-sizing: border-box;}
 
 #side-bar{
     width: 20%;
     height: 100vh;
 
+    /* background-color: #003458; */
     background-color: #003458;
-
-
+    
     position: sticky;
     top: 0;
     overflow: hidden;
 }
 
 #side-bar>div:nth-child(1){
-    height: 10%;
+    height: 15%;
     display: block;
+    padding-top: 30px;
+    /* border: 1px solid red; */
 }
+
 #logo{
-   /*  border: 2px solid red; */
-    height: 80%;
+    /* border: 2px solid red; */
+    width: 250px;
     display: block;
     margin: 20px auto;
 }
 #side-bar>div:nth-child(2){
     height: 13%;
     display: block;
+    margin-top: 50px;
+    /* background-color: white; */
+    border-radius: 50%;
+    /* border: 1px solid red; */
 }
 .admin-info > *{
     display: flex;
@@ -35,46 +43,57 @@
     justify-content: center;
 }
 .admin-info>img{
-    width: 60px;
+    width: 100px;
+    border-radius: 50%;
+    /* margin-bottom: 20px; */
 }
 #admin-name{
     font-size:24px;
     font-weight: bold;
     color: white;
     margin: auto;
+    /* border: 1px solid red; */
+    margin-top: 20px;
 }
 #admin-email{ 
     font-size: 14px;
     color: gray;
 }
 #side-bar>div:nth-child(3){
-    height: 68%;
+    height: 62%;
     margin:10px auto;
 }
 #menu-bar  ul{
     list-style: none;
     display: block;
-    color: ivory;
+    color: white;
 }
 #menu-bar  ul:first-child{
     padding-top: 30px;
 }
 
+#menu-bar{
+    padding-top: 20px;
+}
+
 .menu{
     width: 80%;
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 15px;
     text-align: center;
     cursor: pointer;
     
-    border-top: 1px solid ivory;
+    padding-top: 7px;
+    padding-bottom: 1px;
+    border-top: 1px solid white;
+    /* border: 1px solid red; */
 }
 .menu>ul{
     padding-left: 0;
 }
 .board-list> a{
     text-decoration:none;
-    color: antiquewhite;
+    color: rgb(255, 255, 255);
     display: none;
     /* visibility: hidden; */
     height: 0;
@@ -110,16 +129,36 @@
 }
 
 #side-bar>div:nth-child(4){
-    height: 4%;
+    height: 50%;
     display: block;
-    border: 1px solid gray;
+    margin-left: 20px;
+    /* border: 1px solid rgb(192, 192, 192); */
 }
 #side-bar>div:nth-child(4)>a{
     height: 100;
     text-decoration: none;
     font-size: 17px;
-    color:ivory;
+    color:white;
     
-    border-top: 3px solid ivory;
+    border-top: 2px solid white;
     margin: 10px;
+    padding-top: 3px;
+}
+
+
+/* -------------------------------------- */
+#menu-bar{
+    height: 100px;
+    /* border: 1px solid red; */
+}
+
+#menu-bar > div:nth-of-type(1){
+    /* border: 1px solid red; */
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    color: white;
+    width: 80%;
+    margin-left: 27px;
+    margin-bottom: 30px;
 }
