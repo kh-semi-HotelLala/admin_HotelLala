@@ -1,0 +1,75 @@
+#faq-content{
+    width: 80%;
+    height: 1050px;
+    background-color: ivory;
+}
+#faq-content-header{
+    height: 120px;
+    display: block;
+    font-size: 35px;
+    color: #003458;
+    background-color: gray;
+    margin: 0;
+    padding: 20px 0 10px 35px;
+}
+#select-filter{
+    height: 80px;
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+#select-filter div{
+    border-bottom: 3px solid #003458;
+}
+#select-filter *{
+    background-color: ivory;
+    padding: 10px;
+    margin: 0 10px;
+}
+#select-filter select{
+    width:100px;
+    border-radius: 0;
+}
+#select-filter input{
+    width: 300px;
+    border: none;
+    outline: none;
+    text-align: left;
+}
+#select-filter button{
+    width: 100px;
+    border: 1px solid #003458;
+    cursor: pointer;
+}
+#select-filter button:hover{
+    background-color: #003458;
+    color: white;
+}
+
+/* ------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------- */
+/* 내용 영ㄱ역 */
+
+#faq-wrapper{
+    min-height: 500px;
+    border: 2px solid red;
+    margin: 50px auto;
+    padding: 40px;
+}
+.tab-menu-area{
+    border-bottom: 2px solid #003458;
+}
+.tab-menu-area button{
+    width: 100px;
+    height: 30px;
+    border: 0;
+}
+.fqa-list{
+    height: 50px;
+    border: 1px solid green;
+}
+
+.hidden-list{
+    
+}

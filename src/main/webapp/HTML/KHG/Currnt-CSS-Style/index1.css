@@ -1,0 +1,70 @@
+*{box-sizing: border-box;}
+
+body{margin: 0;}/* body가 가지고 잇는 기본적인 margin을 없앤다.*/
+
+/* div{ border: 1px solid black;} */
+
+main{
+    width: 100%;
+    margin: auto;
+}
+
+header{
+    width: 100%;
+    height:150px;
+    display:flex;
+    justify-content: space-between;
+    background-color:#1a2a6a ;
+
+}
+header>section:nth-child(1){
+    display: flex;
+    flex-basis: 40%;
+}
+
+header>section:nth-child(1)>a{
+    text-decoration: none;
+    font-size: 67px;   
+    color: white;
+
+    margin:0 0 0 15px;
+
+    display: flex;
+    align-items: center;
+}
+
+/* header>section:nth-child(1)>a>img{
+    width: 80%;
+} */
+
+header>section:nth-child(2){
+    flex-basis:55%;
+
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+#admin-code>p{
+    height: 50%;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    
+}
+#admin-email>p{
+    height: 50%;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ccc;
+    margin-top: 0px;
+    
+}
+header>section:nth-child(2)>div>img{
+    height: 80%;
+    margin: 10px;
+}
+
+
