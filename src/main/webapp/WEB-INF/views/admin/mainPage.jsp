@@ -32,7 +32,7 @@
 
 
             <section id="board-Notice">
-           
+                <a href="HotelLala/"></a>
             </section>
         </section>
     </main>
