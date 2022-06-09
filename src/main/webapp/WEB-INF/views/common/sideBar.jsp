@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <section id="side-bar">
             <div>
-                <a href="/HotelLala/src/main/webapp/index.html">
-                    <img src="/HotelLala/admin/resources/images/logoSam (1).png" id="logo">
+                <a href="/Admin_HotelLala/src/main/webapp/index.html">
+                    <img src="/Admin_HotelLala/resources/images/logo.png" id="logo">
                 </a>
             </div>
             <div>
                 <div class="admin-info">
                     <!-- 프로필 이미지 ... 다시 고르기  -->
-                    <img src="/HotelLala/src/main/webapp/resources/images/user.png">
+                    <img src="/Admin_HotelLala/resources/images/user.png">
                 </div>
                 <div class="admin-info">
                     <div id="admin-name">김매니저</div>
