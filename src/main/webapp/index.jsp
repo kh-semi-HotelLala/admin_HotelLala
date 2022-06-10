@@ -41,8 +41,8 @@
 				<strong class="login-logo">Admin Login</strong>
 				<form action="login" method="POST"> 
 					<div id="login-input">
-						<span>관리자번호</span>
-						<input type="text" name="adminNo" id="adminNo" placeholder="관리자 번호를 입력해주세요" autocomplete="off"><br>
+						<span>아이디(이메일)</span>
+						<input type="text" name="adminEmail" id="adminNo" placeholder="관리자 번호를 입력해주세요" autocomplete="off"><br>
 						<span>비밀번호</span>
 						<input type="password" name="adminPw" id="adminPw" placeholder="비밀번호를 입력해주세요">
 					</div>
@@ -76,4 +76,22 @@
 	</c:choose>
 	
 	</body>
+	<%-- session에 message 속성이 존재하는 경우 alert창으로 해당 내용을 출력 --%>
+	<c:if test="${ !empty sessionScope.message }">
+		<script>
+			alert("${message}");
+			// EL 작성 시 scope를 지정하지 않으면
+			// page -> request -> session -> application 순서로 검색하여
+			// 일치하는 속성이 있으면 출력
+		</script>
+
+		<%-- message 1회 출력 후 session에서 제거 --%>
+		<c:remove var="message" scope="session"/>
+	</c:if>
+
+		<!-- jQuery 라이브러리 추가. -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	
+		<!-- main . js파일을 연결 -->
+		<script src="${contextPath}/resources/js/main.js"></script>
 </html>

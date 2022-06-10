@@ -14,8 +14,8 @@
                     </div>
                 </div>
                 <div class="admin-info">
-                    <div id="admin-name">김매니저</div>
-                    <div id="admin-email">sample@lala.or.kr</div>
+                    <div id="admin-name">${adminLogin.adminName}</div>
+                    <div id="admin-email">${adminLogin.adminEmail}</div>
                 </div>
             </div>
             <div id="menu-bar">
@@ -53,3 +53,4 @@
                 <a href="#">홈페이지</a>
             </div>
         </section>
+  
