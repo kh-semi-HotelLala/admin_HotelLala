@@ -53,7 +53,6 @@ public class AdminDAO {
 				admin.setAdminTel(rs.getString("ADMIN_TEL"));
 				admin.setAdminEmail(rs.getString("ADMIN_EMAIL"));
 			}	
-			System.out.println(admin);
 		}finally {
 			close(rs);
 			close(pstmt);

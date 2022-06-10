@@ -1,10 +1,7 @@
 #side-bar{
     width: 20%;
     height: 100vh;
-
-    /* background-color: #003458; */
     background-color: #003458;
-    
     position: sticky;
     top: 0;
     overflow: hidden;
@@ -26,9 +23,7 @@
     height: 13%;
     display: block;
     margin-top: 50px;
-    /* background-color: white; */
     border-radius: 50%;
-    /* border: 1px solid red; */
 }
 .admin-info > *{
     display: flex;

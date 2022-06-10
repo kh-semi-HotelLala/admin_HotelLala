@@ -1,0 +1,158 @@
+#board-notice{
+display: block;    
+width: 80%;
+background-color: ivory;
+}
+#notice-top{
+height: 80px;
+display: block;
+font-size: 40px;
+font-weight: bold;
+color: #003458;
+padding: 20px 0 10px 35px;
+border-bottom:1px solid black ;
+}
+#board-notice-content{
+background-color: wh;
+padding: 20px;
+margin: 20px;
+}
+#board-notice-content>table>*{
+text-align: center;
+}
+thead *{
+font-size: 25px;
+border-top: 3px solid black;
+border-bottom: 3px solid black;
+}
+#board-notice-content>table{
+width: 100%;
+padding: 10px;
+font-size: 16px;
+border-collapse: collapse;
+}
+tbody tr{
+font-weight: bold;
+}
+
+tr, td {
+border-bottom: 1px solid #444444;
+padding: 10px;
+letter-spacing: 1px;
+}
+
+tr>td:nth-child(1){
+width: 80px;
+}
+tr>td:nth-child(2) a{
+text-decoration: none;
+color: black;
+}
+tr>td:nth-child(3){
+width: 250px;
+border: 1px sold ;
+}
+
+#list-btn{
+height: 100px;
+width: 100%;
+display: flex;
+flex-direction: row-reverse;
+border-top: 1px solid black;
+}
+#list-btn button{
+height: 30px;
+width: 100px;
+margin: 20px 10px 0 15px;
+border: 2px solid black;
+background-color: gray;
+border-radius: 3px;
+color: whitesmoke;
+cursor: pointer;
+}
+
+#list-btn button:nth-child(1){
+margin-right: 40px;
+}
+#list-btn button:hover{
+background-color: #003458;
+}
+
+
+/* 검색창 */
+#select-filter{
+height: 80px;
+display: flex;
+justify-content: end;
+padding: 10px;
+border-bottom: 1px solid gray;
+}
+#select-filter div{
+border-bottom: 3px solid #003458;
+}
+#select-filter *{
+background-color: ivory;
+padding: 10px;
+margin: 0 10px;
+}
+#select-filter select{
+width:100px;
+border-radius: 0;
+}
+#select-filter input{
+width: 300px;
+border: none;
+outline: none;
+text-align: left;
+}
+#select-filter button{
+width: 100px;
+border: 1px solid #003458;
+cursor: pointer;
+}
+#select-filter button:hover{
+background-color: #003458;
+color: white;
+}
+
+
+/* ---------------------------------------게시글 작성 ------------------- */
+
+#summernote-section{
+width: 80%;
+background-color: ivory;
+}
+#summernote-top{
+border: 1px solid gray;
+}
+#notice-title{
+height: 40px;
+width: 80%;
+margin: 20px;
+border: 2px solid black;
+border-radius: 2px;
+padding-left: 15px;
+}
+#notice-category{
+margin-left: 15px;
+width: 100px;
+height: 40px;
+border: 2px solid black;
+border-radius: 2px;
+}
+#summernote-form{
+margin: 30px;
+border-radius: 2px;
+padding: 10px;
+} 
+.note-editable{
+background-color: white;
+}
+.notice-btn{
+width: 100px;
+height: 45px;
+margin: 5px;
+border: 2px solid black;
+border-radius: 5px;
+}
+
