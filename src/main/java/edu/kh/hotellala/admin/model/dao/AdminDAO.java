@@ -41,8 +41,6 @@ public class AdminDAO {
 		
 		try {
 			String sql = prop.getProperty("adminLogin");
-			
-			System.out.println("sqp:"+sql);
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, adminEmail);
 			pstmt.setString(2, adminPw);
