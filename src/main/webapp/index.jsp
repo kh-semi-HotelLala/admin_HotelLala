@@ -39,7 +39,7 @@
 		<section>
 			<article class="login-box">
 				<strong class="login-logo">Admin Login</strong>
-				<form action="login" method="POST" onsubmit="return loginValidate()"> 
+				<form action="login" method="POST"> 
 					<div id="login-input">
 						<span>아이디(이메일)</span>
 						<input type="text" name="adminEmail" id="adminNo" placeholder="관리자 번호를 입력해주세요" autocomplete="off"><br>
@@ -89,9 +89,5 @@
 		<c:remove var="message" scope="session"/>
 	</c:if>
 
-		<!-- jQuery 라이브러리 추가. -->
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	
-		<!-- main . js파일을 연결 -->
-		<script src="${contextPath}/resources/js/main.js"></script>
 </html>

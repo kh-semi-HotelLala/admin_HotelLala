@@ -5,19 +5,8 @@
     font-style: normal;
 }
 body{   margin: 0;}
-main{
-    width: 100%;
-    box-sizing: border-box;
-}
-.content{
-   background-color: rgb(250, 250, 250);
-}
-/* #board-Notice{
-    width: 80%;
-    background: #bdc3c7;  fallback for old browsers
-    background: -webkit-linear-gradient(to bottom, #2c3e50, #bdc3c7);  Chrome 10-25, Safari 5.1-6
-    background: linear-gradient(to bottom, #2c3e50, #bdc3c7); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+   
-} */
+main{    width: 100%;}
+.content{  display: flex; }
 
 body::-webkit-scrollbar {
     width: 8px;  /* 스크롤바의 너비 */
@@ -28,3 +17,6 @@ body::-webkit-scrollbar-thumb {
     background: #302b65; 
     border-radius: 10px;
 }
+
+/* 투명한 색 */
+/* background-color: rgb(250, 250, 250); */
