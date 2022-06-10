@@ -33,14 +33,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
-
 }
-#admin-img-area{      
-    position: relative;}
-#admin-img-area>img{
+#admin-img-area{position: relative;}
+#admin-img-area>a>img{   
     width: 100px;
     border-radius: 50%;
-    /* margin-bottom: 20px; */
 }
 #alert{
     display: inline-block;
@@ -141,8 +138,8 @@
 #side-bar>div:nth-child(4){
     height: 50%;
     display: block;
-    margin-left: 20px;
-    /* border: 1px solid rgb(192, 192, 192); */
+    display: flex;
+    justify-content: space-around;
 }
 #side-bar>div:nth-child(4)>a{
     height: 100;
@@ -172,3 +169,4 @@
     margin-left: 27px;
     margin-bottom: 30px;
 }
+

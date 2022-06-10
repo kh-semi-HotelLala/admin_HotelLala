@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <section id="side-bar">
             <div>
-                <a href="/Admin_HotelLala/src/main/webapp/index.html">
-                    <img src="/Admin_HotelLala/resources/images/logo.png" id="logo">
+                <a href="${contextPath}">
+                    <img src="${contextPath}/resources/images/logo.png" id="logo">
                 </a>
             </div>
             <div>
                 <div class="admin-info">
                     <!-- 프로필 이미지 ... 다시 고르기  -->
                     <div id="admin-img-area">
-                        <img src="${contextPath}/resources/images/user.png">
-                        <span id="alert">4</span>
+                        <a href="${contextPath}/info"><img src="${contextPath}/resources/images/user.png"></a>
+                        <a href="${contextPath}/alertPage"><span id="alert">4</span></a>
                     </div>
                 </div>
                 <div class="admin-info">
@@ -36,6 +36,7 @@
                         <ul>
                             <li class="board-list"><a href="${contextPath}/member/AllList" >고객 전체 조회</a></li>
                             <li class="board-list"><a href="${contextPath}/member/SearchOne" >고객 검색</a> </li>
+                            <li class="board-list"><a href="${contextPath}/admin/signUp">관리자 가입</a> </li>
                         </ul>
                     </li>
                     <li class="menu">
@@ -49,8 +50,8 @@
                 </ul>
             </div>
             <div>
-                <a href="logout" id="logout">로그아웃</a>
-                <a href="#">홈페이지</a>
+                <a href="${contextPath}/logout" id="logout">로그아웃</a>
+                <a href="hotelLala" id="goToHome">홈페이지</a>
             </div>
         </section>
   

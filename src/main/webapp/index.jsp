@@ -53,6 +53,11 @@
 				</form>
 			</article>
 		</section>
+		
+		<div id="adminSignUp">
+			<a href="${contextPath}/admin/signUp">관리자 가입</a>
+		</div>
+
 	</main>
 
 	</c:when>
