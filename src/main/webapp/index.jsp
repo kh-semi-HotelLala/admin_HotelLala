@@ -39,7 +39,7 @@
 		<section>
 			<article class="login-box">
 				<strong class="login-logo">Admin Login</strong>
-				<form action="login" method="POST"> 
+				<form action="login" method="POST" onsubmit="return loginValidate()"> 
 					<div id="login-input">
 						<span>아이디(이메일)</span>
 						<input type="text" name="adminEmail" id="adminNo" placeholder="관리자 번호를 입력해주세요" autocomplete="off"><br>
