@@ -49,6 +49,7 @@
                 </ul>
             </div>
             <div>
-                <a href="#" id="logout">로그아웃</a>
+                <a href="logout" id="logout">로그아웃</a>
+                <a href="#">홈페이지</a>
             </div>
         </section>
