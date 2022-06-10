@@ -41,7 +41,7 @@
 				<strong class="login-logo">Admin Login</strong>
 				<form action="login" method="POST"> 
 					<div id="login-input">
-						<span>관리자번호</span>
+						<span>아이디(이메일)</span>
 						<input type="text" name="adminEmail" id="adminNo" placeholder="관리자 번호를 입력해주세요" autocomplete="off"><br>
 						<span>비밀번호</span>
 						<input type="password" name="adminPw" id="adminPw" placeholder="비밀번호를 입력해주세요">

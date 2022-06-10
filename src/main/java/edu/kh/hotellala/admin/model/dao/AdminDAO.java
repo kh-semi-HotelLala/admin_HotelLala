@@ -42,14 +42,14 @@ public class AdminDAO {
 		try {
 			String sql = prop.getProperty("adminLogin");
 			
+			System.out.println("sqp:"+sql);
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, adminEmail);
 			pstmt.setString(2, adminPw);
 			
-			rs= pstmt.executeQuery();
+			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				admin = new Admin();
-				
 				admin.setAdminNo(rs.getInt("ADMIN_NO"));
 				admin.setAdminName(rs.getString("ADMIN_NM"));
 				admin.setAdminTel(rs.getString("ADMIN_TEL"));

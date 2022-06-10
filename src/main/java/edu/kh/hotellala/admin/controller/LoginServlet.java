@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet{
 			session.setMaxInactiveInterval(3600); 
 			System.out.println(admin);
 		}else {
-			System.out.println(admin);
+			System.out.println(admin+"로그인 실패");
 			session.setAttribute("message", "정보가 올바르지 않습니다.");
 		}
 		
