@@ -41,9 +41,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    position: relative;
+
 }
-.admin-info>img{
+#admin-img-area{      
+    position: relative;}
+#admin-img-area>img{
     width: 100px;
     border-radius: 50%;
     /* margin-bottom: 20px; */
@@ -55,6 +57,7 @@
     position: absolute;
     z-index: 100;
     top: 0;
+    right: 0;
     font-size: 19px;
     font-weight: bold;
     color: #ddd;

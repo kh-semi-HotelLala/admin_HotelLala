@@ -8,8 +8,10 @@
             <div>
                 <div class="admin-info">
                     <!-- 프로필 이미지 ... 다시 고르기  -->
-                    <img src="${contextPath}/resources/images/user.png">
-                    <span id="alert">4</span>
+                    <div id="admin-img-area">
+                        <img src="${contextPath}/resources/images/user.png">
+                        <span id="alert">4</span>
+                    </div>
                 </div>
                 <div class="admin-info">
                     <div id="admin-name">김매니저</div>
