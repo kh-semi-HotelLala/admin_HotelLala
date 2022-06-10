@@ -16,14 +16,31 @@ public class LoginServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		
+		try {
+			
 		HttpSession session = req.getSession();
 		
-		session.setAttribute("adminLogin", "임시 로그인값");
-		session.setMaxInactiveInterval(3600); 
+		
+		int result = 0;
+		
+		if(result>0){
+			session.setAttribute("adminLogin", "임시 로그인값");
+			session.setMaxInactiveInterval(3600); 
 			
-		System.out.println("login성공햇다는 의미");
+		}else {
+			session.setAttribute("message", "정보가 올바르지 않습니다.");
+		}
+		
 		
 		String path = req.getContextPath();
 		resp.sendRedirect(path);
+
+		}catch(Exception e) {
+		
+			
+			
+		}
+				
 	}
 }
