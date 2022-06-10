@@ -7,18 +7,23 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 //로그인 버튼 클릭시 로그인 검증하고 메인 화면으로 이동시키는 서블릿
-@WebServlet("/admin")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String path = "/WEB-INF/views/admin/mainPage.jsp";
-		//path = "list?type="+type; //해당 게시판 목록 1페이지
-		//String path = "mainPage";
-		//resp.sendRedirect(path);
-		req.getRequestDispatcher(path).forward(req, resp);
+		HttpSession session = req.getSession();
+		
+		session.setAttribute("adminLogin", "임시 로그인값");
+		session.setMaxInactiveInterval(3600); 
+			
+		System.out.println("login성공햇다는 의미");
+		
+		String path = req.getContextPath();
+		resp.sendRedirect(path);
 	}
 }
