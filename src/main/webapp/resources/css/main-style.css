@@ -4,18 +4,12 @@
     font-weight: normal;
     font-style: normal;
 }
-
-*{
-    box-sizing: border-box;
-   }
-body{
-    margin: 0;
-}
+body{   margin: 0;}
 main{
-    width: 100%;
+   /*  width: 100%; */
 }
 .content{
-    display: flex;
+   
 }
 /* #board-Notice{
     width: 80%;
