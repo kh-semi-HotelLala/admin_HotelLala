@@ -19,10 +19,11 @@
 
     <main class="container">
         
-        <jsp:include page="/WEB-INF/views/common/sideBar.jsp" />
         
+        <jsp:include page="/WEB-INF/views/common/sideBar.jsp" />
         <section id="content">
-    
+
+            
             <div class="content-header">
                 <div class="content-name">Reserve</div> 
                 <div class="content-detailname">- 예약조회</div>
@@ -76,7 +77,7 @@
                             <td>2022-06-01</td>
                             <td>2022-06-02</td>
                             <td>
-                                <a href="list-detail">
+                                <a href="listDetail">
                                     <button id="btn">상세보기</button>
                                 </a>
                             </td>
@@ -88,7 +89,7 @@
                             <td>2022-06-01</td>
                             <td>2022-06-02</td>
                             <td>
-                                <a href="${contextPath}/reservation/list-detail.jsp">
+                                <a href="listDetail">
                                     <button id="btn">상세보기</button>
                                 </a>
                             </td>

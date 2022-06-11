@@ -16,18 +16,14 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-	<main class="conainer">
+	<main class="container">
 
-		<section class="content">
-
-
-			<jsp:include page="/WEB-INF/views/common/sideBar.jsp" />
-
-
-
+		<jsp:include page="/WEB-INF/views/common/sideBar.jsp" />
+		
+		<section id="content">
 
 			<section id="faq-content">
-				<h1 id="faq-content-header">* FAQ</h1>
+				<span id="content-top-title">* FAQ</span>
 				
 				<form id="select-filter">
 					<div>

@@ -1,10 +1,9 @@
 #faq-content{
-    width: 80%;
-    height: 1050px;
-    background-color: ivory;
+    width: 100%;
+    height: 1050px; /* 화면 내려가는 효과 주기위한 높이 */
 }
 #faq-content-header{
-    height: 80px;
+    height: 10px;
     display: block;
     font-size: 35px;
     color: #003458;
@@ -23,7 +22,6 @@
     border-bottom: 3px solid #003458;
 }
 #select-filter *{
-    background-color: ivory;
     padding: 10px;
     margin: 0 10px;
 }
@@ -113,7 +111,7 @@
     background-color: #003458;
 }
 
-ul{
+/* ul{
     list-style: none;
     padding: 0;
 }
@@ -121,8 +119,7 @@ li{
     border: 0;
     padding: 0;
     margin: 0;
-
-}
+} */
 
 
 .faq-content-area{

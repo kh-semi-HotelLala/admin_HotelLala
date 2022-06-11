@@ -1,25 +1,17 @@
 #board-notice{
-display: block;    
-width: 80%;
-background-color: ivory;
+height: 100vh;
 }
+
 #notice-top{
-height: 80px;
-display: block;
-font-size: 40px;
-font-weight: bold;
-color: #003458;
-padding: 20px 0 10px 35px;
-border-bottom:1px solid black ;
+    font-weight: bold;
+    color: rgb(68, 68, 68);
+    font-size: 30px;
 }
-#board-notice-content{
-background-color: wh;
-padding: 20px;
-margin: 20px;
-}
+
 #board-notice-content>table>*{
 text-align: center;
 }
+
 thead *{
 font-size: 25px;
 border-top: 3px solid black;
@@ -81,38 +73,37 @@ background-color: #003458;
 
 /* 검색창 */
 #select-filter{
-height: 80px;
-display: flex;
-justify-content: end;
-padding: 10px;
-border-bottom: 1px solid gray;
+    height: 80px;
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+    border-bottom: 1px solid gray;
 }
 #select-filter div{
-border-bottom: 3px solid #003458;
+    border-bottom: 3px solid #003458;
 }
 #select-filter *{
-background-color: ivory;
-padding: 10px;
-margin: 0 10px;
+    padding: 10px;
+    margin: 0 10px;
 }
 #select-filter select{
-width:100px;
-border-radius: 0;
+    width:100px;
+    border-radius: 0;
 }
 #select-filter input{
-width: 300px;
-border: none;
-outline: none;
-text-align: left;
+    width: 300px;
+    border: none;
+    outline: none;
+    text-align: left;
 }
 #select-filter button{
-width: 100px;
-border: 1px solid #003458;
-cursor: pointer;
+    width: 100px;
+    border: 1px solid #003458;
+    cursor: pointer;
 }
 #select-filter button:hover{
-background-color: #003458;
-color: white;
+    background-color: #003458;
+    color: white;
 }
 
 
