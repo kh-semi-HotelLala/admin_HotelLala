@@ -16,27 +16,27 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-	<main class="conainer">
+	<main class="container">
 
-		<section class="content">
-
-
-			<jsp:include page="/WEB-INF/views/common/sideBar.jsp" />
+		<jsp:include page="/WEB-INF/views/common/sideBar.jsp" />
+		<section id="content">
 
 			
 			<section id="board-QNA">
-				<span id="QNA-top">* QNA</span>
+				<span id="content-top-title">* QNA</span>
 
-				<div id="select-filter">
-					<select name=""  id="">
-						<option value="">등급명</option>
-						<option value="">고객명</option>
-						<option value="">고객번호</option>
-						<option value="">등급명</option>
-					</select>
-					<input type="text" placeholder="검색">
-					<button>검색</button>
-				</div>
+				<form id="select-filter">
+					<div>
+						<select name=""  id="">
+							<option value="">제목</option>
+							<option value="">내용</option>
+							<option value="">제목+내용</option>
+						</select>
+						<input type="text" placeholder="검색"> 
+						<button class="fa-solid fa-magnifying-glass"></button>
+						</div>
+				</form>
+
 
 				<div id="board-QNA-content">
 					<table id="qna-table">
@@ -63,8 +63,9 @@
 						</tbody>    
 					</table>
 				</div>
-			
 			</section>
+
+
 		</section>
 	</main>
 </body>

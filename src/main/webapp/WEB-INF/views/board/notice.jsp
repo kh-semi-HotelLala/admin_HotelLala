@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>index</title>
+<title>공지사항</title>
 <link rel="stylesheet"	href="${contextPath}/resources/css/main-style.css">
 <link rel="stylesheet" 	href="${contextPath}/resources/css/sideBar-style.css">
 <link rel="stylesheet" 	href="${contextPath}/resources/css//board/notice-style.css">
@@ -16,26 +16,27 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-	<main class="conainer">
+	<main class="container">
 
-		<section class="content">
+		<jsp:include page="/WEB-INF/views/common/sideBar.jsp" />
+		<section id="content">
 
 
-			<jsp:include page="/WEB-INF/views/common/sideBar.jsp" />
-
-			<section id="board-notice">
-				<span id="notice-top">* 공지사항</span>
+			<div id="board-notice">
+				<span id="content-top-title">* 공지사항</span>
 
 				<form id="select-filter">
 					<div>
-						<select name="" id="">
+						<select name=""  id="">
 							<option value="">제목</option>
 							<option value="">내용</option>
 							<option value="">제목+내용</option>
-						</select> <input type="text" placeholder="검색">
-						<button>검색</button>
-					</div>
+						</select>
+						<input type="text" placeholder="검색"> 
+						<button class="fa-solid fa-magnifying-glass"></button>
+						</div>
 				</form>
+
 
 				<div id="board-notice-content">
 					<table id="table-top">
@@ -117,7 +118,9 @@
 					<button>공지사항 수정</button>
 					<button>공지사항 삭제</button>
 				</div>
-			</section>
+
+			</div>
+		
 		</section>
 	</main>
 </body>
