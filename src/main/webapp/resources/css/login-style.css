@@ -48,12 +48,14 @@ main>section *{
 }
 
 .login-logo{
-    height: 100px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    color: ivory;
+    height: 30%;
+    width: 100%;
+}
+.login-logo>img{
+    height: 100%;
+    margin: auto;
 }
 #login-input{
     height: 200px;
@@ -64,6 +66,9 @@ main>section *{
     color: white;
     font-weight: bold;
     width: 280px;
+}
+.login-box>form{
+    height: 70%;
 }
 .login-box>form ::placeholder{
     color: black;

@@ -2,7 +2,7 @@
 <section id="side-bar">
             <div>
                 <a href="${contextPath}">
-                    <img src="${contextPath}/resources/images/logo.png" id="logo">
+                    <img src="${contextPath}/resources/images/tempLogo.png" id="logo">
                 </a>
             </div>
             <div>
