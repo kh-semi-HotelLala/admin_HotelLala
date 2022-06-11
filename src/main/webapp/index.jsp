@@ -33,13 +33,13 @@
 
 	<c:choose>
 	
-	<c:when test="${ empty sessionScope.adminLogin}">
+	<c:when test="${ empty sessionScope.adminLogin}"><%-- 로그인 페이지 if 문 시작 --%>
 	
 	<main class="container" id="login-main">
 		<section>
 			<article class="login-box">
-				<strong class="login-logo">Admin Login</strong>
-				<form action="login" method="POST"> 
+				<span class="login-logo"><img src="${contextPath}/resources/images/logo.png"></span>
+				<form action="login" method="POST" onsubmit="return loginValidate()"> 
 					<div id="login-input">
 						<span>아이디(이메일)</span>
 						<input type="text" name="adminEmail" id="adminNo" placeholder="관리자 번호를 입력해주세요" autocomplete="off"><br>
@@ -58,11 +58,12 @@
 			<a href="${contextPath}/admin/signUp">관리자 가입</a>
 		</div>
 
+		<script src="${contextPath}/resources/js/main.js"></script>
 	</main>
 
-	</c:when>
+	</c:when><%-- 로그인 페이지 if 문 종료 --%>
 
-	<c:otherwise>
+	<c:otherwise><%-- 관리자 페이지 if 문 시작 --%>
 		<main class="conainer">
 
 			<section class="content">
@@ -76,10 +77,9 @@
 				</section>
 			</section>
 		</main>
-	</c:otherwise>
+	</c:otherwise><%-- 관리자 페이지 if 문 시작 --%>
 	
 	</c:choose>
-	
 	</body>
 	<%-- session에 message 속성이 존재하는 경우 alert창으로 해당 내용을 출력 --%>
 	<c:if test="${ !empty sessionScope.message }">
@@ -89,7 +89,6 @@
 			// page -> request -> session -> application 순서로 검색하여
 			// 일치하는 속성이 있으면 출력
 		</script>
-
 		<%-- message 1회 출력 후 session에서 제거 --%>
 		<c:remove var="message" scope="session"/>
 	</c:if>

@@ -1,0 +1,153 @@
+#faq-content{
+    width: 80%;
+    height: 1050px;
+    background-color: ivory;
+}
+#faq-content-header{
+    height: 80px;
+    display: block;
+    font-size: 35px;
+    color: #003458;
+    background-color: gray;
+    margin: 0;
+    padding: 20px 0 10px 35px;
+}
+#select-filter{
+    height: 80px;
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+#select-filter div{
+    border-bottom: 3px solid #003458;
+}
+#select-filter *{
+    background-color: ivory;
+    padding: 10px;
+    margin: 0 10px;
+}
+#select-filter select{
+    width:100px;
+    border-radius: 0;
+}
+#select-filter input{
+    width: 300px;
+    border: none;
+    outline: none;
+    text-align: left;
+}
+#select-filter button{
+    width: 100px;
+    border: 1px solid #003458;
+    cursor: pointer;
+}
+#select-filter button:hover{
+    background-color: #003458;
+    color: white;
+}
+
+/* ------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------- */
+/* ------------------------------------ */
+/* 버튼 영역 */
+
+
+#faq-wrapper{
+    min-height: 500px;
+    margin: 50px auto;
+    padding: 40px;
+}
+.tab-menu-area{
+    border-bottom: 2px solid #003458;
+}
+.tab-menu-area button{
+    width: 100px;
+    height: 30px;
+    border: 0;
+}
+.tab-menu-area{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    border-top: 3px solid #003458;
+}
+.tab-menu-area a{
+    display: flex;
+    position: relative;
+    width: 20%;
+    height: 60px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    font-size: 19px;
+}
+.tab-menu-area a::before{
+    position: absolute;
+    left: 0;
+    top: 15px;
+    content: "";
+    width: 1px;
+    height: 28px;
+    background-color: #ddd;
+}
+.tab-menu-area a::after{
+    position: absolute;
+    left: 0;
+    top: 15px;
+    content: "";
+    width: 2px;
+    height: 28px;
+    background-color: #ddd;
+}
+
+
+.tab-menu-area a:hover{
+    background-color: #003458;
+    color: white;
+}
+
+.choice{
+    background-color: #003458;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+li{
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+}
+
+
+.faq-content-area{
+    width: 100%;
+    min-height: 500px;
+    padding:10px;
+}
+
+.faq-list{
+    height: 45px;
+    border: 1px solid black;
+    display: flex;
+}
+.faq-list span{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.faq-list  .on{width: 10%; background-color: lightcoral; border-radius: 15px;}
+.faq-list  .tw{width: 70%; background-color: #ddd; justify-content: flex-start; padding-left: 10px;}
+.faq-list  .th{width: 20%; background-color: aqua;}
+
+.onChoice{
+    background-color: #ddd;
+}
