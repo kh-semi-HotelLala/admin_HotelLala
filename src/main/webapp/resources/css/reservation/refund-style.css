@@ -1,0 +1,337 @@
+*{box-sizing: border-box;}
+
+/* Page 이름 부분 */
+#content > .content-header{
+    padding: 0;
+    height: 70px;
+    /* border: 1px solid red; */
+}
+
+#content > .content-header >.content-name{
+    font-weight: bold;
+    color: rgb(68, 68, 68);
+    font-size: 30px;
+    /* border: 1px solid red; */
+}
+
+.content-header > .content-detailname{
+    font-size: 14px;
+    color: gray;
+    /* border: 1px solid red; */
+}
+
+
+/* 검색 기능 */
+
+.refund-search{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 0;
+    /* border: 1px solid red; */
+}
+
+
+select{
+    width: 100px;
+    height: 30px;
+    border: 1px solid rgb(194, 194, 194);
+    color: #5E6278;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+
+.search-area{  
+    display: flex;
+    margin-left: 10px;
+}
+
+#search{
+    padding: 3px;
+    border: 1px solid rgb(194, 194, 194);
+    color: #5E6278;
+    width: 200px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+#search-btn{
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 3px;
+    margin-left: 5px;
+    /* border: 1px solid red; */
+}
+
+#date-btn{
+    width: 30px;
+    height: 20px;
+    background-color: white;
+    cursor: pointer;
+    border: 0;
+    /* border: 1px solid red; */
+}
+
+
+/* 환불 내역 */
+tbody{
+    font-size: 16px;
+}
+
+.refund-list{
+    width: 100%;
+    /* min-height: 700px; */
+    /* border: 1px solid red; */
+}
+
+.list-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    border-top: 1px solid #8d8d8d;
+    border-bottom: 1px solid #d1d1d1;
+    height: 20px;
+    background-color: #003458;
+}
+
+th{
+    height: 40px;
+    color: white;
+}
+
+tr{
+    height: 40px;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.list-table tr td{
+    text-align: center;
+    color: #636363;
+}
+
+#wait{
+    background-color: rgb(248, 93, 93);
+    color: white;
+    padding: 3px 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#complete{
+    background-color: rgb(93, 170, 93);
+    color: white;
+    padding: 3px 7px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.list-table tr > *:nth-of-type(1){width: 10%;}
+.list-table tr > td:nth-of-type(2){width: 10%;}
+.list-table tr > *:nth-of-type(3){width: 10%;}
+.list-table tr > *:nth-of-type(4){width: 20%;}
+.list-table tr > *:nth-of-type(5){width: 20%;}
+.list-table tr > *:nth-of-type(6){width: 10%;}
+.list-table tr > *:nth-of-type(7){width: 20%;}
+
+
+#updateBtn{
+    width: 30%;
+    height: 20px;
+    border: 1px solid rgb(194, 194, 194);
+    background-color: white;
+}
+
+#deleteBtn{
+    width: 30%;
+    height: 20px;
+    border: 1px solid rgb(194, 194, 194);
+    background-color: white;
+}
+
+#updateBtn a{
+    text-decoration: none;
+    color: #003458;
+}
+
+#deleteBtn a{
+    text-decoration: none;
+    color: #003458;
+}
+
+#updateBtn:hover{
+    cursor: pointer;
+    background-color: rgb(194, 194, 194);
+    color: white;
+}
+
+#deleteBtn:hover{
+    cursor: pointer;
+    background-color: rgb(194, 194, 194);
+    color: white;
+}
+
+
+
+/* 모달 */
+#modal{
+    width: 100%;
+    height: 100%;
+    position : fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(93, 93, 93, 0.25);
+    /* backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px); */
+    border-radius: 1px;
+    border: 1px solid rgba(93, 93, 93, 0.25);
+}
+
+.modal-window{
+   background: white;
+   /* backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px ); */
+    border-radius: 3px;
+    border: 1px solid rgba(93, 93, 93, 0.25);
+    
+    margin-left: 20%;
+    justify-content: space-between;
+    width: 40%;
+    height: 800px;
+    position: relative;
+    padding: 20px;
+    transition-duration: 0.2s;
+    /* border: 1px solid red; */
+}
+
+.title{
+    padding-left: 20px;
+    padding-top: 30px;
+    color: rgb(68, 68, 68);
+    font-size: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    /* border: 1px solid red; */
+}
+
+.modal-close{
+    float: right;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: gray;
+    font-size: 20px;
+    font-weight: bold;
+    /* border: 1px solid red; */
+}
+
+.modal-content{
+    margin-top: 25px;
+    width: 95%;
+}
+
+.modal-name{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(90, 90, 90);
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.modal-content > div{
+    padding: 30px;
+}
+
+.content-refund > div{
+    margin-top: 20px;
+    display: flex;
+    /* border-bottom: 1px solid rgb(219, 219, 219); */
+}
+
+.content-refund > div > div:nth-of-type(1){
+    width: 50%;
+    height: 30px;
+    padding-top: 5px;
+    color: rgb(68, 68, 68);
+    /* border: 1px solid red; */
+}
+
+.content-refund > div > div:nth-of-type(2){
+    width: 50%;
+    font-size: 20px;
+    color: rgb(90, 90, 90);
+    text-align: end;
+    font-weight: bold;
+    padding-top: 5px;
+    /* border-bottom: 1px solid rgb(219, 219, 219); */
+}
+
+/* 모달 버튼 영역 */
+.modal-window > div:nth-of-type(4){
+    display: flex;
+    justify-content: center;
+}
+
+#modal-update{
+    width: 200px;
+    height: 30px;
+    border: 0;
+    background-color: #003458;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 20px;
+}
+
+#modal-close{
+    width: 200px;
+    height: 30px;
+    border: 0;
+    background-color: #003458;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+
+#modal-update:hover{
+    background-color: white;
+    color: #003458;
+    border: 1px solid #003458;
+    cursor: pointer;
+}
+
+#modal-close:hover{
+    background-color: white;
+    color: #003458;
+    border: 1px solid #003458;
+    cursor: pointer;
+}
+
+.modal-content > div > div:nth-of-type(3){
+    margin-top: 50px;
+}
+
+
+@keyframes show {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes hide {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}

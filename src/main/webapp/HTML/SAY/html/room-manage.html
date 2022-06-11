@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객실관리</title>
+
+    <link rel="stylesheet" href="/HotelLala/src/main/webapp/resources/css/main.css">
+    <link rel="stylesheet" href="/HotelLala/src/main/webapp/resources/css/sideBar.css">
+    <link rel="stylesheet" href="/HotelLala/src/main/webapp/resources/css/room-manage.css">
+    
+    <script src="https://kit.fontawesome.com/a7e904a504.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <main class="container">
+        
+        <section id="side-bar">
+            <div>
+                <a href="/HotelLala/src/main/webapp/index.html">
+                    <img src="/HotelLala/admin/resources/images/logoSam (1).png" id="logo">
+                </a>
+            </div>
+            <div>
+                <div class="admin-info">
+                    <!-- 프로필 이미지 ... 다시 고르기  -->
+                    <img src="/HotelLala/src/main/webapp/resources/images/user.png">
+                </div>
+                <div class="admin-info">
+                    <div id="admin-name">김매니저</div>
+                    <div id="admin-email">sample@lala.or.kr</div>
+                </div>
+            </div>
+            <div id="menu-bar">
+                <div>Menu</div>
+                <ul>
+                    <li class="menu">
+                        <strong id="payment">예약</strong>
+                        <ul>
+                            <li class="board-list"><a href="/HotelLala/src/main/webapp/html/reserve-select.html" >예약리스트</a></li>
+                            <li class="board-list"><a href="/HotelLala/src/main/webapp/html/room-manage.html" >객실관리</a> </li>
+                            <li class="board-list"><a href="/HotelLala/src/main/webapp/html/refund-select.html" >환불내역</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="menu">
+                        <strong id="guest">고객</strong>
+                        <ul>
+                            <li class="board-list"><a href="/admin/고객전체조회 게시판.html" >고객 전체 조회</a></li>
+                            <li class="board-list"><a href="#" >고객 검색</a> </li>
+                        </ul>
+                    </li>
+                    <li class="menu">
+                        <strong id="board">게시판</strong>
+                        <ul>
+                            <li class="board-list"><a href="/admin/게시판/공지사항 게시판.html" >공지사항</a></li>
+                            <li class="board-list"><a href="/admin/게시판/QNA 게시판 .html 게시판.html" >QNA</a> </li>
+                            <li class="board-list"><a href="#" >FAQ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <a href="#" id="logout">로그아웃</a>
+            </div>
+        </section>
+        
+        <section id="content">
+
+            <div class="content-header">
+                <div class="content-name">Room Manage</div> 
+                <div class="content-detailname">- 객실관리</div>
+            </div>
+
+            <div class="floor-icon">
+                <div>
+                    <div>6F</div>
+                    <div>5F</div>
+                    <div>4F</div>
+                    <div>3F</div>
+                    <div>2F</div>
+                    <div>LOBBY</div>
+                </div>
+            </div>
+
+            <div class="room">
+                
+                <div class="top">
+                    <div class="room-info In">
+                        <div>101</div>
+                        <div>유저일 님</div>
+                        <div>22.06.01~(1박)</div>
+                        <div>
+                            <a href="#">
+                                <button class="reserve-detail">예약상세</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="room-info In">
+                        <div>102</div>
+                        <div>유저일 님</div>
+                        <div>22.06.01~(1박)</div>
+                        <div>
+                            <a href="#">
+                                <button class="reserve-detail">예약상세</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="room-info">
+                        <div>103</div>
+                        <div>예약가능</div>
+                    </div>
+                </div>
+
+        </section>
+
+    </main>
+
+    <div id="modal">
+        <div class="modal-window">
+            <div class="modal-close">&times;</div>
+            <div class="title">
+                <div>예약 상세</div>
+            </div>
+            <div class="modal-content">
+                <div>
+                    <div>
+                        <div>예약번호</div>
+                        <div>01</div>
+                    </div>
+                    <div>
+                        <div>예약자명</div>
+                        <div>유저일</div>
+                    </div>
+                    <div>
+                        <div>예약접수일</div>
+                        <div>2022-06-01 00:00:00</div>
+                    </div>
+                    <div>
+                        <div>입실일</div>
+                        <div>2022.06.03(수) / 1박</div>
+                    </div>
+                    <div>
+                        <div>인원</div>
+                        <div>성인 : 2명</div>
+                    </div>
+                    <div>
+                        <div>휴대폰번호</div>
+                        <div>010-1234-1234</div>
+                    </div>
+                    <div>
+                        <div>예약상태</div>
+                        <div>예약완료</div>
+                    </div>
+                    <div>
+                        <div>객실 요청 사항</div>
+                        <div>헤어드라이기</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-btn-area">
+                <button id="modal-btn">확인</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/HotelLala/src/main/webapp/resources/js/room-manage.js"></script>
+
+</body>
+</html>
+
+            
+
+            
+
+
+
+    

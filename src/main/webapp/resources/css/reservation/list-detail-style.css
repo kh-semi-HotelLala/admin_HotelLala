@@ -1,0 +1,239 @@
+*{box-sizing: border-box;}
+
+/* Page 이름 부분 */
+#content > .content-header{
+    padding: 0;
+    height: 70px;
+    /* border: 1px solid red; */
+}
+
+.content-name{
+    font-weight: bold;
+    color: rgb(68, 68, 68);
+    font-size: 30px;
+    /* border: 1px solid red; */
+}
+
+.content-header > .content-detailname{
+    font-size: 14px;
+    color: gray;
+    /* border: 1px solid red; */
+}
+
+#content{
+    background-color: rgb(250, 250, 250);
+}
+
+
+/* 예약 상세 정보 */
+#content > div:nth-of-type(2){
+    margin-top: 40px;
+    width: 100%;
+    /* border: 1px solid black; */
+    background-color: rgb(233, 233, 233);
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #003458;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+    /* border: 1px solid red; */
+}
+
+
+.reserve-info{
+    background-color: rgb(255, 255, 255);
+}
+
+
+.reserve > div {
+    display: flex;
+    height: 30px;
+    /* border-bottom: 1px solid black; */
+}
+
+.reserve > div > div {
+    width: 50%;
+    display: flex;
+    /* border: 1px solid red; */
+}
+
+
+.reserve > div > div > div{
+    width: 50%;
+    /* border: 1px solid red; */
+}
+
+.info-name{
+    text-align: center;
+    padding-top: 5px;
+    background-color: #003458;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.info-content{
+    padding-left: 10px;
+    padding-top: 3px;
+    border-bottom: 1px solid gray;
+}
+
+/* 요청사항 */
+.req > div{
+    display: flex;
+    /* border-bottom: 1px solid black; */
+}
+
+.req > div > div{
+    width: 25%;
+}
+
+.req li{
+    list-style: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.req .info-content{
+    border-bottom: 1px solid white;
+}
+
+
+/* 예약 상태 */
+.reserve-status{
+    background-color: white;
+}
+
+.reserve-status > div{
+    display: flex;
+    height: 40px;
+    /* border-bottom: 1px solid black; */
+}
+
+.reserve-status > div > div{
+    width: 25%;
+}
+
+.reserve-status > div > .info-content{
+    width: 75%;
+    padding-top: 10px;
+    border-top: 1px solid gray;
+    /* border-bottom: 1px solid white; */
+
+}
+
+.reserve-status > div span{
+    background-color: white;
+    border: 1px solid #003458;
+    padding: 3px;
+}
+
+.reserve-status > div span:nth-of-type(2){
+    background-color: #003458;
+    color: white;
+}
+
+
+/* 결제정보 */
+.pay-info{
+    background-color: white;
+    /* border: 1px solid black; */
+}
+
+.payment > div {
+    display: flex;
+}
+
+.payment > div > div:nth-of-type(1){
+    width: 25%;
+    border-right: 1px solid white;
+}
+
+.payment > div > div:nth-of-type(2){
+    width: 75%;
+}
+
+.payment > div > div > div{
+    display: flex;
+}
+
+.payment > div > div > div > div{
+    width: 50%;
+    padding: 3px;
+    /* border-bottom: 1px solid black; */
+}
+
+
+
+/* 메모 */
+.memo-info{
+    background-color: white;
+    /* border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black; */
+}
+
+.memo > div{
+    display: flex;
+}
+
+.memo > div > div:nth-of-type(1){
+    width: 25%;
+}
+
+.memo > div > .info-content{
+    width: 75%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+
+/* 저장/취소 버튼 */
+.btn{
+    margin-top: 20px;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.btn > span{
+    margin: 0 20px;
+    /* border: 1px solid red; */
+}
+
+.btn > span button{
+    height: 30px;
+    background-color: white;
+    border: 1px solid #003458;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: #003458;
+}
+
+.btn > span button:hover{
+    background-color: #003458;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn > span > button > a{
+    text-decoration: none;
+    color : rgb(68, 68, 68);
+}
+
+#save{
+    width: 40%;
+}
+
+#cancle{
+    width: 40%;
+}

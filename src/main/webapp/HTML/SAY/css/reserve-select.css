@@ -1,0 +1,144 @@
+*{box-sizing: border-box;}
+
+/* Page 이름 부분 */
+#content > .content-header{
+    padding: 0;
+    height: 70px;
+    /* border: 1px solid red; */
+}
+
+#content > .content-header >.content-name{
+    font-weight: bold;
+    color: rgb(68, 68, 68);
+    font-size: 30px;
+    /* border: 1px solid red; */
+}
+
+.content-header > .content-detailname{
+    font-size: 14px;
+    color: gray;
+    /* border: 1px solid red; */
+}
+
+
+/* 검색 기능 */
+
+.reserve-search{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 0;
+    /* border: 1px solid red; */
+}
+
+
+select{
+    width: 100px;
+    height: 30px;
+    border: 1px solid rgb(194, 194, 194);
+    color: #5E6278;
+    border-radius: 1rem;
+    background-color: white;
+}
+
+
+.search-area{  
+    display: flex;
+    margin-left: 10px;
+}
+
+#search{
+    padding: 3px;
+    border: 1px solid rgb(194, 194, 194);
+    color: #5E6278;
+    width: 200px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+#search-btn{
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 3px;
+    margin-left: 5px;
+    /* border: 1px solid red; */
+}
+
+#date-btn{
+    width: 30px;
+    height: 20px;
+    background-color: white;
+    cursor: pointer;
+    border: 0;
+    /* border: 1px solid red; */
+}
+
+
+/* 예약목록조회 */
+
+tbody{
+    font-size: 16px;
+}
+
+.reserve-list{
+    width: 100%;
+    /* min-height: 700px; */
+    /* border: 1px solid red; */
+}
+
+.list-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    border-top: 1px solid #8d8d8d;
+    border-bottom: 1px solid #d1d1d1;
+    height: 20px;
+    background-color: #003458;
+}
+
+th{
+    height: 40px;
+    color: white;
+    /* border: 1px solid red; */
+}
+
+tr{
+    height: 40px;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.list-table tr td{
+    text-align: center;
+    color: #636363;
+}
+
+
+.list-table tr > *:nth-of-type(1){width: 15%;}
+.list-table tr > td:nth-of-type(2){width: 10%;}
+.list-table tr > *:nth-of-type(3){width: 10%;}
+.list-table tr > *:nth-of-type(4){width: 15%;}
+.list-table tr > *:nth-of-type(5){width: 15%;}
+.list-table tr > *:nth-of-type(6){width: 10%;}
+
+
+#btn{
+    width: 50%;
+    height: 20px;
+    border: 1px solid rgb(194, 194, 194);
+    background-color: white;
+}
+
+#btn a{
+    text-decoration: none;
+    color: #003458;
+}
+
+#btn:hover{
+    cursor: pointer;
+    background-color: rgb(194, 194, 194);
+    color: white;
+}

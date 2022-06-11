@@ -1,0 +1,260 @@
+*{box-sizing: border-box;}
+
+/* Page 이름 부분 */
+#content > .content-header{
+    padding: 0;
+    height: 70px;
+    /* border: 1px solid red; */
+}
+
+.content-name{
+    font-weight: bold;
+    color: rgb(68, 68, 68);
+    font-size: 30px;
+    /* border: 1px solid red; */
+}
+
+.content-header > .content-detailname{
+    font-size: 14px;
+    color: gray;
+    /* border: 1px solid red; */
+}
+
+
+
+/* 층 별 아이콘 */
+.floor-icon{
+    margin-top: 40px;
+    display: flex;
+    /* border: 1px solid red; */
+}
+
+.floor-icon > div {
+    width: 100px;
+    height: 180px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #003458;
+}
+
+.floor-icon > div > div:nth-of-type(1){
+    background-color: #003458;
+    color: white;
+    border-bottom: 1px solid #003458;
+    height: 30px;
+}
+.floor-icon > div > div:nth-of-type(2){
+    border-bottom: 1px solid #003458;
+    height: 30px;
+}
+.floor-icon > div > div:nth-of-type(3){
+    border-bottom: 1px solid #003458;
+    height: 30px;
+}
+.floor-icon > div > div:nth-of-type(4){
+    border-bottom: 1px solid #003458;
+    height: 30px;
+}
+.floor-icon > div > div:nth-of-type(5){
+    border-bottom: 1px solid #003458;
+    height: 30px;
+}
+.floor-icon > div > div:nth-of-type(6){
+    background-color: rgb(226, 226, 226);
+    border-bottom: 1px solid #003458;
+    height: 30px;
+}
+
+.floor-icon > div > div:nth-of-type(2):hover{
+    cursor: pointer;
+    background-color: #003458;
+    color: white;
+}
+
+.floor-icon > div > div:nth-of-type(3):hover{
+    cursor: pointer;
+    background-color: #003458;
+    color: white;
+}
+
+.floor-icon > div > div:nth-of-type(4):hover{
+    cursor: pointer;
+    background-color: #003458;
+    color: white;
+}
+.floor-icon > div > div:nth-of-type(5):hover{
+    cursor: pointer;
+    background-color: #003458;
+    color: white;
+}
+
+
+
+/* 룸 정보 */
+.room{
+    margin-left: 100px;
+    height: 70%;
+    /* border: 1px solid red; */
+}
+
+.top{
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+
+.room-info{
+    width: 30%;
+    height: 170px;
+    border: 1px solid #003458;
+    border-radius: 3px;
+    background-color: white;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.room-info > div{
+    margin-top: 5px;
+    padding: 5px 0;
+}
+
+.In{
+    background-color: rgb(250, 182, 182);
+}
+
+.reserve-detail{
+    margin: 5px 0;
+    width: 80px;
+    height: 30px;
+    border: 0;
+    background-color: #003458;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.reserve-detail:hover{
+    border: 1px solid #003458;
+    background-color: white;
+    color: #003458;
+    cursor: pointer;
+}
+
+
+/* 모달 */
+#modal{
+    width: 100%;
+    height: 100%;
+    position : fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(93, 93, 93, 0.25);
+    /* backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px); */
+    border-radius: 1px;
+    border: 1px solid rgba(93, 93, 93, 0.25);
+}
+
+.modal-window{
+   background: white;
+   /* backdrop-filter: blur( 13.5px );
+    -webkit-backdrop-filter: blur( 13.5px ); */
+    border-radius: 3px;
+    border: 1px solid rgba(93, 93, 93, 0.25);
+    
+    margin-left: 48%;
+    justify-content: space-between;
+    width: 40%;
+    height: 800px;
+    position: relative;
+    padding: 20px;
+    /* border: 1px solid red; */
+}
+
+.title{
+    padding-left: 20px;
+    padding-top: 30px;
+    color: rgb(68, 68, 68);
+    font-size: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    /* border: 1px solid red; */
+}
+
+.modal-close{
+    float: right;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: gray;
+    font-size: 20px;
+    font-weight: bold;
+    /* border: 1px solid red; */
+}
+
+.modal-content{
+    margin-top: 25px;
+    width: 95%;
+}
+
+.modal-content > div{
+    padding: 30px;
+}
+
+.modal-content > div > div{
+    display: flex;
+    margin-top: 10px;
+    /* border-bottom: 1px solid rgb(219, 219, 219); */
+}
+
+.modal-content > div > div > div:nth-of-type(1){
+    width: 50%;
+    height: 30px;
+    padding-top: 5px;
+    color: rgb(68, 68, 68);
+    /* border: 1px solid red; */
+}
+
+.modal-content > div > div  div:nth-of-type(2){
+    width: 50%;
+    font-size: 20px;
+    color: rgb(90, 90, 90);
+    text-align: end;
+    font-weight: bold;
+    padding-top: 5px;
+    /* border-bottom: 1px solid rgb(219, 219, 219); */
+}
+
+/* 모달 버튼 영역 */
+.modal-window > div:nth-of-type(4){
+    display: flex;
+    justify-content: center;
+}
+
+#modal-btn{
+    width: 200px;
+    height: 30px;
+    border: 0;
+    background-color: #003458;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#modal-btn:hover{
+    background-color: white;
+    color: #003458;
+    border: 1px solid #003458;
+    cursor: pointer;
+}
+
+.modal-btn-area{
+    border: 1px solid red;
+}
