@@ -1,28 +1,3 @@
-/* 하나 고르기 */
-/* @font-face {
-    font-family: 'GmarketSans';
-    font-weight: 700; 
-    font-style: normal; 
-    src: url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFBold.woff2) format('woff2'),
-         url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFBold.woff) format('woff');
-    font-display: swap;
-} */
-@font-face {
-    font-family: 'GmarketSans';
-    font-weight: 500; 
-    font-style: normal; 
-    src: url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFMedium.woff2) format('woff2'),
-         url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFMedium.woff) format('woff');
-    font-display: swap;
-}
-/* @font-face {
-    font-family: 'GmarketSans';
-    font-weight: 300; 
-    font-style: normal; 
-    src: url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFLight.woff2) format('woff2'),
-         url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFLight.woff) format('woff');
-    font-display: swap;
-} */
 *{box-sizing: border-box;}
 
 body{margin: 0;}
@@ -187,17 +162,3 @@ main{
     background-color: white;
     /* border: 1px solid red; */
 }
-
-/* 스크롤 */
-body::-webkit-scrollbar {
-    width: 8px;  /* 스크롤바의 너비 */
-}
-
-body::-webkit-scrollbar-thumb {
-    height: 30%; 
-    background: #302b65; 
-    border-radius: 10px;
-}
-
-/* 투명한 색 */
-/* background-color: rgb(250, 250, 250); */

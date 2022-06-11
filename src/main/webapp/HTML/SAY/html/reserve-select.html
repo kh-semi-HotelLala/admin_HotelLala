@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약관리_조회</title>
+
+    <link rel="stylesheet" href="../resources/css/main.css">
+    <link rel="stylesheet" href="../resources/css/reserve-select.css">
+    <link rel="stylesheet" href="../resources/css/sideBar.css">
+    <!-- <link rel="stylesheet" href="/HotelLala/src/main/webapp/resources/css/reserve-select.css">
+    <link rel="stylesheet" href="/HotelLala/src/main/webapp/resources/css/sideBar.css"> -->
+
+</head>
+<body>
+
+    <main class="container">
+        
+        <section id="side-bar">
+            <div>
+                <a href="#">
+                    <img src="../resources/images/logoSam (1).png" id="logo">
+                </a>
+            </div>
+            <div>
+                <div class="admin-info">
+                    <img src="../resources/images/user.png">
+                </div>
+                <div class="admin-info">
+                    <div id="admin-name">김매니저</div>
+                    <div id="admin-email">sample@lala.or.kr</div>
+                </div>
+            </div>
+            <div id="menu-bar">
+                <ul>
+                    <li class="menu">
+                        <strong id="payment">예약</strong>
+                        <ul>
+                            <li class="board-list"><a href="/HotelLala/src/main/webapp/html/reserve-select.html" >예약리스트</a></li>
+                            <li class="board-list"><a href="/HotelLala/src/main/webapp/html/room-manage.html" >객실관리</a> </li>
+                            <li class="board-list"><a href="/HotelLala/src/main/webapp/html/refund-select.html" >환불내역</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="menu">
+                        <strong id="guest">고객</strong>
+                        <ul>
+                            <li class="board-list"><a href="/admin/고객전체조회 게시판.html" >고객 전체 조회</a></li>
+                            <li class="board-list"><a href="#" >고객 검색</a> </li>
+                        </ul>
+                    </li>
+                    <li class="menu">
+                        <strong id="board">게시판</strong>
+                        <ul>
+                            <li class="board-list"><a href="/admin/게시판/공지사항 게시판.html" >공지사항</a></li>
+                            <li class="board-list"><a href="/admin/게시판/QNA 게시판 .html 게시판.html" >QNA</a> </li>
+                            <li class="board-list"><a href="#" >FAQ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <a href="#" id="logout">로그아웃</a>
+            </div>
+        </section>
+        
+        <section id="content">
+    
+            <div class="content-header">
+                <div class="content-name">Reserve</div> 
+                <div class="content-detailname">- 예약조회</div>
+            </div>
+        
+            <div>        
+                <form action="#" method="get" id="reserve-search">
+                    <div class="reserve-search">
+                        <div>
+                            <select name="select">
+                                <option value="reserve-date">예약일</option>
+                                <option value="reserve-num">예약번호</option>
+                                <option value="room-num">객실번호</option>
+                                <option value="member-num">회원이름</option>
+                            </select>
+                        </div>
+                            
+                        <div class="search-area">
+                            
+                            <input type="search" id="search" name="search"
+                                autocomplete="off" placeholder="search">
+        
+                            <button type="submit" id="search-btn" >검색</button>
+                            
+                        </div>
+                            
+                    </div>
+                </form>    
+            </div>
+    
+            <div class="reserve-list">
+                
+                <table class="list-table">
+                    <thead>
+                        <tr>
+                            <th>예약일</th>
+                            <th>이름</th>
+                            <th>객실번호</th>
+                            <th>입실일</th>
+                            <th>퇴실일</th>
+                            <th>상세보기</th>
+                        </tr>
+                    </thead>
+        
+                    <tbody>
+                        
+                        <tr>
+                            <td>2022-05-18</td>
+                            <td>유저일</td>
+                            <td>101</td>
+                            <td>2022-06-01</td>
+                            <td>2022-06-02</td>
+                            <td>
+                                <a href="../html/reserve-select.html">
+                                    <button id="btn">상세보기</button>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2022-05-18</td>
+                            <td>유저일</td>
+                            <td>101</td>
+                            <td>2022-06-01</td>
+                            <td>2022-06-02</td>
+                            <td>
+                                <a href="../html/reserve-select.html">
+                                    <button id="btn">상세보기</button>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        
+                    </tbody>
+                </table>
+            </div>
+        
+        </section>
+    </main>
+    </body>
+    </html>
+
+    
+    
