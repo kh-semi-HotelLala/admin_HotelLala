@@ -204,7 +204,7 @@ width: 8px;  /* 스크롤바의 너비 */
 
 body::-webkit-scrollbar-thumb {
 height: 30%; 
-background: #302b65; 
+background: #003458; 
 border-radius: 10px;
 }
 
