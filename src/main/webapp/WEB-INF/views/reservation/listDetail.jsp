@@ -118,21 +118,15 @@
                                 <div>
                                     <div class="info-name">기본가격</div>
                                     <div class="info-content">230,000원</div>
-                                    <div class="info-name">멤버십사용</div>
-                                    <div class="info-content">10,000p</div>
+                                    <div class="info-name">옵션추가</div>
+                                    <div class="info-content">성인 조식 + 2</div>
                                 </div>                            
                                 <div>
                                     <div class="info-name">인원추가</div>
                                     <div class="info-content">성인 2명</div>
                                     <div class="info-name">결제금액</div>
                                     <div class="info-content">300,000 원</div>
-                                </div>                            
-                                <div class="pay-count">
-                                    <div class="info-name">옵션추가</div>
-                                    <div class="info-content">성인 조식 + 2</div>
-                                    <div class="info-content"></div>
-                                    <div class="info-content"></div>
-                                </div>                            
+                                </div>                                                    
                             </div>
                         </div>
                     </div>

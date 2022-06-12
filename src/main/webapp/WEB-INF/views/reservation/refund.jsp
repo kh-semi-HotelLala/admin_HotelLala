@@ -22,7 +22,7 @@
         <section id="content">
 
             <div class="content-header">
-                <div class="content-name">Sales</div> 
+                <div class="content-name">Refund</div> 
                 <div class="content-detailname">- 환불내역</div>
             </div>
 
