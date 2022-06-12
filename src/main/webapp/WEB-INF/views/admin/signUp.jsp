@@ -43,15 +43,14 @@
 
 
                 <!-- 비밀번호 -->
-                <div id="pw-input-area">
-                    <label for="memberPw">
-                        <span class="required">비밀번호</span> 
-                    </label>
+                <div class="signUp-input-area" >
+                    <span class="required" style="margin: 0;">비밀번호</span> 
+                    <input type="password" id="password" name="password" placeholder="비밀번호" maxlength="30" style="margin: 0;"> 
+                </div>
+
                     <div class="signUp-input-area pw-area">
-                        <input type="password" id="password" name="password" placeholder="비밀번호" maxlength="30"> 
                         <input type="password" id="passwordConfirm" placeholder="비밀번호 확인" maxlength="30"> 
                     </div>
-                </div>
 
                 <!-- 전화번호 -->
                 <label for="memberTell">
@@ -69,6 +68,7 @@
     <!-- jQuery Library 추가 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- singup.js 연결 -->
+    <script src="${contextPath}/resources/js/admin/admin.js"></script>
 
 </body>
 
