@@ -21,8 +21,8 @@
         
         
         <jsp:include page="/WEB-INF/views/common/sideBar.jsp" />
+        
         <section id="content">
-
             
             <div class="content-header">
                 <div class="content-name">Reserve</div> 
@@ -94,10 +94,29 @@
                                 </a>
                             </td>
                         </tr>
-                        
-                        
                     </tbody>
                 </table>
+            </div>
+
+            <div class="pagination-area">
+                <ul class="pagination">
+                    <li><a href="#">&lt;&lt;</a></li>
+                    <li><a href="#">&lt;</a></li>
+                    
+                    <li><a class="current">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">10</a></li>
+
+                    <li><a href="#">&gt;</a></li>
+                    <li><a href="#">&gt;&gt;</a></li>
+                </ul>
             </div>
         
         </section>

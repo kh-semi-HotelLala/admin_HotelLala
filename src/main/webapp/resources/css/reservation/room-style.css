@@ -154,7 +154,7 @@
     left: 0;
     top: 0;
     display: flex;
-    /* display: none; */
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -176,7 +176,7 @@
     margin-top: 60px;
     margin-left: 700px;
     justify-content: space-between;
-    width: 500px;
+    width: 40%;
     height: 790px;
     position: relative;
     padding: 20px;
@@ -184,20 +184,17 @@
 }
 
 /* 모달 닫기 버튼 */
-#modal-close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-
-    color: white;
-    font-size: 50px;
-    font-weight: bold;
-
-    transition-duration: 0.2s;
+.modal-close {
+    float: right;
+    padding: 10px 20px;
     cursor: pointer;
+    color: gray;
+    font-size: 20px;
+    font-weight: bold;
+    /* border: 1px solid red; */
 }
 
-#modal-close:hover{
+.modal-close:hover{
     transform: scale(1.2);
 }
 
@@ -261,7 +258,7 @@
     color: white;
     font-size: 14px;
     font-weight: bold;
-    margin-left: 120px;
+    /* margin-left: 120px; */
 }
 
 #modal-btn:hover{
