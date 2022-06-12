@@ -1,5 +1,4 @@
 package edu.kh.hotellala.admin.model.dao;
-
 import static edu.kh.hotellala.common.JDBCTemplate.*;
 
 import java.io.FileInputStream;
@@ -18,6 +17,7 @@ public class AdminDAO {
 	
 	private Properties prop;
 	
+	//admin-sql에서 xml문서 읽어오기
 	public AdminDAO(){
 		try {
 			prop = new Properties();
@@ -59,5 +59,98 @@ public class AdminDAO {
 		}
 		return admin;
 	}
+
+	
+	//----------------------------------------------------------------------
+	//----------------------------------------------------------------------
+	//이메일 인증 번호 
+	
+	   /** 인증번호 생성 DAO
+	    * @param conn
+	    * @param inputEmail
+	    * @param cNumber
+	    * @return result
+	    * @throws Exception
+	    */
+	   public int insertCertification(Connection conn, String inputEmail, String cNumber) throws Exception {
+	      int result = 0;
+	      
+	      try {
+	         String sql = prop.getProperty("insertCertification");
+	         
+	         pstmt = conn.prepareStatement(sql);
+	         
+	         pstmt.setString(1, inputEmail);
+	         pstmt.setString(2, cNumber);
+	         
+	         result = pstmt.executeUpdate();
+	         
+	      }finally {
+	         close(pstmt);
+	      }
+	      
+	      return result;
+	   }
+
+	   /** 인증번호, 발급일 수정 DAO
+	    * @param conn
+	    * @param inputEmail
+	    * @param cNumber
+	    * @return result
+	    * @throws Exception
+	    */
+	   public int updateCertification(Connection conn, String inputEmail, String cNumber) throws Exception {
+	      int result = 0;
+	      
+	      try {
+	         String sql = prop.getProperty("updateCertification");
+	         
+	         pstmt = conn.prepareStatement(sql);
+	         
+	         pstmt.setString(1, cNumber);
+	         pstmt.setString(2, inputEmail);
+	         
+	         result = pstmt.executeUpdate();
+	         
+	      }finally {
+	         close(pstmt);
+	      }
+	      
+	      return result;
+	   }
+
+	   /** 인증번호 확인 DAO
+	    * @param conn
+	    * @param inputEmail
+	    * @param cNumber
+	    * @return result
+	    * @throws Exception
+	    */
+	   public int checkNumber(Connection conn, String inputEmail, String cNumber) throws Exception{
+	      int result = 0;
+	      
+	      try {
+	         
+	         String sql = prop.getProperty("checkNumber");
+	         
+	         pstmt = conn.prepareStatement(sql);
+	         
+	         pstmt.setString(1, inputEmail);
+	         pstmt.setString(2, cNumber);
+	         pstmt.setString(3, inputEmail);
+	         
+	         rs = pstmt.executeQuery();
+	         
+	         if(rs.next()) {
+	            result = rs.getInt(1);
+	         }
+	         
+	         
+	      }finally {
+	         close(pstmt);
+	      }
+	      
+	      return result;
+	   }
 
 }

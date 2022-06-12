@@ -6,8 +6,6 @@ const checkObj = {
     "sendEmail" :false //인증번호 발송 체크를 위한 
 };
 
-
-
 const email = document.getElementById("email")
 /* 이메일 전송을 위한 이벤트 */
 document.getElementById("sendBtn").addEventListener("click",function(){
@@ -36,6 +34,7 @@ document.getElementById("sendBtn").addEventListener("click",function(){
         success:function(result){
             if(result==1){  
                 alert("이메일 발송 성공.")
+                checkObj.sendEmail = true;
              }else{
                 alert("이메일 발송에 실패하였습니다.")
             }
@@ -44,8 +43,5 @@ document.getElementById("sendBtn").addEventListener("click",function(){
             console.log("이메일 발송 실패....");
         }
     })
-    
-
-
-
 }) 
+

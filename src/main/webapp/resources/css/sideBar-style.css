@@ -3,6 +3,10 @@
     display: block;
     padding-top: 15px;
 }
+*{
+   /*  border: 1px solid red; */
+}
+
 
 #logo{
     /* border: 2px solid red; */
@@ -19,6 +23,8 @@
 .admin-info > *{
     display: flex;
     justify-content: center;
+    
+    font-family: 'GmarketSansMedium';
 }
 .admin-info:nth-child(1){
     width: 100%;
@@ -63,7 +69,9 @@
 }
 #menu-bar  ul{
     list-style: none;
+    padding: 0;
     display: block;
+    margin: 0 auto;
     color: white;
 }
 #menu-bar  ul:first-child{
@@ -75,7 +83,7 @@
 }
 
 .menu{
-    width: 80%;
+    width: 100%;
     font-size: 25px;
     margin-top: 15px;
     text-align: center;
@@ -83,8 +91,7 @@
     
     padding-top: 7px;
     padding-bottom: 1px;
-    border-top: 1px solid white;
-    /* border: 1px solid red; */
+    border-top: 1px solid #ddd;
 }
 .menu>ul{
     padding-left: 0;
@@ -140,6 +147,8 @@
     border-top: 2px solid white;
     margin: 10px;
     padding-top: 3px;
+    
+    font-family: 'GmarketSansMedium';
 }
 
 
@@ -156,7 +165,9 @@
     margin-top: 30px;
     color: white;
     width: 80%;
-    margin-left: 27px;
     margin-bottom: 30px;
+
+    margin-left:auto ;
+    margin-right:auto ;
 }
 
