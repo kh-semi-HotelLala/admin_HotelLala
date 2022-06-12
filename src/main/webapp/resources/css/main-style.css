@@ -25,32 +25,34 @@ font-display: swap;
 } */
 *{box-sizing: border-box;}
 
-body{margin: 0;}
+body{
+    margin: 0;
+}
 
 main{
-width: 100%;
+    width: 100%;
 }
 
 .container{
-display: flex;
-flex-wrap: nowrap;
-position: relative;
+    display: flex;
+    position: relative;
 }
 
 /* 사이드바 */
-#sideBar{
-width: 20%;
-height: 100vh; /* 왜 같이 안내려가? */
-/* background-color: #F5F8FA; */
-background-color: #003458;
-position: sticky;
-display: flex;
+#side-bar{
+    width: 20%;
+    height: 100vh;
+    background-color: #003458;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
 }
 
 /* content 부분 */
 #content{
 width: 80%;
-height: 100vh;
 /************** 현기씨랑 맞춘 부분 ********************/
 background-color: rgb(250, 250, 250);
 padding: 40px 50px; 

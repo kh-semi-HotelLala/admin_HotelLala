@@ -19,9 +19,8 @@
 	<main class="container">
 
 		<jsp:include page="/WEB-INF/views/common/sideBar.jsp" />
+		
 		<section id="content">
-
-
 			<div id="board-notice">
 				<span id="content-top-title">* 공지사항</span>
 
