@@ -13,7 +13,7 @@
 #side-bar>div:nth-child(2){
     height: 13%;
     display: block;
-    margin-top: 50px;
+    margin-top: 80px;
     border-radius: 50%;
 }
 .admin-info > *{

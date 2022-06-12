@@ -141,14 +141,14 @@ tr{
 
 
 #updateBtn{
-    width: 30%;
+    width: 70px;
     height: 20px;
     border: 1px solid rgb(194, 194, 194);
     background-color: white;
 }
 
 #deleteBtn{
-    width: 30%;
+    width: 70px;
     height: 20px;
     border: 1px solid rgb(194, 194, 194);
     background-color: white;
