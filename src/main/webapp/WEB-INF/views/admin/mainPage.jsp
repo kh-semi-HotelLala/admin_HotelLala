@@ -14,7 +14,7 @@
     <script src="https://kit.fontawesome.com/ea629e8085.js"	crossorigin="anonymous"></script>
 </head>
 <body>
-    <main class="conainer">
+    <main class="container">
 
         <section class="content">
 
@@ -33,6 +33,7 @@
 
             <section id="board-Notice">
                 <a href="HotelLala/"></a>
+
             </section>
         </section>
     </main>

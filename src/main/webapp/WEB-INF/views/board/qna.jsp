@@ -11,7 +11,7 @@
 <title>Q&A</title>
 <link rel="stylesheet"	href="${contextPath}/resources/css/main-style.css">
 <link rel="stylesheet" 	href="${contextPath}/resources/css/sideBar-style.css">
-<link rel="stylesheet" 	href="${contextPath}/resources/css//board/qna-style.css">
+<link rel="stylesheet" 	href="${contextPath}/resources/css/board/qna-style.css">
 <script src="https://kit.fontawesome.com/ea629e8085.js"
 	crossorigin="anonymous"></script>
 </head>
@@ -19,6 +19,7 @@
 	<main class="container">
 
 		<jsp:include page="/WEB-INF/views/common/sideBar.jsp" />
+		
 		<section id="content">
 
 			

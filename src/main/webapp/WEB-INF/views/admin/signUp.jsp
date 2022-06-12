@@ -21,49 +21,45 @@
 
 			
         <section class="signUp-content">
+            
+            
             <form action="signUp" method="post" name="signUp-form" id = "signUp-box" onsubmit="return signUpValidate()">
-
-                <label for="memberEmail">
-                    <span class="required">*이메일</span> 
-                </label>
+                <div id="logo-area">
+                    <img src="${contextPath}/resources/images/Logo.png">
+                </div>
+                
                 <div class="signUp-input-area">
-                    <input type="text" id="memberEmail" name="memberEmail" placeholder="아이디(이메일)" 
-                                        maxlength="30" autocomplete="off" required> 
-                    <button type="button" id="sendBtn">인증번호 받기</button>
+                    <span class="required">이메일</span> 
+                    <input type="text" id="email" name="email" placeholder="아이디(이메일)" maxlength="30" autocomplete="off" required> 
+                    <button type="button" id="sendBtn">전송</button>
                 </div>
 
                 <!-- 인증번호 -->
-                <label for="emailCheck">
-                    <span class="required">* 인증번호</span> 
-                </label>
                 <div class="signUp-input-area">
-                    <input type="text" id="cNumber" placeholder="인증번호를 입력하세요" 
-                                 maxlength="6" autocomplete="off" CLASS="""> 
-
-                    <button type="button" id="cBtn">인증번호 확인</button>
+                    <span class="required">인증번호</span> 
+                    <input type="text" id="cNumber" placeholder="인증번호를 입력하세요" maxlength="6" autocomplete="off" CLASS="""> 
+                    <button type="button" id="cBtn">확인</button>
                 </div>
-                <span class="signUp-message" id="cMessage"></span>
 
 
                 <!-- 비밀번호 -->
-                <label for="memberPw">
-                    <span class="required">* 비밀번호</span> 
-                </label>
-               
-                <div class="signUp-input-area">
-                    <input type="password" id="memberPw" name="memberPw" placeholder="비밀번호" maxlength="30"> 
-                </div>
-                <div class="signUp-input-area">
-                    <input type="password" id="memberPwConfirm" placeholder="비밀번호 확인" maxlength="30"> 
+                <div id="pw-input-area">
+                    <label for="memberPw">
+                        <span class="required">비밀번호</span> 
+                    </label>
+                    <div class="signUp-input-area pw-area">
+                        <input type="password" id="password" name="password" placeholder="비밀번호" maxlength="30"> 
+                        <input type="password" id="passwordConfirm" placeholder="비밀번호 확인" maxlength="30"> 
+                    </div>
                 </div>
 
                 <!-- 전화번호 -->
                 <label for="memberTell">
-                    <span class="required">* 전화번호</span>  
                 </label>
-               
-                <div class="signUp-input-area">
-                    <input type="text" id="memberTel" name="memberTel" placeholder="( -없이 숫자만 입력)" maxlength="11"> 
+                
+                <div class="signUp-input-area tell-area">
+                    <span class="required">전화번호</span>  
+                    <input type="text" id="tell" name="tell" placeholder="( -없이 숫자만 입력)" maxlength="11"> 
                 </div>
                  <button type="submit" id="signUp-btn">등록</button>
             </form>

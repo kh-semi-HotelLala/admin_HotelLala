@@ -19,11 +19,8 @@ public class ReserveSelectServlet extends HttpServlet {
 		try {
 			
 			String path = "/WEB-INF/views/reservation/list.jsp";
-			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-			
 			dispatcher.forward(req, resp);
-		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

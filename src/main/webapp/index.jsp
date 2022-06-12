@@ -38,7 +38,7 @@
 	<main class="container" id="login-main">
 		<section>
 			<article class="login-box">
-				<span class="login-logo"><img src="${contextPath}/resources/images/logo.png"></span>
+				<span class="login-logo"><img src="${contextPath}/resources/images/Logo.png"></span>
 				<form action="login" method="POST" onsubmit="return loginValidate()"> 
 					<div id="login-input">
 						<span>아이디(이메일)</span>
@@ -64,12 +64,12 @@
 	</c:when><%-- 로그인 페이지 if 문 종료 --%>
 
 	<c:otherwise><%-- 관리자 페이지 if 문 시작 --%>
-		<main class="conainer">
+		<main class="container">
 
+			<jsp:include page="/WEB-INF/views/common/sideBar.jsp"/>
 			<section class="content">
 	
 		  
-			<jsp:include page="/WEB-INF/views/common/sideBar.jsp"/>
 	
 	
 				<section id="board-Notice">
