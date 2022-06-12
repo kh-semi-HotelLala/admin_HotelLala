@@ -54,8 +54,8 @@ main>section *{
     width: 100%;
 }
 .login-logo>img{
-    height: 100%;
-    margin: auto;
+    height: 80%;
+    margin: 20px auto;
 }
 #login-input{
     height: 200px;
