@@ -86,6 +86,7 @@ main>section *{
     width: 100%;
     display: flex;
     margin-top:10px ;
+    margin-bottom: 2px;
     border-bottom: 2px solid rgba(141, 141, 141, 0.285);
 }
 
@@ -110,10 +111,22 @@ main>section *{
 .signUp-input-area>input{
     height: 30px;
     width: 60%;
+    background-color:#003458;
+    border: none;
+    color: white;
+    outline: none;
 }
 .signUp-input-area>button{
     height: 30px;
     width: 20%;
+    border-radius: 2px ;
+}
+
+button:hover{
+    background-color: #003458;
+    color: white;
+    border: 1px solid white;
+    border-radius: 2px ;
 }
 .tell-area *{
     margin: 0;

@@ -3,10 +3,38 @@
 <properties>
 <comment>admin-sql.xml</comment>
 
-	<!-- 관리자 정보 조회 -->
-	<entry key="adminLogin">
-	SELECT ADMIN_NO,ADMIN_NM,ADMIN_TEL,ADMIN_EMAIL FROM ADMIN_ACCOUNT
-	WHERE ADMIN_EMAIL=? AND ADMIN_PW=?
-	</entry>
+<!-- 관리자 정보 조회 -->
+<entry key="adminLogin">
+SELECT ADMIN_NO,ADMIN_NM,ADMIN_TEL,ADMIN_EMAIL FROM ADMIN_ACCOUNT
+WHERE ADMIN_EMAIL=? AND ADMIN_PW=?
+</entry>
 
+
+<entry key="updateCertification">
+UPDATE ADMIN_CERTIFICATION SET
+C_NUMBER = ?,
+ISSUE_DT = SYSDATE
+WHERE EMAIL = ?
+</entry>
+  
+<!-- 인증번호 생성 -->
+<entry key="insertCertification">
+   INSERT INTO ADMIN_CERTIFICATION VALUES(?, ?, SYSDATE)
+</entry>
+
+<!-- 인증번호를 확인 -->
+<entry key="checkNumber">
+   SELECT 
+   CASE WHEN (SELECT '1' FROM CERTIFICATION
+            WHERE EMAIL = ?
+            AND C_NUMBER = ?)  = 1
+   
+      THEN NVL( (SELECT '1' FROM CERTIFICATION
+            WHERE EMAIL = ?
+            AND ISSUE_DT + (INTERVAL '5' MINUTE) >= SYSDATE) , '2') 
+
+      ELSE '3'   
+   END         
+FROM DUAL
+</entry>
 </properties>

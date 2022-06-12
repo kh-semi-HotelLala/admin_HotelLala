@@ -36,16 +36,14 @@ public class EncryptWrapper extends HttpServletRequestWrapper{
 		
 		switch(name){
 		case "inputPw" :    //입력된 비밀번호 
-		case "memberPw" :   //로그인된 유저의 비밀번호
+		case "password" :   //로그인된 유저의 비밀번호
 			
-		case "currentPw" :  // 원래 비밀번호
+		case "adminPw" :  // 원래 비밀번호
 		case "newPw" :      //새 비밀번호
 			
 			value = getSha512(super.getParameter(name)); 
 			break;
 			
-		//암호화가 필요한 비밀번호 자료가 아니면 그냥 기존에 있던 값 그대로 유지한다.
-		//기본 getParameter() 메서드의 형태 유지
 		default : value = super.getParameter(name); 
 		}
 		return value;

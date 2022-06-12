@@ -8,12 +8,10 @@ url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFBold.woff
 font-display: swap;
 } */
 @font-face {
-font-family: 'GmarketSans';
-font-weight: 500; 
-font-style: normal; 
-src: url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFMedium.woff2) format('woff2'),
-url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFMedium.woff) format('woff');
-font-display: swap;
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 /* @font-face {
 font-family: 'GmarketSans';
@@ -23,7 +21,11 @@ src: url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFLigh
 url(https://cdn.jsdelivr.net/gh/webfontworld/GmarketSans/GmarketSansTTFLight.woff) format('woff');
 font-display: swap;
 } */
-*{box-sizing: border-box;}
+
+
+*{
+    box-sizing: border-box;
+ }
 
 body{
     margin: 0;
