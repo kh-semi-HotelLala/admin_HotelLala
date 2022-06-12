@@ -106,7 +106,7 @@
 }
 
 .room-info{
-    width: 30%;
+    width: 250px;
     height: 170px;
     border: 1px solid #003458;
     border-radius: 3px;
@@ -253,5 +253,5 @@
 }
 
 .modal-btn-area{
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }

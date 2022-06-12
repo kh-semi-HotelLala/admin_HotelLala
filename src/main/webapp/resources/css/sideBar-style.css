@@ -142,7 +142,6 @@
     justify-content: space-around;
 }
 #side-bar>div:nth-child(4)>a{
-    height: 100;
     text-decoration: none;
     font-size: 17px;
     color:white;
