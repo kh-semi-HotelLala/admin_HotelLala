@@ -68,7 +68,7 @@
 
 			<jsp:include page="/WEB-INF/views/common/sideBar.jsp"/>
 			
-				<section class="content">
+				<section id="content">
 					
 					<div class="content-header">
 						<div class="content-name">HOME</div>
@@ -79,7 +79,7 @@
 						</div>
 					</div>
 				
-					<div class="main-content">
+					<div id="main-content">
 				
 						<div class="current-rev">
 							<div class="box-text">

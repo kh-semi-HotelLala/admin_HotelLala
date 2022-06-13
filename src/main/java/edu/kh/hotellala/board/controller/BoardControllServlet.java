@@ -24,7 +24,7 @@ public class BoardControllServlet extends HttpServlet {
 
 		String path = req.getRequestURI();
 		System.out.println("path:"+path);
-		int point = path.lastIndexOf("/");
+		int point = path.lastIndexOf("/"); 
 		String boardType = path.substring(point);
 		
 		
@@ -36,8 +36,7 @@ public class BoardControllServlet extends HttpServlet {
 
 			// 들어온 요청이 Q&A일 경우
 			if (boardType.equals("/qna")) {
-			
-
+				qnaBoard(req);
 			}
 
 			String folderPath = "/WEB-INF/views/board" + boardType + ".jsp";
