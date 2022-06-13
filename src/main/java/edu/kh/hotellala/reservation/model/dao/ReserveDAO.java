@@ -23,7 +23,7 @@ public class ReserveDAO {
 		try {
 			prop = new Properties();
 			
-			String filePath = ReserveDAO.class.getResource("/edu/kh/hotellala/sql/reserv-sql.xml").getPath();
+			String filePath = ReserveDAO.class.getResource("/edu/kh/hotellala/sql/reserve-sql.xml").getPath();
 			
 			prop.loadFromXML( new FileInputStream(filePath) );
 		 

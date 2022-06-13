@@ -62,12 +62,14 @@ select{
     border: 1px solid rgb(194, 194, 194);
     border-radius: 3px;
     margin-left: 5px;
+    height: 30px;
+    width: 40px;
     /* border: 1px solid red; */
 }
 
 #date-btn{
     width: 30px;
-    height: 20px;
+    height: 30px;
     background-color: white;
     cursor: pointer;
     border: 0;
