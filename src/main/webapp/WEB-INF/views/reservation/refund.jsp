@@ -76,7 +76,7 @@
                             <td>2022-05-29</td>
                             <td><span id="wait">대기중</span></td>
                             <td>
-                                <button id="updateBtn">환불처리</button>
+                                <button class="updateBtn">환불처리</button>
                             </td>
                         </tr>
                         <tr>
@@ -87,14 +87,14 @@
                             <td>2022-05-29</td>
                             <td><span id="complete">환불완료</span></td>
                             <td>
-                                <button id="deleteBtn">삭제</button>
+                                <button class="deleteBtn">삭제</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="pagination-area">
+            <!-- <div class="pagination-area">
                 <ul class="pagination">
                     <li><a href="#">&lt;&lt;</a></li>
                     <li><a href="#">&lt;</a></li>
@@ -113,7 +113,7 @@
                     <li><a href="#">&gt;</a></li>
                     <li><a href="#">&gt;&gt;</a></li>
                 </ul>
-            </div>
+            </div> -->
 
             </section>
         </main>
@@ -126,7 +126,7 @@
         <div class="modal-window">
             <div class="modal-close">&times;</div>
             <div class="title">
-                <div>환불 수정</div>
+                <div>환불 처리</div>
             </div>
             <div class="modal-content">
                 <div>
@@ -143,9 +143,9 @@
                             <div>200,000 원</div>
                         </div>
                         <div>
-                            <div>멤버십 사용 유무</div>
+                            <div>결제방법</div>
                             <div>
-                                10,000 p
+                                무통장입금
                             </div>
                         </div>
                     </div>
@@ -181,6 +181,8 @@
             </div>
         </div>
     </div>
+
+    <script src="${contextPath}/resources/js/reservation/refund.js"></script>
     
 </body>
 </html>
