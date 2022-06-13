@@ -20,10 +20,11 @@ public class LoginServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		AdminService service = new AdminService();
+		
 		String adminEmail = req.getParameter("adminEmail");
 		String adminPw = req.getParameter("adminPw");
 		
-		
+		System.out.println("암호화 후 비밀번호 : " + adminPw);
 		try {
 		HttpSession session = req.getSession();
 		

@@ -80,6 +80,7 @@ public class AdminController extends HttpServlet{
 		
 	try {
 		AdminService service = new AdminService();	
+		
 		//회원가입 form이 post방식 /signUp으로 요청 들어옴
 		System.out.println(boardType);
 		if(boardType.equals("/signUp")) {
