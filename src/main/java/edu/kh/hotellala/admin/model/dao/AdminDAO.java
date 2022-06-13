@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Properties;
 
 import edu.kh.hotellala.admin.model.vo.Admin;
@@ -13,6 +14,7 @@ import edu.kh.hotellala.admin.model.vo.Admin;
 public class AdminDAO {
 
 	PreparedStatement pstmt;
+	Statement stmt;
 	ResultSet rs;
 	
 	private Properties prop;
@@ -59,9 +61,31 @@ public class AdminDAO {
 		}
 		return admin;
 	}
+	
+	/**미답변된 qna 갯수 조회 DAO
+	 * @param conn
+	 * @param admin
+	 * @return
+	 * @throws Exception
+	 */
+	public int selectCountQna(Connection conn, Admin admin)throws Exception{
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("selectCountQna");
+			stmt=conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}	
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return result;
+	}
 
 	
-	//----------------------------------------------------------------------
 	//----------------------------------------------------------------------
 	//이메일 인증 번호 
 	
@@ -152,8 +176,10 @@ public class AdminDAO {
 	      
 	      return result;
 	   }
-
-	public int signUp(Connection conn, Admin admin)throws Exception{
+   //----------------------------------------------------------------------
+		
+	   //회원가입
+	   public int signUp(Connection conn, Admin admin)throws Exception{
 	int result=0;
 		
 		try {
@@ -169,5 +195,7 @@ public class AdminDAO {
 		}
 		return result;
 	}
+
+
 
 }

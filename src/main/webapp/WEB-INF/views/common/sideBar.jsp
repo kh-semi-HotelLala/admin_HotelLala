@@ -10,7 +10,7 @@
                     <!-- 프로필 이미지 ... 다시 고르기  -->
                     <div id="admin-img-area">
                         <a href="${contextPath}/info"><img src="${contextPath}/resources/images/user.png"></a>
-                        <a href="${contextPath}/alertPage"><span id="alert">4</span></a>
+                        <a href="${contextPath}/board/qna"><span id="alert">${adminLogin.qnaCount}</span></a>
                     </div>
                 </div>
                 <div class="admin-info">
