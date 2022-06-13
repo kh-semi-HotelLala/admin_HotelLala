@@ -20,6 +20,12 @@ public class AdminService {
 	public Admin adminLogin(String adminEmail, String adminPw)throws Exception{
 		Connection conn = getConnection();
 		Admin admin = dao.adminLogin(conn,adminEmail,adminPw);
+		
+		//만약 관리자 로그인에 성공하면 자신의 qna리스트 조회해오기
+		if(admin != null) {
+			admin.setQnaCount(dao.selectCountQna(conn,admin));
+		}
+		
 		close(conn);
 		return admin;
 	}

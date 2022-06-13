@@ -9,6 +9,11 @@ SELECT ADMIN_NO,ADMIN_NM,ADMIN_TEL,ADMIN_EMAIL FROM ADMIN_ACCOUNT
 WHERE ADMIN_EMAIL=? AND ADMIN_PW=?
 </entry>
 
+<!-- 미답변된 qna리스트. -->
+<entry key="selectCountQna">
+SELECT COUNT(*) FROM QNA_BOARD
+WHERE ANSWER = 'N'
+</entry>
 
 <entry key="updateCertification">
 UPDATE ADMIN_CERTIFICATION SET

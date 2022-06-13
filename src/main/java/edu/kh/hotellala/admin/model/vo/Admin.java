@@ -15,4 +15,5 @@ public class Admin {
 	private String adminPw;
 	private String adminName;
 	private String adminTell;
+	private int qnaCount;
 }

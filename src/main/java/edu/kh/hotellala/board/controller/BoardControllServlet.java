@@ -30,8 +30,11 @@ public class BoardControllServlet extends HttpServlet {
 		
 		try {
 			// 들어온 요청이 공지사항 또는 FAQ 일 때
-			if (boardType.equals("notice") || boardType.equals("faq")) {
+			if (boardType.equals("notice")) {
 
+			}
+			if (boardType.equals("faq")) {
+				
 			}
 
 			// 들어온 요청이 Q&A일 경우
