@@ -83,8 +83,6 @@ public class EncryptWrapper extends HttpServletRequestWrapper{
 			e.printStackTrace();
 		}
 	
-		
-		
 		return encryptPw;
 	}
 }

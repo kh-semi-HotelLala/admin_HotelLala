@@ -11,7 +11,8 @@ import lombok.ToString;
 @ToString
 public class Admin {
 	private int adminNo;
-	private String adminName;
-	private String adminTel;
 	private String adminEmail;
+	private String adminPw;
+	private String adminName;
+	private String adminTell;
 }

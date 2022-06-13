@@ -7,6 +7,8 @@ import static edu.kh.hotellala.common.JDBCTemplate.*;
 
 import java.sql.Connection;
 
+
+
 public class AdminService {
 
 	AdminDAO dao = new AdminDAO();
@@ -61,6 +63,25 @@ public class AdminService {
 		Connection conn = getConnection();
 		
 		int result = dao.checkNumber(conn, inputEmail, cNumber);
+		
+		close(conn);
+		
+		return result;
+	}
+
+	
+	/** 회원가입을 위한 Service
+	 * @param admin
+	 * @return
+	 * @throws Exception
+	 */
+	public int singUpAdmin(Admin admin)throws Exception{
+	Connection conn = getConnection();
+		
+		int result = dao.signUp(conn,admin);
+		
+		if(result>0)commit(conn);
+		else rollback(conn);
 		
 		close(conn);
 		

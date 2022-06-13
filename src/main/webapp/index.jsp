@@ -38,7 +38,7 @@
 	<main class="container" id="login-main">
 		<section>
 			<article class="login-box">
-				<span class="login-logo"><img src="${contextPath}/resources/images/Logo.png"></span>
+				<span class="login-logo"><img src="${contextPath}/resources/images/LogoWhite.png"></span>
 				<form action="login" method="POST" onsubmit="return loginValidate()"> 
 					<div id="login-input">
 						<span>아이디(이메일)</span>

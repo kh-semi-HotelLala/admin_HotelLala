@@ -90,18 +90,7 @@ main>section *{
     border-bottom: 2px solid rgba(141, 141, 141, 0.285);
 }
 
-#pw-input-area{
-    display: block;
-    margin-top: 5px;
-}
-.pw-area{
-    display: block;
-    text-align: center;
-}
-.pw-area>input{
-    display: block;
-    margin: 2px auto;
-}
+
 
 .signUp-input-area>span{
     height: 30px;
@@ -111,6 +100,13 @@ main>section *{
 .signUp-input-area>input{
     height: 30px;
     width: 60%;
+    background-color:#003458;
+    border: none;
+    color: white;
+    outline: none;
+    padding-left: 10px;
+}
+.signUp-input-area>input:focus{
     background-color:#003458;
     border: none;
     color: white;
@@ -137,4 +133,20 @@ button:hover{
     width: 80%;
     height: 40px;
     margin: 10px auto;
+}
+ 
+.checkEmail{
+    background-color: #003458;
+    border:1px solid white;
+    border-radius:2px;
+    color:white;
+}
+/* 비밀번호 메세지 */
+.pwConfirm{
+    font-weight: bold;
+    text-align: center;
+}
+.pwFail{
+    font-weight: bold;
+    text-align: center;
 }
