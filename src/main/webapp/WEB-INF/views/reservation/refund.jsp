@@ -94,7 +94,7 @@
                 </table>
             </div>
 
-            <div class="pagination-area">
+            <!-- <div class="pagination-area">
                 <ul class="pagination">
                     <li><a href="#">&lt;&lt;</a></li>
                     <li><a href="#">&lt;</a></li>
@@ -113,7 +113,7 @@
                     <li><a href="#">&gt;</a></li>
                     <li><a href="#">&gt;&gt;</a></li>
                 </ul>
-            </div>
+            </div> -->
 
             </section>
         </main>
