@@ -37,4 +37,9 @@ WHERE EMAIL = ?
    END         
 FROM DUAL
 </entry>
+
+<entry key="signUp">
+INSERT INTO ADMIN_ACCOUNT VALUES(SEQ_ADMIN_NO.NEXTVAL,?,?,?,?)
+</entry>
+
 </properties>

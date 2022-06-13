@@ -104,6 +104,7 @@ main>section *{
     border: none;
     color: white;
     outline: none;
+    padding-left: 10px;
 }
 .signUp-input-area>input:focus{
     background-color:#003458;

@@ -50,7 +50,7 @@ public class AdminDAO {
 				admin = new Admin();
 				admin.setAdminNo(rs.getInt("ADMIN_NO"));
 				admin.setAdminName(rs.getString("ADMIN_NM"));
-				admin.setAdminTel(rs.getString("ADMIN_TEL"));
+				admin.setAdminTell(rs.getString("ADMIN_TEL"));
 				admin.setAdminEmail(rs.getString("ADMIN_EMAIL"));
 			}	
 		}finally {
@@ -152,5 +152,22 @@ public class AdminDAO {
 	      
 	      return result;
 	   }
+
+	public int signUp(Connection conn, Admin admin)throws Exception{
+	int result=0;
+		
+		try {
+			String sql = prop.getProperty("signUp");
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, admin.getAdminEmail());
+			pstmt.setString(2, admin.getAdminPw());
+			pstmt.setString(3, admin.getAdminName());
+			pstmt.setString(4, admin.getAdminTell());
+			result = pstmt.executeUpdate();
+		}finally{
+			close(pstmt);
+		}
+		return result;
+	}
 
 }

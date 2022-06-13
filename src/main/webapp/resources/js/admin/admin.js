@@ -3,6 +3,7 @@ const checkObj = {
     "pwCheck":false,
     "pwConfirm":false,
     "tell":false,
+    "name":false,
     "sendEmail" :false //인증번호 발송 체크를 위한 
 };
 
@@ -162,6 +163,7 @@ function signUpValidate(){
                     case "pwCheck":   str="비밀번호가"; break;    
                     case "pwConfirm": str="비밀번호 확인이"; break;
                     case "tell":       str="전화번호가"; break;
+                    case "name":       str="이름이"; break;
                     case "sendEmail":  str="이메일 인증이"; break;
                     }            
             alert(str+" 유효하지 않습니다.");    
@@ -169,3 +171,19 @@ function signUpValidate(){
         }
     }
 }
+
+
+
+// 까먹고 나중에 추가하는 이름 길이 + 한글 확인 
+
+const adminName = document.getElementById("adminName");
+
+adminName.addEventListener("change",function(){
+    if(this.value.trim()==''){
+        checkObj.name = false;
+    }
+    nameReg= /^[가-힣]{2,4}$/;
+    if(nameReg.test(this.value)){
+        checkObj.name = true;
+    }
+})

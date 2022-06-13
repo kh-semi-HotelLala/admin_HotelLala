@@ -45,7 +45,7 @@
                 <!-- 비밀번호 -->
                 <div class="signUp-input-area" >
                     <span class="required" style="margin: 0; letter-spacing: -2;">비밀번호</span> 
-                    <input type="password" id="password" name="password" placeholder="비밀번호" maxlength="30" style="margin: 0;"> 
+                    <input type="password" id="password" name="adminPw" placeholder="비밀번호" maxlength="30" style="margin: 0;"> 
                 </div>
                 
                 <div class="signUp-input-area">
@@ -62,7 +62,14 @@
                         <span class="required">전화번호</span>  
                         <input type="text" id="tell" name="tell" placeholder="( -없이 숫자만 입력)" maxlength="11"> 
                         <span id="tellConfirmMessage"></span>
-                </div>
+                    </div>
+                    
+                    <div class="signUp-input-area tell-area">
+                        <span class="required">이름</span>  
+                        <input type="text" id="adminName" name="adminName" placeholder="이름을 입력해주세요."> 
+                        <span id="nameConfirmMessage"></span>
+                    </div>
+
                  <button id="signUp-btn">등록</button>
             </form>
 

@@ -19,8 +19,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import edu.kh.hotellala.admin.model.service.AdminService;
+import edu.kh.hotellala.admin.model.vo.Admin;
 
 @WebServlet("/admin/*")
 public class AdminController extends HttpServlet{
@@ -69,18 +71,44 @@ public class AdminController extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//모든 
 		String uriPath = req.getRequestURI();
 		int point = uriPath.lastIndexOf("/");
 		String boardType = uriPath.substring(point);
 		
-		try {
-			
+		
+		
+	try {
+		AdminService service = new AdminService();	
 		//회원가입 form이 post방식 /signUp으로 요청 들어옴
 		System.out.println(boardType);
 		if(boardType.equals("/signUp")) {
+			Admin admin = new Admin();
+			 
+			 admin.setAdminEmail(req.getParameter("email"));
+			 admin.setAdminPw(req.getParameter("adminPw"));
+			 admin.setAdminTell(req.getParameter("tell"));
+			 admin.setAdminName(req.getParameter("adminName"));
+			 
+			int result = service.singUpAdmin(admin);
 			
+			HttpSession session =  req.getSession();
+			
+			if(result>0) {
+				session.setAttribute("message", "관리자 가입 성공");
+			}else {
+				session.setAttribute("message", "관리자 가입 실패");				
+			}
 			
 		}
+		
+		
+		
+		
+		//회원 가입 정상 수행시 다시 로그인 화면으로 이동후 로그인
+		resp.sendRedirect(req.getContextPath());
+		
+		
 	}catch(Exception e){
 		e.printStackTrace();
 		resp.setStatus(500);
