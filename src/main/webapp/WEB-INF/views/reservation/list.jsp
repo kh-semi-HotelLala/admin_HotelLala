@@ -69,8 +69,37 @@
                     </thead>
         
                     <tbody>
+
+                        <c:choose>
+                            <c:when test="empty reserveList">
+                                <tr>
+                                    <td>예약 정보가 없습니다.</td>
+                                </tr>
+                            </c:when>
+
+                            <c:otherwise>
+
+                            <c:forEach var="reserve" items="${reserveList}">
+
+                                <tr>
+                                    <td>${paymentDate}</td>
+                                    <td>${memberName}</td>
+                                    <td>${memberName}</td>
+                                    <td>${roomNo}</td>
+                                    <td>${checkIn}</td>
+                                    <td>${checkOut}</td>
+                                    <td>
+                                        <button id="btn">상세보기</button>
+                                    </td>
+                                </tr>
+
+                            </c:forEach>
+
+                            </c:otherwise>
+
+                        </c:choose>
                         
-                        <tr>
+                        <!-- <tr>
                             <td>2022-05-18</td>
                             <td>유저일</td>
                             <td>101</td>
@@ -93,12 +122,12 @@
                                     <button id="btn">상세보기</button>
                                 </a>
                             </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
 
-            <div class="pagination-area">
+            <!-- <div class="pagination-area">
                 <ul class="pagination">
                     <li><a href="#">&lt;&lt;</a></li>
                     <li><a href="#">&lt;</a></li>
@@ -117,7 +146,7 @@
                     <li><a href="#">&gt;</a></li>
                     <li><a href="#">&gt;&gt;</a></li>
                 </ul>
-            </div>
+            </div> -->
         
         </section>
     </main>

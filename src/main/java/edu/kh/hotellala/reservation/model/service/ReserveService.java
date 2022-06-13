@@ -14,7 +14,7 @@ public class ReserveService {
 	
 	
 	/**
-	 * 게시글 목록 조회	Service
+	 * 예약 목록 조회 Service
 	 * @param cp
 	 * @return map
 	 * @throws Exception
@@ -24,6 +24,7 @@ public class ReserveService {
 		Connection conn = getConnection();
 		
 		// 현재 게시판 전체 게시글 수 조회 DAO 호출
+		
 		
 		// 전체 게시글 수 + 현재 페이지 이용해 페이지네이션 객체 생성
 		
@@ -35,5 +36,13 @@ public class ReserveService {
 		
 		return null;
 	}
+	
+	
+	
+	
 
+
+	
+
+	
 }

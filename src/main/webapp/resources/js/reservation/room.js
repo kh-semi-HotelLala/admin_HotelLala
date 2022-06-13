@@ -52,3 +52,7 @@ const forthF = document.getElementById("forthF");
 const fifthF = document.getElementById("fifthF");
 const sixthF = document.getElementById("sixthF");
 
+
+secondF.addEventListener("click", function(){
+    
+});

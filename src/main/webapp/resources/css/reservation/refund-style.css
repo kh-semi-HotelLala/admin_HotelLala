@@ -141,37 +141,37 @@ tr{
 .list-table tr > *:nth-of-type(7){width: 15%;}
 
 
-#updateBtn{
+.updateBtn{
     width: 70px;
     height: 20px;
     border: 1px solid rgb(194, 194, 194);
     background-color: white;
 }
 
-#deleteBtn{
+.deleteBtn{
     width: 70px;
     height: 20px;
     border: 1px solid rgb(194, 194, 194);
     background-color: white;
 }
 
-#updateBtn a{
+.updateBtn a{
     text-decoration: none;
     color: #003458;
 }
 
-#deleteBtn a{
+.deleteBtn a{
     text-decoration: none;
     color: #003458;
 }
 
-#updateBtn:hover{
+.updateBtn:hover{
     cursor: pointer;
     background-color: rgb(194, 194, 194);
     color: white;
 }
 
-#deleteBtn:hover{
+.deleteBtn:hover{
     cursor: pointer;
     background-color: rgb(194, 194, 194);
     color: white;
@@ -254,6 +254,15 @@ tr{
     /* border: 1px solid red; */
 }
 
+.modal.show{
+    display: flex;
+    animation-name: show;
+}
+
+.modal.hide{
+    animation-name: hide;
+}
+
 .title{
     padding-left: 20px;
     padding-top: 30px;
@@ -277,6 +286,8 @@ tr{
 .modal-content{
     margin-top: 25px;
     width: 95%;
+    min-height: 550px;
+    /* border: 1px solid red; */
 }
 
 .modal-name{

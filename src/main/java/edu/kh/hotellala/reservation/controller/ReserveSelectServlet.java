@@ -29,8 +29,13 @@ public class ReserveSelectServlet extends HttpServlet {
 			
 			ReserveService service = new ReserveService();
 			
-			// 페이지네이션 객체, 게시글 리스트
+			// 페이지네이션 객체, 게시글 리스트를 한 번에 반환하는 Service
 			Map<String, Object> map = service.selectReserveList(cp);
+			
+			// 일반 예약목록 조회
+			
+			
+			// 검색 예약목록 조회
 			
 			
 			String path = "/WEB-INF/views/reservation/list.jsp";
