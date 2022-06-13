@@ -25,11 +25,11 @@ WHERE EMAIL = ?
 <!-- 인증번호를 확인 -->
 <entry key="checkNumber">
    SELECT 
-   CASE WHEN (SELECT '1' FROM CERTIFICATION
+   CASE WHEN (SELECT '1' FROM ADMIN_CERTIFICATION
             WHERE EMAIL = ?
             AND C_NUMBER = ?)  = 1
    
-      THEN NVL( (SELECT '1' FROM CERTIFICATION
+      THEN NVL( (SELECT '1' FROM ADMIN_CERTIFICATION
             WHERE EMAIL = ?
             AND ISSUE_DT + (INTERVAL '5' MINUTE) >= SYSDATE) , '2') 
 

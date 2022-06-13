@@ -18,7 +18,7 @@
         <section>
         <article class="login-box" id="select-pw">
                  <form action="" id=""> 
-                    <span class="login-logo">비밀번호 찾기</span>
+                    <span class="login-logo"><img src="${contextPath}/resources/images/LogoWhite.png"></span>
                     <div class="input-name">
                         <span>이름</span>
                         <input type="text" placeholder="이름을 입력해주세요." autocomplete="off">
@@ -31,7 +31,7 @@
                         <span>이메일</span>
                         <input type="text" placeholder="이메일을 입력해주세요." autocomplete="off">
                     </div>
-                    <button type="email" id="select-pw-btn">비밀번호 찾기</button>
+                    <button type="email" id="select-pw-btn">임시비밀 번호 전송</button>
                 </form>
         </article>
         </section>

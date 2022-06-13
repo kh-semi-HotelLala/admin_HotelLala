@@ -44,7 +44,16 @@ public class AdminController extends HttpServlet{
 
 		if(Type.equals("/sendEmail")) {
 			int result = sendEmail(req.getParameter("email"));
-			resp.getWriter().print(result);
+			
+			if(result>0) {	resp.getWriter().print(result);	}
+			else {resp.setStatus(500);}
+		}
+		//이메일 번호 체크 Ajax 요청시
+		if(Type.equals("/checkNumber")) {
+			int result = checkNumber(req.getParameter("email"),req.getParameter("cNumber"));
+		
+			if(result>0) {	resp.getWriter().print(result);	}
+			else {resp.setStatus(500);}
 		}
 		
 		
@@ -57,20 +66,26 @@ public class AdminController extends HttpServlet{
 		
 	}
 	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String uriPath = req.getRequestURI();
 		int point = uriPath.lastIndexOf("/");
 		String boardType = uriPath.substring(point);
 		
-		//공지사항 또는 FAQ 일 때
+		try {
+			
+		//회원가입 form이 post방식 /signUp으로 요청 들어옴
 		System.out.println(boardType);
 		if(boardType.equals("/signUp")) {
-			System.out.println(req.getParameter("email"));
-			System.out.println(req.getParameter("password"));
-			System.out.println(req.getParameter("tell"));
+			
+			
 		}
+	}catch(Exception e){
+		e.printStackTrace();
+		resp.setStatus(500);
 	}
+}
 	
 	
 	//이메일 인증번호를 생성 + 전달 하고 
@@ -181,4 +196,17 @@ public class AdminController extends HttpServlet{
 		
 		return result;
 	}
+	
+	//이메일 인증 번호 조회
+	private int checkNumber(String inputEmail, String cNumber) {
+		int result =0;;
+		
+		try {
+			result = new AdminService().checkNumber(inputEmail,cNumber);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 }
