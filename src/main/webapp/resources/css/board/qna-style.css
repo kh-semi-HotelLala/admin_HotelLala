@@ -57,61 +57,56 @@ color: white;
 
 
 /* ---------------------------------------------------------------------------- */
-#list-btn button:nth-child(1){
-margin-right: 40px;
-}
-#list-btn button:hover{
-background-color: #003458;
-}
-/* 검색창 */
+/* 검색 창 */
 
+/* 검색 기능 */
 
-/* #select-filter{
-padding: 20px;
-border-top: 1px solid gray;
-border-bottom: 1px solid gray;
-}
-#select-filter> *{
-height: 30px;
-}
-#select-filter>input{
-width: 400px;
-border: 1px solid black;  
-}
- */
-#select-filter{
-    height: 80px;
+.fliter-search{
     display: flex;
-    justify-content: end;
-    padding: 10px;
-    border-bottom: 1px solid gray;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 0;
 }
-#select-filter div{
-    border-bottom: 3px solid #003458;
-}
-#select-filter *{
-    padding: 10px;
-    margin: 0 10px;
-}
-#select-filter select{
-    width:100px;
-    border-radius: 0;
-}
-#select-filter input{
-    width: 300px;
-    border: none;
-    outline: none;
-    text-align: left;
-}
-#select-filter button{
+select{
     width: 100px;
-    border: 1px solid #003458;
+    height: 30px;
+    border: 1px solid rgb(194, 194, 194);
+    color: #5E6278;
+    border-radius: 3px;
+    background-color: white;
+}
+.search-area{  
+    display: flex;
+    margin-left: 10px;
+}
+#search{
+    padding: 3px;
+    border: 1px solid rgb(194, 194, 194);
+    color: #5E6278;
+    width: 200px;
+    height: 30px;
+    border-radius: 3px;
+}
+
+#search-btn{
     cursor: pointer;
+    background-color: white;
+    border: 1px solid rgb(194, 194, 194);
+    border-radius: 3px;
+    margin-left: 5px;
+    /* border: 1px solid red; */
 }
-#select-filter button:hover{
-    background-color: #003458;
-    color: white;
+#date-btn{
+    width: 30px;
+    height: 20px;
+    background-color: white;
+    cursor: pointer;
+    border: 0;
+    /* border: 1px solid red; */
 }
+
+
 
 /* ---------------------------------------------------------------------------- */
 /* 상세보기 /답변하기 */
