@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel LALA 관리자 페이지</title>
+
+    <link rel="stylesheet" href="/HotelLala/src/main/webapp/resources/css/main.css">
+    <link rel="stylesheet" href="/HotelLala/src/main/webapp/resources/css/sideBar.css">
+    
+</head>
+<body>
+
+    <main class="container">
+        
+        <section id="side-bar">
+            <div>
+                <a href="/HotelLala/src/main/webapp/index.html">
+                    <img src="/HotelLala/admin/resources/images/logoSam (1).png" id="logo">
+                </a>
+            </div>
+            <div>
+                <div class="admin-info">
+                    <!-- 프로필 이미지 ... 다시 고르기  -->
+                    <img src="/HotelLala/src/main/webapp/resources/images/user.png">
+                </div>
+                <div class="admin-info">
+                    <div id="admin-name">김매니저</div>
+                    <div id="admin-email">sample@lala.or.kr</div>
+                </div>
+            </div>
+            <div id="menu-bar">
+                <div>Menu</div>
+                <ul>
+                    <li class="menu">
+                        <strong id="payment">예약</strong>
+                        <ul>
+                            <li class="board-list"><a href="/HotelLala/src/main/webapp/html/reserve-select.html" >예약리스트</a></li>
+                            <li class="board-list"><a href="/HotelLala/src/main/webapp/html/room-manage.html" >객실관리</a> </li>
+                            <li class="board-list"><a href="/HotelLala/src/main/webapp/html/refund-select.html" >환불내역</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="menu">
+                        <strong id="guest">고객</strong>
+                        <ul>
+                            <li class="board-list"><a href="/admin/고객전체조회 게시판.html" >고객 전체 조회</a></li>
+                            <li class="board-list"><a href="#" >고객 검색</a> </li>
+                        </ul>
+                    </li>
+                    <li class="menu">
+                        <strong id="board">게시판</strong>
+                        <ul>
+                            <li class="board-list"><a href="/admin/게시판/공지사항 게시판.html" >공지사항</a></li>
+                            <li class="board-list"><a href="/admin/게시판/QNA 게시판 .html 게시판.html" >QNA</a> </li>
+                            <li class="board-list"><a href="#" >FAQ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <a href="#" id="logout">로그아웃</a>
+            </div>
+        </section>
+        
+        <section id="content">
+            
+            <div class="content-header">
+                <div class="content-name">HOME</div>
+                <div>
+                    <div>TODAY</div>
+                    <div>2022 . 06 . 01</div>
+                    <div id="clock">16:49:45</div>
+                </div>
+            </div>
+
+            <div class="main-content">
+
+                <div class="current-rev">
+                    <div class="box-text">
+                        <div>예약 현황</div>
+                        <div>오늘의 예약 수</div>
+                    </div>
+                    <div class="box-count">5</div>
+                </div>
+                    
+                <div class="refund-req">
+                    <div>
+                        <div class="box-text">
+                            <div>환불 요청</div>
+                            <div>오늘 환불 요청 수</div>
+                        </div>
+                        <div class="box-count">2,000,000</div>
+                    </div>
+                </div>
+                    
+                <div class="QNA-req">
+                    <div>
+                        <div class="box-text">
+                            <div>미답변 문의</div>
+                            <div>미답변 문의 수</div>
+                        </div>
+                        <div class="box-count">2</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-area">
+                <div class="content-chart">
+                    <div></div>
+                </div>
+
+                <div class="chart-info">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/HotelLala/src/main/webapp/resources/js/main.js"></script>
+
+</body>
+</html>
