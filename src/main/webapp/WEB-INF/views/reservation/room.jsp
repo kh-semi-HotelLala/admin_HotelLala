@@ -30,11 +30,11 @@
 
             <div class="floor-icon">
                 <div>
-                    <div>6F</div>
-                    <div>5F</div>
-                    <div>4F</div>
-                    <div>3F</div>
-                    <div>2F</div>
+                    <div id="sixthF">6F</div>
+                    <div id="fifthF">5F</div>
+                    <div id="forthF">4F</div>
+                    <div id="thirdF">3F</div>
+                    <div id="secondF">2F</div>
                     <div>LOBBY</div>
                 </div>
             </div>
@@ -121,7 +121,7 @@
     </div>
 
 
-    <script src="${contextPath}/resources/js/room.js"></script>
+    <script src="${contextPath}/resources/js/reservation/room.js"></script>
 
 </body>
 </html>

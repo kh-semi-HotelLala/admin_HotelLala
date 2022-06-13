@@ -118,10 +118,13 @@
                                 <div>
                                     <div class="info-name">기본가격</div>
                                     <div class="info-content">230,000원</div>
+
+                                    <!-- 비어있을 수 있음 -->
                                     <div class="info-name">옵션추가</div>
                                     <div class="info-content">성인 조식 + 2</div>
                                 </div>                            
                                 <div>
+                                    <!-- 비어있을 수 있음 -->
                                     <div class="info-name">인원추가</div>
                                     <div class="info-content">성인 2명</div>
                                     <div class="info-name">결제금액</div>
@@ -132,7 +135,7 @@
                     </div>
                 </div>
 
-                <div class="memo-info">
+                <!-- <div class="memo-info">
                     <div class="memo">
                         <div>
                             <div class="info-name">메모</div>
@@ -141,14 +144,14 @@
                             </div>                            
                         </div>
                     </div>
-                </div>
+                </div> -->
                 
                         
                 <!-- 상세 페이지 저장/취소 버튼 -->
                 <div class="btn">
                     <span>
                         <a href="${contextPath}/">
-                            <button id="save">수정</button>
+                            <button id="save">확인</button>
                         </a>
                     </span>
                     <span>
