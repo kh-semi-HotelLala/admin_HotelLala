@@ -21,10 +21,8 @@ import edu.kh.hotellala.common.wrapper.EncryptWrapper;
 // 필터가 적용되어야 하는 url이 여러개인 경우 String 배열 초기화 형태로 작성하면 된다
 // String 배열에서 바로 초기화 하듯이 문자열 배열 형태로 저장하면 된다. {"123", "456", "789"}
 
-@WebFilter(filterName="encryptFilter" , urlPatterns = {"/l^ogin",
-														"/admin/signUp",
-														"/member/myPage/changePw",
-														"/member/myPage/secession"})  
+@WebFilter(filterName="encryptFilter" , urlPatterns = {"/login",
+														"/admin/signUp"})  
 public class EncryptFilter extends HttpFilter implements Filter {
 
 	public void destroy() {
