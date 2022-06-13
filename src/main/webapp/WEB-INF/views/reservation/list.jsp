@@ -82,14 +82,17 @@
                             <c:forEach var="reserve" items="${reserveList}">
 
                                 <tr>
-                                    <td>${paymentDate}</td>
+                                    <!-- 나중에 작성해야 함! -->
+                                    <td>${paymentDate}</td> 
                                     <td>${memberName}</td>
                                     <td>${memberName}</td>
                                     <td>${roomNo}</td>
                                     <td>${checkIn}</td>
                                     <td>${checkOut}</td>
                                     <td>
-                                        <button id="btn">상세보기</button>
+                                        <a href="listDetail?${reserve.reservationNo}">
+                                            <button id="btn">상세보기</button>
+                                        </a>
                                     </td>
                                 </tr>
 

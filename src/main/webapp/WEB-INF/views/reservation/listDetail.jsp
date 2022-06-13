@@ -92,7 +92,7 @@
                         <div>
                             <div class="info-name">요청사항</div>
                             <div class="info-content">
-                                <li>- 수건 4개</li>
+                                <div>- 수건 4개</div>
                             </div>                            
                         </div>
                     </div>
