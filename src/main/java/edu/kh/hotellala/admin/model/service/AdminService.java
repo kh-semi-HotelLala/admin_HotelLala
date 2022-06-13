@@ -7,8 +7,6 @@ import static edu.kh.hotellala.common.JDBCTemplate.*;
 
 import java.sql.Connection;
 
-
-
 public class AdminService {
 
 	AdminDAO dao = new AdminDAO();
@@ -21,11 +19,8 @@ public class AdminService {
 	 */
 	public Admin adminLogin(String adminEmail, String adminPw)throws Exception{
 		Connection conn = getConnection();
-		
 		Admin admin = dao.adminLogin(conn,adminEmail,adminPw);
-		
 		close(conn);
-		
 		return admin;
 	}
 
