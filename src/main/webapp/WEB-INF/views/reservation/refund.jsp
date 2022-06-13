@@ -92,6 +92,29 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div class="pagination-area">
+                <ul class="pagination">
+                    <li><a href="#">&lt;&lt;</a></li>
+                    <li><a href="#">&lt;</a></li>
+                    
+                    <li><a class="current">1</a></li>
+                    <li><a href="${contexxtPath}/reservation/list?cp=2">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li><a href="#">9</a></li>
+                    <li><a href="#">10</a></li>
+
+                    <li><a href="#">&gt;</a></li>
+                    <li><a href="#">&gt;&gt;</a></li>
+                </ul>
+            </div>
+
             </section>
         </main>
                 
@@ -153,7 +176,7 @@
                 </div>
             </div>
             <div>
-                <button id="modal-update">수정</button>
+                <button id="modal-update">환불</button>
                 <button id="modal-close">취소</button>
             </div>
         </div>
