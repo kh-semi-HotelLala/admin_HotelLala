@@ -69,7 +69,56 @@
 			<jsp:include page="/WEB-INF/views/common/sideBar.jsp"/>
 			<section class="content">
 	
-		  
+				<div class="content-header">
+                    <div class="content-name">HOME</div>
+                    <div>
+                        <div>TODAY</div>
+                        <div>2022 . 06 . 01</div>
+                        <div id="clock">16:49:45</div>
+                    </div>
+                </div>
+            
+                <div class="main-content">
+            
+                    <div class="current-rev">
+                        <div class="box-text">
+                            <div>예약 현황</div>
+                            <div>오늘의 예약 수</div>
+                        </div>
+                        <div class="box-count">5</div>
+                    </div>
+                        
+                    <div class="refund-req">
+                        <div>
+                            <div class="box-text">
+                                <div>환불 요청</div>
+                                <div>오늘 환불 요청 수</div>
+                            </div>
+                            <div class="box-count">2,000,000</div>
+                        </div>
+                    </div>
+                        
+                    <div class="QNA-req">
+                        <div>
+                            <div class="box-text">
+                                <div>미답변 문의</div>
+                                <div>미답변 문의 수</div>
+                            </div>
+                            <div class="box-count">2</div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="chart-area">
+                    <div class="content-chart">
+                        <div></div>
+                    </div>
+            
+                    <div class="chart-info">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
 	
 	
 				<section id="board-Notice">

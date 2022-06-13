@@ -72,7 +72,7 @@
 
     </main>
 
-    <div id="modal">
+    <div class="modal">
         <div class="modal-window">
             <div class="modal-close">&times;</div>
             <div class="title">

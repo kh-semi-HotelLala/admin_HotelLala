@@ -83,6 +83,7 @@ tbody{
 
 .refund-list{
     width: 100%;
+    min-height: 75%;
     /* min-height: 700px; */
     /* border: 1px solid red; */
 }
@@ -174,6 +175,44 @@ tr{
     cursor: pointer;
     background-color: rgb(194, 194, 194);
     color: white;
+}
+
+/* 페이지 네이션 */
+.pagination{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.pagination > li{
+    width: 20px;
+    margin: 0 2px;
+    text-align: center;
+}
+
+.pagination a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    letter-spacing: -2px;
+    text-decoration: none;
+    color: #003458;
+}
+
+.pagination a:hover{
+    color: white;
+    background-color: #003458;
+    border-radius: 50%;
+}
+
+/* 현재 페이지 번호 */
+.pagination .current{
+    color: white;
+    background-color: #003458;
+    border-radius: 50%;
+    font-weight: bold;
 }
 
 
