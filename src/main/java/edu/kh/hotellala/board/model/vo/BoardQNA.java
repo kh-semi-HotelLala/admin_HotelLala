@@ -17,4 +17,8 @@ public class BoardQNA {
 	private String answer;
 	private String adminName;
 	private String memberName;
+	private String createDt;
+	private String memberTel;
+	private String memberEmail;
+	
 }

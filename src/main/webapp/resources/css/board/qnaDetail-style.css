@@ -1,0 +1,29 @@
+#board-QNA{
+    min-height: 500px;
+}
+
+.bold{
+    font-size: 1.3em;
+    border-bottom: 3px solid #003458;
+}
+.qna-area{
+    border: 1px solid red;
+    width: 100%;
+}
+.qna-area *{
+    padding: 0;
+    margin: 0;
+}
+
+.Q{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+#detail-table{
+    border-collapse: collapse;
+}
+.table-row{
+    border-bottom: 1px solid black;
+}

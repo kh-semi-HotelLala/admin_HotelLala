@@ -27,21 +27,29 @@
 				<div id="content-top-title">Q&A</div>
 				<div id="content-top-detial">*1:1문의</div>
 
-				<form action="#" method="get" id="fliter-search">
+				<form action="qna" method="get" id="fliter-search">
                     <div class="fliter-search">
+						<input type="hidden" name="type" value="search">
                         <div>
-                            <select name="select">
-                                <option value="">제목</option>
-                                <option value="">내용</option>
-                                <option value="">제목+내용</option>
+                            <select name="answer">
+                                <option value="N">미답변</option>
+                                <option value="Y">답변</option>
+                            </select>
+
+                            <select name="category">
+                                <option value="A">모든</option>
+                                <option value="O">기타</option>
+                                <option value="P">결제</option>
+                                <option value="R">객실</option>
+                                <option value="G">단체이용</option>
                             </select>
                         </div>
                             
                         <div class="search-area">
+							
                             <input type="search" id="search" name="search" autocomplete="off" placeholder="search">
                             <button type="submit" id="search-btn" >검색</button>
-							<button type="button">미답변만 보기</button>
-						</div>
+							</div>
                     </div>
                 </form> 
 
@@ -50,7 +58,6 @@
 					<table id="qna-table">
 							<thead>
 							<tr>
-								<th>No.</th>
 								<th>종류</th>
 								<th>문의 제목</th>
 								<th>작성자</th>
@@ -62,11 +69,11 @@
 						<tbody id="tbody">
 							<c:forEach var="qna" items="${qnaList}">
 								<tr>
-									<td>${qna.qnaNo}</td>
 									<td>${qna.category}</td>
-									<td><a href="qna?no=${qna.qnaNo}">${qna.title}</a></td>
+									<td><a href="qna?type=detail&no=${qna.qnaNo}">${qna.title}</a></td>
+									<p style="width: 1px; background-color:#ddd;"></p>
 									<td>${qna.memberName}</td>
-									<td>2022-05-14</td>
+									<td>${qna.createDt}</td>
 									<td>${qna.answer}</td>
 								</tr>
 							</c:forEach>

@@ -57,6 +57,7 @@ public class BoardDAO {
 				qna.setTitle(rs.getString(3));
 				qna.setAnswer(rs.getString(4));
 				qna.setMemberName(rs.getString(5));
+				qna.setCreateDt(rs.getString("DT"));
 				
 				qnaList.add(qna);
 			}
@@ -96,6 +97,45 @@ public class BoardDAO {
 			close(stmt);
 		}
 		return list;
+	}
+
+
+	
+	/**qna 상세 조회 DAO
+	 * @param conn
+	 * @param no
+	 * @return qna
+	 * @throws Exception
+	 */
+	public BoardQNA selectQnaDetail(Connection conn, int no)throws Exception{
+		BoardQNA qna = null;
+		try {
+			String sql = prop.getProperty("selectQnaDetail");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				qna = new BoardQNA();
+				qna.setQnaNo(rs.getInt(1));
+				qna.setCategory(rs.getString(2));
+				qna.setTitle(rs.getString(3));
+				qna.setAnswer(rs.getString(4));
+				qna.setMemberName(rs.getString(5));
+				qna.setCreateDt(rs.getString(6));
+				qna.setContent(rs.getString(7));
+				qna.setMemberTel(rs.getString(8));
+				qna.setMemberEmail(rs.getString(9));
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return qna;
 	}
 
 }
