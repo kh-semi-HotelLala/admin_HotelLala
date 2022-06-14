@@ -67,8 +67,35 @@
                     </thead>
 
                     <tbody>
+
+                        <c:choose>
+                            <c:when test="empty refundList">
+                                <tr>
+                                    <td>환불 내역이 없습니다.</td>
+                                </tr>
+                            </c:when>
+
+                            <c:otherwise>
+
+                                <c:forEach var="refund" items="${refundList}">
+
+                                    <tr>
+                                        <td>${refund.}</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+
+                                </c:forEach>
+
+                            </c:otherwise>
+                        </c:choose>
+
                         
-                        <tr>
+                        <!-- <tr>
                             <td>01</td>
                             <td>유저일</td>
                             <td>101</td>
@@ -89,31 +116,10 @@
                             <td>
                                 <button class="deleteBtn">삭제</button>
                             </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
-
-            <!-- <div class="pagination-area">
-                <ul class="pagination">
-                    <li><a href="#">&lt;&lt;</a></li>
-                    <li><a href="#">&lt;</a></li>
-                    
-                    <li><a class="current">1</a></li>
-                    <li><a href="${contexxtPath}/reservation/list?cp=2">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">6</a></li>
-                    <li><a href="#">7</a></li>
-                    <li><a href="#">8</a></li>
-                    <li><a href="#">9</a></li>
-                    <li><a href="#">10</a></li>
-
-                    <li><a href="#">&gt;</a></li>
-                    <li><a href="#">&gt;&gt;</a></li>
-                </ul>
-            </div> -->
 
             </section>
         </main>

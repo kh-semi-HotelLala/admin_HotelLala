@@ -1,7 +1,7 @@
 package edu.kh.hotellala.reservation.controller;
 
 import java.io.IOException;
-import java.util.Map;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.kh.hotellala.reservation.model.service.ReserveService;
+import edu.kh.hotellala.reservation.model.vo.ReserveCheck;
 
 
 @WebServlet("/reservation/list")
@@ -21,21 +22,24 @@ public class ReserveSelectServlet extends HttpServlet {
 		
 		try {
 			
-			int cp = 1;
+			ReserveService service = new ReserveService();			
+		
+			List<ReserveCheck> reserveList = null;
+		 	// 일반 예약목록 조회
+			if(req.getParameter("select") == null) {
+				
+				reserveList = service.selectReserveAll();
 			
-			if(req.getParameter("cp") != null) {
-				cp = Integer.parseInt(req.getParameter("cp"));
+			} else { // 검색 예약목록 조회
+				
+				String select = req.getParameter("select");
+				String query = req.getParameter("query");
+				
+				reserveList = service.searchReserveList(select, query);
+				
 			}
 			
-			ReserveService service = new ReserveService();
-			
-			// 페이지네이션 객체, 게시글 리스트를 한 번에 반환하는 Service
-			Map<String, Object> map = service.selectReserveList(cp);
-			
-			// 일반 예약목록 조회
-			
-			
-			// 검색 예약목록 조회
+			req.setAttribute("reserveList", reserveList);
 			
 			
 			String path = "/WEB-INF/views/reservation/list.jsp";
