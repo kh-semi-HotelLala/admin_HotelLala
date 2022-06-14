@@ -1,6 +1,6 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,37 +23,71 @@
 		<section id="content">
 
 			<section id="faq-content">
-				<span id="content-top-title">* FAQ</span>
+				<div id="content-top-title">FAQ</div>
+				<div id="content-top-detial">*자주 묻는 질문</div>
 				
-				<form id="select-filter">
-					<div>
-						<select name=""  id="">
-							<option value="">제목</option>
-							<option value="">내용</option>
-							<option value="">제목+내용</option>
-						</select>
-						<input type="text" placeholder="검색"> 
-						<button class="fa-solid fa-magnifying-glass"></button>
-						</div>
-				</form>
-
 				
 			<section id="faq-wrapper">
 				<div class="tab-menu-area">
-					<a href="" class="onChoice">전체</a>
-					<a href="javascript: void(0);">예약</a>
-					<a href="">결제</a>
+					<p style="width: 1px; background-color:#ddd;"></p>
+					<a href="faq" class="choice">전체</a>
+					<p style="width: 1px; background-color:#ddd;"></p>
+					<a href="faq/reservation">예약</a>
+					<p style="width: 1px; background-color:#ddd;"></p>
+					<a href="faq/payment">결제</a>
+					<p style="width: 1px; background-color:#ddd;"></p>
 					<a href="">시설 이용</a>
-					<a href="">기타</a>
+					<p style="width: 1px; background-color:#ddd;"></p>
+					<a href="faq/other">기타</a>
+					<p style="width: 1px; background-color:#ddd;"></p>
 				</div>
 			
 				<div class="faq-content-area">
-					<ul>
-						<li>
-							<div class="faq-list">
-								<span class="on">카테고리</span><span class="tw">제목</span><span class="th">{작성일</span>
+					<ul class="faq-ul">
+
+						<li class="faq-list">
+							<div class="faq-header">
+								<span class="faq-category">카테고리</span>
+								<span class="faq-title">제목</span>
+								<span class="faq-createDate">작성일</span>
+							</div>
+							<div class="faq-content">
+								<p>라라호텔 객실 예약 대표 전화와 홈페이지 그리고 여행사를 통해 예약 가능합니다.</p>
 							</div>
 						</li>
+
+						<li class="faq-list">
+							<div class="faq-header">
+								<span class="faq-category">카테고리</span>
+								<span class="faq-title">제목</span>
+								<span class="faq-createDate">작성일</span>
+							</div>
+							<div class="faq-content">
+								<p >라라호텔 객실 예약 대표 전화와 홈페이지 그리고 여행사를 통해 예약 가능합니다.								</p>
+							</div>
+						</li>
+
+					
+
+						<li class="faq-list">
+							<div class="faq-header">
+								<span class="faq-category">카테고리</span>
+								<span class="faq-title">제목</span>
+								<span class="faq-createDate">작성일</span>
+							</div>
+							<div class="faq-content">
+								<p >라라호텔 객실 예약 대표 전화와 홈페이지 그리고 여행사를 통해 예약 가능합니다.								</p>
+							</div>
+							<%-- 게시글번호를 저장하는 히든속성값(필요한가?) --%>
+							<input type="hidden" name="boardNo" value="">
+						</li>
+
+					
+
+					
+
+					
+					</ul>
 				</div>
 			</section>
 		</section>
