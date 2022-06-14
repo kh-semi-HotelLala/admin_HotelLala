@@ -20,5 +20,5 @@ public class BoardQNA {
 	private String createDt;
 	private String memberTel;
 	private String memberEmail;
-	
+	private String answeContent;
 }
