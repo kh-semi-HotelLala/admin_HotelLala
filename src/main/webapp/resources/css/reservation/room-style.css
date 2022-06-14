@@ -38,8 +38,6 @@
 }
 
 .floor-icon > div > div:nth-of-type(1){
-    background-color: #003458;
-    color: white;
     border-bottom: 1px solid #003458;
     height: 30px;
     padding-top: 5px;
@@ -60,6 +58,8 @@
     padding-top: 5px;
 }
 .floor-icon > div > div:nth-of-type(5){
+    background-color: #003458;
+    color: white;
     border-bottom: 1px solid #003458;
     height: 30px;
     padding-top: 5px;
@@ -98,7 +98,7 @@
 
 /* 룸 정보 */
 .room{
-    margin-left: 100px;
+    margin-left: 150px;
     height: 70%;
     /* border: 1px solid red; */
 }

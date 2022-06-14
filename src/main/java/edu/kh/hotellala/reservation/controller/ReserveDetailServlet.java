@@ -1,6 +1,7 @@
 package edu.kh.hotellala.reservation.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.kh.hotellala.reservation.model.service.ReserveService;
+import edu.kh.hotellala.reservation.model.vo.ReserveCheck;
 
 @WebServlet("/reservation/listDetail")
 public class ReserveDetailServlet extends HttpServlet{
@@ -25,11 +27,11 @@ public class ReserveDetailServlet extends HttpServlet{
 			// 2. 예약 서비스 객체 만들기
 			ReserveService service = new ReserveService(); 
 			
-			// 3. 예약정보 + 결제 정보 조회
-//			ListDetail detail = service.selectReserveDetail(reservationNo);
+			// 3. 예약정보, 예약자정보, 옵션 추가
+			List<ReserveCheck> reserveDetail = service.selectReserveDetail(reservationNo);
 			
 			// 4. 예약정보 + 결제 정보를 jsp에서 쓸 수 있도록
-			
+			req.setAttribute("reserveDetail", reserveDetail);
 			
 			String path = "/WEB-INF/views/reservation/listDetail.jsp";
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);

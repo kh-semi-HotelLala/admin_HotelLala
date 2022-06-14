@@ -35,12 +35,12 @@
                         <div>
                             <div class="reserve-no">
                                 <div class="info-name">예약번호</div>
-                                <div class="info-content">12341234</div>
+                                <div class="info-content">0101010</div>
                             </div>
                         
                             <div class="reserve-date">
                                 <div class="info-name">예약접수일</div>
-                                <div class="info-content">2022-06-01 00:00:00</div>
+                                <div class="info-content">2022-06-01</div>
                             </div>
                         </div>
                             
@@ -125,8 +125,8 @@
                                 </div>                            
                                 <div>
                                     <!-- 비어있을 수 있음 -->
-                                    <div class="info-name">인원추가</div>
-                                    <div class="info-content">성인 2명</div>
+                                    <div class="info-name">결제수단</div>
+                                    <div class="info-content">신용카드</div>
                                     <div class="info-name">결제금액</div>
                                     <div class="info-content">300,000 원</div>
                                 </div>                                                    
@@ -134,31 +134,15 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="memo-info">
-                    <div class="memo">
-                        <div>
-                            <div class="info-name">메모</div>
-                            <div class="info-content">
-                                <div>메모할 내용</div>
-                            </div>                            
-                        </div>
-                    </div>
-                </div> -->
                 
                         
                 <!-- 상세 페이지 저장/취소 버튼 -->
                 <div class="btn">
                     <span>
-                        <a href="${contextPath}/">
+                        <a href="${contextPath}/reservation/list">
                             <button id="save">확인</button>
                         </a>
-                    </span>
-                    <span>
-                        <a href="${contextPath}/">
-                            <button id="cancle">취소</button>
-                        </a>
-                    </span>                
+                    </span>               
                 </div>
         
         </section>

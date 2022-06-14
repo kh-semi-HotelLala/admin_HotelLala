@@ -35,9 +35,8 @@
                         <div>
                             <select name="select">
                                 <option value="reserve-date">예약일</option>
-                                <option value="reserve-num">예약번호</option>
                                 <option value="room-num">객실번호</option>
-                                <option value="member-num">회원이름</option>
+                                <option value="member-name">회원이름</option>
                             </select>
                         </div>
                             
@@ -46,7 +45,7 @@
                             <input type="search" id="search" name="search"
                                 autocomplete="off" placeholder="search">
         
-                            <button type="submit" id="search-btn" >검색</button>
+                            <button type="submit" id="search-btn" name="query">검색</button>
                             
                         </div>
                             
@@ -61,7 +60,7 @@
                         <tr>
                             <th>예약일</th>
                             <th>이름</th>
-                            <th>객실번호</th>
+                            <th>객실호수</th>
                             <th>입실일</th>
                             <th>퇴실일</th>
                             <th>상세보기</th>
@@ -83,14 +82,13 @@
 
                                 <tr>
                                     <!-- 나중에 작성해야 함! -->
-                                    <td>${paymentDate}</td> 
-                                    <td>${memberName}</td>
-                                    <td>${memberName}</td>
-                                    <td>${roomNo}</td>
-                                    <td>${checkIn}</td>
-                                    <td>${checkOut}</td>
+                                    <td>${reserve.paymentDate}</td> 
+                                    <td>${reserve.memberName}</td>
+                                    <td>${reserve.roomNo}</td>
+                                    <td>${reserve.checkIn}</td>
+                                    <td>${reserve.checkOut}</td>
                                     <td>
-                                        <a href="listDetail?${reserve.reservationNo}">
+                                        <a href="listDetail?no=${reserve.reservationNo}">
                                             <button id="btn">상세보기</button>
                                         </a>
                                     </td>
@@ -129,27 +127,6 @@
                     </tbody>
                 </table>
             </div>
-
-            <!-- <div class="pagination-area">
-                <ul class="pagination">
-                    <li><a href="#">&lt;&lt;</a></li>
-                    <li><a href="#">&lt;</a></li>
-                    
-                    <li><a class="current">1</a></li>
-                    <li><a href="${contexxtPath}/reservation/list?cp=2">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">6</a></li>
-                    <li><a href="#">7</a></li>
-                    <li><a href="#">8</a></li>
-                    <li><a href="#">9</a></li>
-                    <li><a href="#">10</a></li>
-
-                    <li><a href="#">&gt;</a></li>
-                    <li><a href="#">&gt;&gt;</a></li>
-                </ul>
-            </div> -->
         
         </section>
     </main>
