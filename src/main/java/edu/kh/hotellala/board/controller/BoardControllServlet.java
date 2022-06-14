@@ -115,12 +115,12 @@ public class BoardControllServlet extends HttpServlet {
 		} else{
 			//아닌 경우 파라미터에서 어느 수행 요청인지 type을 가져와 확인한다.
 			String type = req.getParameter("type");
-			
+			HttpSession session = req.getSession();
 		switch (type) {
 			//forward인지 redirect인지 구분한 boolean값
 			//둘 모두 가야될 위치를 저장한 변수 path를 
 			//hash Map에 저장에 doGet 메서드에서 사용한다.
-  
+		
 			case "search":   
 				List<BoardQNA> qnaList = service.selectQnaList();
 				req.setAttribute("qnaList", qnaList);
@@ -134,10 +134,9 @@ public class BoardControllServlet extends HttpServlet {
 				map.put("path", "/qnaDetail.jsp");
 				map.put("bol", true);
 				break;
-				//조회후 상세 
+				//삭제의 경우인대 기능 제거
 			case "delete":
-				int result = 0;
-				HttpSession session = req.getSession();
+//				int result = service.deleteQNA(Integer.parseInt(req.getParameter("no")));
 				session.setAttribute("message", "삭제되었습니다.");
 				map.put("path", req.getContextPath()+"/board/qna");
 				map.put("bol", false); //redirect의 경우 false으로 구분

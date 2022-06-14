@@ -100,7 +100,6 @@ public class BoardDAO {
 	}
 
 
-	
 	/**qna 상세 조회 DAO
 	 * @param conn
 	 * @param no
@@ -138,4 +137,7 @@ public class BoardDAO {
 		return qna;
 	}
 
+
+	
+	
 }

@@ -56,4 +56,18 @@ public class BoardService {
 		return qna;
 	}
 
+	
+	/*
+	 * public int deleteQNA(int no)throws Exception{ Connection conn =
+	 * getConnection();
+	 * 
+	 * int result = dao.deleteQNA(conn,no);
+	 * 
+	 * if(result>0)commit(conn); else rollback(conn);
+	 * 
+	 * close(conn);
+	 * 
+	 * return result; }
+	 */
+
 }
