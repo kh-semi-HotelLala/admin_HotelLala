@@ -66,8 +66,6 @@ public class BoardDAO {
 			close(rs);
 			close(stmt);
 		}
-		
-		
 		return qnaList;
 	}
 
@@ -127,6 +125,7 @@ public class BoardDAO {
 				qna.setContent(rs.getString(7));
 				qna.setMemberTel(rs.getString(8));
 				qna.setMemberEmail(rs.getString(9));
+				qna.setAnswerContent(rs.getString(10));
 			}
 			
 		}finally {
@@ -135,6 +134,26 @@ public class BoardDAO {
 		}
 		
 		return qna;
+	}
+
+
+	public int insertAnswer(Connection conn, int adminNo, String inputAnswer, int no)throws Exception{
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("insertAnswer");
+
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, adminNo);
+			pstmt.setString(2, inputAnswer);
+			pstmt.setInt(3, no);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		return result;
 	}
 
 

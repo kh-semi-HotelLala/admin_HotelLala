@@ -7,6 +7,7 @@ import static edu.kh.hotellala.common.JDBCTemplate.*;
 import edu.kh.hotellala.board.model.dao.BoardDAO;
 import edu.kh.hotellala.board.model.vo.Board;
 import edu.kh.hotellala.board.model.vo.BoardQNA;
+import edu.kh.hotellala.common.Util;
 
 public class BoardService {
 
@@ -48,7 +49,7 @@ public class BoardService {
 		BoardQNA qna = dao.selectQnaDetail(conn,no);
 		
 			if(qna != null) {
-				//나중에 추가될 이미지 저장용객체
+				//나중에 추가될 이미지 저장용 객체
 			}
 			
 		close(conn);
@@ -56,18 +57,18 @@ public class BoardService {
 		return qna;
 	}
 
-	
-	/*
-	 * public int deleteQNA(int no)throws Exception{ Connection conn =
-	 * getConnection();
-	 * 
-	 * int result = dao.deleteQNA(conn,no);
-	 * 
-	 * if(result>0)commit(conn); else rollback(conn);
-	 * 
-	 * close(conn);
-	 * 
-	 * return result; }
-	 */
+	public int insertAnswer(int adminNo, int no, String inputAnswer)throws Exception{
+		Connection conn = getConnection();
+		
+		inputAnswer = Util.XssHandling(inputAnswer);
+		inputAnswer = Util.newLineHandling(inputAnswer);
+		int result = dao.insertAnswer(conn,adminNo,inputAnswer,no);
+		
+		if(result>0)commit(conn);
+		
+		else rollback(conn);;
+		close(conn);
+		return result;
+	}
 
 }

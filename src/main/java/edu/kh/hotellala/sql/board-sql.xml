@@ -49,11 +49,21 @@ SELECT  QNA_NO,
             TO_CHAR(CREATE_DT,'YYYY-MM-DD'),
             QNA_CONTENT,
             MEMBER_TEL,
-            MEMBER_EMAIL
+            MEMBER_EMAIL,
+            ANSWER_CONTENT
 FROM QNA_BOARD
 JOIN CATEGORY_TYPE USING(CATEGORY_CD)
 JOIN MEMBER USING(MEMBER_NO)
 LEFT JOIN ADMIN_ACCOUNT USING(ADMIN_NO)
+WHERE QNA_NO=?
+</entry>
+
+<!-- QNA답변 삽입 -->
+<entry key="insertAnswer">
+UPDATE "HOTEL_LALA"."QNA_BOARD" 
+SET ANSWER = 'Y', 
+    ADMIN_NO = ?, 
+    ANSWER_CONTENT = ?
 WHERE QNA_NO=?
 </entry>
 
