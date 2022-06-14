@@ -24,7 +24,8 @@
 			
 			
 			<section id="board-QNA">
-				<span id="content-top-title">* QNA</span>
+				<div id="content-top-title">Q&A</div>
+				<div id="content-top-detial">*1:1문의</div>
 
 				<form action="#" method="get" id="fliter-search">
                     <div class="fliter-search">
@@ -49,7 +50,8 @@
 					<table id="qna-table">
 							<thead>
 							<tr>
-								<th colspan="2">종류</th>
+								<th>No.</th>
+								<th>종류</th>
 								<th>문의 제목</th>
 								<th>작성자</th>
 								<th>작성일</th>
@@ -60,7 +62,7 @@
 						<tbody id="tbody">
 							<c:forEach var="qna" items="${qnaList}">
 								<tr>
-									<td colspan="2">${qna.qnaNo}</td>
+									<td>${qna.qnaNo}</td>
 									<td>${qna.category}</td>
 									<td><a href="qna?no=${qna.qnaNo}">${qna.title}</a></td>
 									<td>${qna.memberName}</td>

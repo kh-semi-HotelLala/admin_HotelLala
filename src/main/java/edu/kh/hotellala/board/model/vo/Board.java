@@ -11,11 +11,13 @@ import lombok.ToString;
 @ToString
 public class Board {
 
-	private int boardNo;
-	private String category;
-	private String content;
-	private String boardType;
-	private String 작성일;
-	
+	private int boardNo; //게시글번호
+	private String category; //카테고리
+	private String title; 	//제목
+	private String content; //내용
+	private String createDate; //작성일
 }
-//기타	1번글 공지사항 제목	1번 공지사항 기타 카테고리 내용입니다	NOTICE	22/06/13
+//게시글 번호
+//카테고리
+//게시글 제목
+//작성일

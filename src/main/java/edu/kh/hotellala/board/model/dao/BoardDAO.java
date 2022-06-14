@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Properties;
 
 import edu.kh.hotellala.admin.model.dao.AdminDAO;
+import edu.kh.hotellala.board.model.vo.Board;
 import edu.kh.hotellala.board.model.vo.BoardQNA;
 
 public class BoardDAO {
@@ -33,6 +34,11 @@ public class BoardDAO {
 	}
 
 	
+	/**모든 QNA 목록 조회 DAO
+	 * @param conn
+	 * @return list
+	 * @throws Exception
+	 */
 	public List<BoardQNA> selectQnaList(Connection conn)throws Exception{
 		List<BoardQNA> qnaList = new ArrayList<BoardQNA>();
 		
@@ -62,6 +68,34 @@ public class BoardDAO {
 		
 		
 		return qnaList;
+	}
+
+
+	/**모든 FAQ 목록 조회 DAQ
+	 * @param conn
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Board> selectFaqList(Connection conn)throws Exception{
+		List<Board> list = new ArrayList<Board>();
+		try {
+			String sql = prop.getProperty("selectFaqList");
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				Board faq = new Board();
+				faq.setBoardNo(rs.getInt(1));
+				faq.setCategory(rs.getString(2));
+				faq.setTitle(rs.getString(3));
+				faq.setContent(rs.getString(4));
+				faq.setCreateDate(rs.getString(5));
+				list.add(faq);
+			}
+		}finally {
+			close(rs);
+			close(stmt);
+		}
+		return list;
 	}
 
 }
