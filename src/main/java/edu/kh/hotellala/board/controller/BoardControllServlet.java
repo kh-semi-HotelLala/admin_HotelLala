@@ -25,12 +25,16 @@ public class BoardControllServlet extends HttpServlet {
 
 	BoardService service = new BoardService();
 	
+	
+	
 	/**작성의 경우 요청
 	 *
 	 */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println(req.getParameter("inputAnswer"));
+		System.out.println(req.getParameter("adminNo")+"11어드민");
+		System.out.println(req.getParameter("type"));
 			
 	}
 	

@@ -69,8 +69,10 @@
 					<div class="A">
 						<h1 id="answerHeader">답변</h1>
 
-						<form action="" method="POST" onsubmit="return answerValidate()">
+						<form action="qna" method="POST" onsubmit="return answerValidate()">
 							<input type="hidden" name="qnaNo" id="qnaNo" value="${qna.qnaNo}">
+							<input type="hidden" name="adminNo" value="${adminLogin.adminNo}">
+							<input type="hidden" name="type" value="answer">
 							<textarea name="inputAnswer" id="answer" cols="30" rows="10"></textarea>
 							<button>답변하기</button>
 						</form>
