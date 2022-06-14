@@ -80,10 +80,10 @@
                                 <c:forEach var="refund" items="${refundList}">
 
                                     <tr>
-                                        <td>${refund.}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>${refund.refundNo}</td>
+                                        <td>${refund.memberName}</td>
+                                        <td>${refund.roomNo}</td>
+                                        <td>${refund.paymentDate}</td>
                                         <td></td>
                                         <td></td>
                                         <td></td>

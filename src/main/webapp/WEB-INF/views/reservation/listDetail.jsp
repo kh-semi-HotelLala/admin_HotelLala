@@ -35,7 +35,7 @@
                         <div>
                             <div class="reserve-no">
                                 <div class="info-name">예약번호</div>
-                                <div class="info-content">0101010</div>
+                                <div class="info-content"></div>
                             </div>
                         
                             <div class="reserve-date">

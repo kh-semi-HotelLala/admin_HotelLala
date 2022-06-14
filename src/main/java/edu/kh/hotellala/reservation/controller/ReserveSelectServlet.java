@@ -22,9 +22,10 @@ public class ReserveSelectServlet extends HttpServlet {
 		
 		try {
 			
-			ReserveService service = new ReserveService();			
+			ReserveService service = new ReserveService();	
 		
 			List<ReserveCheck> reserveList = null;
+			
 		 	// 일반 예약목록 조회
 			if(req.getParameter("select") == null) {
 				
