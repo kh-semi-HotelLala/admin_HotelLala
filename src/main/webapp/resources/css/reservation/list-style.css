@@ -44,16 +44,19 @@ select{
 
 .search-area{  
     display: flex;
+    align-items: center;
     margin-left: 10px;
+    height: 30px;
+    /* border: 1px solid red; */
 }
 
-#search{
+#search-query{
     padding: 3px;
     border: 1px solid rgb(194, 194, 194);
     color: #5E6278;
     width: 200px;
     height: 30px;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 #search-btn{
@@ -61,7 +64,7 @@ select{
     background-color: white;
     border: 1px solid rgb(194, 194, 194);
     border-radius: 3px;
-    margin-left: 5px;
+    margin-left: 8px;
     height: 30px;
     width: 40px;
     /* border: 1px solid red; */

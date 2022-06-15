@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.kh.hotellala.reservation.model.service.ReserveService;
+import edu.kh.hotellala.reservation.model.vo.Payment;
 import edu.kh.hotellala.reservation.model.vo.Reservation;
 
 @WebServlet("/reservation/listDetail")
@@ -27,10 +28,12 @@ public class ReserveDetailServlet extends HttpServlet{
 			// 2. 예약 서비스 객체 만들기
 			ReserveService service = new ReserveService(); 
 			
-			// 3. 예약정보, 예약자정보, 옵션 추가
+			// 3-1. 예약정보, 예약상태, 결제정보
 			Reservation detail = service.selectReserveDetail(requestNo);
+
 			
 			// 4. 예약정보 + 결제 정보를 jsp에서 쓸 수 있도록
+			req.setAttribute("detail", detail);
 			
 			String path = "/WEB-INF/views/reservation/listDetail.jsp";
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);

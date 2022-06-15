@@ -11,9 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import javax.servlet.jsp.jstl.sql.Result;
-
-import edu.kh.hotellala.reservation.model.vo.Member;
 import edu.kh.hotellala.reservation.model.vo.Payment;
 import edu.kh.hotellala.reservation.model.vo.Reservation;
 
@@ -135,10 +132,20 @@ public class ReserveDAO {
 				
 				detail= new Reservation();
 				
-				detail.setRequestNo(rs.getString("REQUEST_NO"));
-				detail.setPaymentDate(rs.getDate("PAYMENT_DT"));
-				
-				
+				detail.setRequestNo(rs.getString(1));
+				detail.setPaymentDate(rs.getDate(2));
+				detail.setRoomNo(rs.getInt(3));
+				detail.setCheckIn(rs.getDate(4));
+				detail.setDateRange(rs.getString(5));
+				detail.setRoomType(rs.getString(6));
+				detail.setAdultCount(rs.getInt(7));
+				detail.setChildCount(rs.getInt(8));
+				detail.setMemberName(rs.getString(9));
+				detail.setMemberTel(rs.getString(10));
+				detail.setMemberBR(rs.getString(11));
+				detail.setMemberAddress(rs.getString(12));
+				detail.setExtraRequest(rs.getString(13));
+				detail.setReservationFlag(rs.getString.charAt(0));
 				
 			}
 			
@@ -150,6 +157,9 @@ public class ReserveDAO {
 		
 		return detail;
 	}
+	
+	
+	
 	
 	
 	/**
@@ -197,6 +207,10 @@ public class ReserveDAO {
 	
 
 
+	
+	
+	
+	
 
 	/**
 	 *  환불 전체 조회 DAO
@@ -221,6 +235,10 @@ public class ReserveDAO {
 		
 		return refundList;
 	}
+
+
+
+	
 
 
 
