@@ -1,7 +1,3 @@
-for(let i in ob){
-    console.log(i);
-}
-
 
 //상세조회의 경우 수행 함수
 const params = new URL(location.href).searchParams;
@@ -45,5 +41,4 @@ if(params.get('type')=='search'){
     
 })()
 }
-
 

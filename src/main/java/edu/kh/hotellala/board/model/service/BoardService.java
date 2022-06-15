@@ -111,7 +111,7 @@ public class BoardService {
 	 * @return list
 	 * @throws Exception
 	 */
-	public List<Board> searchFaqList(String key)throws Exception{
+	public List<Board> searchList(String key,int boardNo)throws Exception{
 		Connection conn = getConnection();
 		int cNo=0;
 		switch(key){
@@ -122,7 +122,7 @@ public class BoardService {
 			case "group":cNo=6; break;
 		}
 		
-		List<Board> list = dao.searchQnaList(conn,cNo);
+		List<Board> list = dao.searchList(conn,cNo,boardNo);
 		
 		close(conn);
 		

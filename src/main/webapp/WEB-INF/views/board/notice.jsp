@@ -31,12 +31,30 @@ crossorigin="anonymous"></script>
 		
 		
 		<section id="notice-wrapper">
+<!---------------------검색영역 시작--------------------------->
+<div class="tab-menu-area">
+	<p style="width: 1px; background-color:#ddd;"></p>
+	<a href="notice" class="choice">전체</a>
+	<p style="width: 1px; background-color:#ddd;"></p>
+	<a href="notice?type=search&key=reservation">예약</a>
+	<p style="width: 1px; background-color:#ddd;"></p>
+	<a href="notice?type=search&key=payment">결제</a>
+	<p style="width: 1px; background-color:#ddd;"></p>
+	<a href="notice?type=search&key=facilities">시설 이용</a>
+	<p style="width: 1px; background-color:#ddd;"></p>
+	<a href="notice?type=search&key=group">단체</a>
+	<p style="width: 1px; background-color:#ddd;"></p>
+	<a href="notice?type=search&key=other">기타</a>
+	<p style="width: 1px; background-color:#ddd;"></p>
+</div>
+<!---------------------검색-영역 끝-------------------------->
+
+
 			<div class="notice-content-area">
 				<ul class="notice-ul">
 					<c:forEach var="notice" items="${noticeList}">
 						<li class="notice-list">
 							<div class="notice-header ">
-								<span class="notice-category"></span>
 								<span class="notice-category">${notice.category}</span>
 								<span class="notice-title">${notice.title}</span>
 								<span class="notice-createDate">${notice.createDate}</span>

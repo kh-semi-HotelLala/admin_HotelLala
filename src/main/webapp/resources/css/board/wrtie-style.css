@@ -1,0 +1,16 @@
+#write-header{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+#write-header select{
+    border: 1px solid #ddd;
+    background-color: rgb(250, 250, 250);
+}
+#write-header input{
+    height: 80%;
+    width: 70% ;
+
+}

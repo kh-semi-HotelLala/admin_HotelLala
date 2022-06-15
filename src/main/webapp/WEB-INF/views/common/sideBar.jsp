@@ -33,7 +33,7 @@
             </div>
             <div id="menu-bar">
                 <div>Menu</div>
-                <ul>
+                <ul>${myQNAList}
                     <li class="menu">
                         <strong id="reservation">Reservation</strong>
                         <ul>
@@ -43,12 +43,12 @@
                         </ul>
                     </li>
                     
-                    <li class="menu">
-                    
-                        <strong id="guest">Info</strong>
+                    <li class="menu">    
+                        <strong id="guest">Work set</strong>
                         <ul>
                             <li class="board-list"><a href="${contextPath}/member/AllList" >고객 전체 조회</a></li>
                             <li class="board-list"><a href="${contextPath}/admin/signUp">관리자 정보</a> </li>
+                            <li class="board-list"><a href="${contextPath}/board/write">게시글 작성 </a> </li>
                         </ul>
                     </li>
                     <li class="menu">
