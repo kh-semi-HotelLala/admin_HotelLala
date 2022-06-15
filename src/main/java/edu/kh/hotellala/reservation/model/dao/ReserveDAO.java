@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import edu.kh.hotellala.reservation.model.vo.Payment;
 import edu.kh.hotellala.reservation.model.vo.Reservation;
 
 public class ReserveDAO {
@@ -145,7 +144,8 @@ public class ReserveDAO {
 				detail.setMemberBR(rs.getString(11));
 				detail.setMemberAddress(rs.getString(12));
 				detail.setExtraRequest(rs.getString(13));
-				detail.setReservationFlag(rs.getString.charAt(0));
+				detail.setReservationFlag((rs.getString(14)).charAt(0));
+				
 				
 			}
 			
