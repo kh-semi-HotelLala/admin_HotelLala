@@ -38,6 +38,17 @@ public class BoardService {
 		return list;
 	}
 
+	/**모든 Notice 목록 전체 조회 Service
+	 * @return list
+	 * @throws Exception
+	 */
+	public List<Board> selectNoticeList()throws Exception{
+		Connection conn = getConnection();
+		List<Board> list = dao.selectNoticeList(conn);
+		close(conn);
+		return list;
+	}
+	
 	/**QNA 상세내용 조회 Service
 	 * @param parameter
 	 * @return qnaDetail
@@ -95,6 +106,11 @@ public class BoardService {
 		return list;
 	}
 
+	/**원하는 FAQ만 조회
+	 * @param key
+	 * @return list
+	 * @throws Exception
+	 */
 	public List<Board> searchFaqList(String key)throws Exception{
 		Connection conn = getConnection();
 		int cNo=0;
@@ -112,4 +128,6 @@ public class BoardService {
 		
 		return list;
 	}
+
+	
 }

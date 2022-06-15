@@ -71,7 +71,6 @@ public class BoardControllServlet extends HttpServlet {
 		}
 
 	}
-	
 
 	/**FAQ 게시판의 경우 수행 함수
 	 * @param req
@@ -81,8 +80,10 @@ public class BoardControllServlet extends HttpServlet {
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		if (req.getQueryString() == null&&req.getMethod().equals("GET")) {
+			
 			List<Board> faqList = service.selectFaqList();
 			req.setAttribute("faqList", faqList);
+			
 			map.put("path", "/faq.jsp");
 			map.put("bol", true);
 		} else{
@@ -90,8 +91,10 @@ public class BoardControllServlet extends HttpServlet {
 			
 			switch (type) {
 				case "search":
+					
 					List<Board> faqList = service.searchFaqList(req.getParameter("key"));
 					req.setAttribute("faqList", faqList);
+					
 					map.put("path", "/faq.jsp");
 					map.put("bol", true);
 					break;   
@@ -148,7 +151,10 @@ public class BoardControllServlet extends HttpServlet {
 			case "insertAnswer":
 				no = Integer.parseInt(req.getParameter("no")); //문의글 번호
 				int result = service.insertAnswer(no,admin.getAdminNo(),req.getParameter("inputAnswer"));
-				if(result>0)session.setAttribute("message", "답변이 작성되었습니다.");
+				if(result>0) {
+					session.setAttribute("message", "답변이 작성되었습니다.");
+					admin.setQnaCount(admin.getQnaCount()-1);
+				}
 				map.put("path", "qna");
 				map.put("bol", false); //redirect의 경우 false
 				break;
@@ -162,7 +168,7 @@ public class BoardControllServlet extends HttpServlet {
 		Map<String, Object> map = new HashMap<String, Object>();		
 
 		if (req.getQueryString() == null) {
-			List<Board> noticeList = null;
+			List<Board> noticeList = service.selectNoticeList();
 			req.setAttribute("noticeList", noticeList);
 			map.put("path", "/notice.jsp");
 			map.put("bol", true); //forward의 경우 true
