@@ -30,10 +30,10 @@
             </div>
         
             <div>        
-                <form action="#" method="get" id="reserve-search">
+                <form action="list" method="get" id="reserveSearch" onsubmit="return searchValidate()">
                     <div class="reserve-search">
                         <div>
-                            <select name="select">
+                            <select name="select" id="selectSearch">
                                 <option value="reserve-date">예약일</option>
                                 <option value="room-num">객실번호</option>
                                 <option value="member-name">회원이름</option>
@@ -42,7 +42,7 @@
                             
                         <div class="search-area">
                             
-                            <input type="search" id="search" name="search"
+                            <input type="search" id="search-query" name="query"
                                 autocomplete="off" placeholder="search">
         
                             <button type="submit" id="search-btn" name="query">검색</button>
@@ -88,7 +88,7 @@
                                     <td>${reserve.checkIn}</td>
                                     <td>${reserve.checkOut}</td>
                                     <td>
-                                        <a href="listDetail?no=${reserve.reservationNo}">
+                                        <a href="listDetail?no=${reserve.requestNo}">
                                             <button id="btn">상세보기</button>
                                         </a>
                                     </td>
@@ -100,36 +100,15 @@
 
                         </c:choose>
                         
-                        <!-- <tr>
-                            <td>2022-05-18</td>
-                            <td>유저일</td>
-                            <td>101</td>
-                            <td>2022-06-01</td>
-                            <td>2022-06-02</td>
-                            <td>
-                                <a href="listDetail">
-                                    <button id="btn">상세보기</button>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2022-05-18</td>
-                            <td>유저일</td>
-                            <td>101</td>
-                            <td>2022-06-01</td>
-                            <td>2022-06-02</td>
-                            <td>
-                                <a href="listDetail">
-                                    <button id="btn">상세보기</button>
-                                </a>
-                            </td>
-                        </tr> -->
                     </tbody>
                 </table>
             </div>
         
         </section>
     </main>
+
+    <script src="${contextPath}/resources/js/reservation/list.js"></script>
+
     </body>
     </html>
 

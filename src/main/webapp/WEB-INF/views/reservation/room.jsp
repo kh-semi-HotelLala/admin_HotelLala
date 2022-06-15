@@ -30,11 +30,11 @@
 
             <div class="floor-icon">
                 <div>
-                    <div id="sixthF">6F</div>
-                    <div id="fifthF">5F</div>
-                    <div id="forthF">4F</div>
-                    <div id="thirdF">3F</div>
-                    <div id="secondF">2F</div>
+                    <div class="floorBtn" id="sixthF">6F</div>
+                    <div class="floorBtn" id="fifthF">5F</div>
+                    <div class="floorBtn" id="forthF">4F</div>
+                    <div class="floorBtn" id="thirdF">3F</div>
+                    <div class="floorBtn floor-select" id="secondF">2F</div>
                     <div>LOBBY</div>
                 </div>
             </div>
@@ -47,9 +47,7 @@
                         <div>유저일 님</div>
                         <div>22.06.01~(1박)</div>
                         <div>
-                            <a href="#">
-                                <button class="reserve-detail">예약상세</button>
-                            </a>
+                            <button class="reserve-detail">예약상세</button>
                         </div>
                     </div>
                     <div class="room-info In">
@@ -66,7 +64,7 @@
                         <div>103</div>
                         <div>예약가능</div>
                     </div>
-                </div>
+                </div> 
 
         </section>
 
@@ -81,7 +79,7 @@
             <div class="modal-content">
                 <div>
                     <div>
-                        <div>예약번호</div>
+                        <div>주문번호</div>
                         <div>01</div>
                     </div>
                     <div>

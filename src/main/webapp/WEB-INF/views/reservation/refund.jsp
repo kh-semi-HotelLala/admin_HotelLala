@@ -18,7 +18,7 @@
     <main class="container">
         
         <jsp:include page="/WEB-INF/views/common/sideBar.jsp" />
-
+		
         <section id="content">
 
             <div class="content-header">
@@ -68,7 +68,7 @@
 
                     <tbody>
 
-                        <c:choose>
+                        <%-- <c:choose>
                             <c:when test="empty refundList">
                                 <tr>
                                     <td>환불 내역이 없습니다.</td>
@@ -80,22 +80,26 @@
                                 <c:forEach var="refund" items="${refundList}">
 
                                     <tr>
-                                        <td>${refund.}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>${refund.refundNo}</td>
+                                        <td>${refund.memberName}</td>
+                                        <td>${refund.roomNo}</td>
+                                        <td>${refund.paymentNo}</td>
+                                        <td>${refund.refundDate}</td>
+	                                    <td><span id="wait">대기중</span></td>
+                                        <td>
+                                        	<button class="updateBtn">환불처리</button>
+                                        </td>
                                     </tr>
 
                                 </c:forEach>
+                                        
+                                        
 
                             </c:otherwise>
-                        </c:choose>
+                        </c:choose> --%>
 
                         
-                        <!-- <tr>
+                        <tr>
                             <td>01</td>
                             <td>유저일</td>
                             <td>101</td>
@@ -116,7 +120,7 @@
                             <td>
                                 <button class="deleteBtn">삭제</button>
                             </td>
-                        </tr> -->
+                        </tr>
                     </tbody>
                 </table>
             </div>

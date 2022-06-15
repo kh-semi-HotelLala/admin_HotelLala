@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.kh.hotellala.reservation.model.service.ReserveService;
-import edu.kh.hotellala.reservation.model.vo.ReserveCheck;
+import edu.kh.hotellala.reservation.model.vo.Reservation;
 
 
 @WebServlet("/reservation/list")
@@ -22,9 +22,10 @@ public class ReserveSelectServlet extends HttpServlet {
 		
 		try {
 			
-			ReserveService service = new ReserveService();			
-		
-			List<ReserveCheck> reserveList = null;
+			ReserveService service = new ReserveService();	
+
+			List<Reservation> reserveList = null;
+			
 		 	// 일반 예약목록 조회
 			if(req.getParameter("select") == null) {
 				
@@ -40,7 +41,7 @@ public class ReserveSelectServlet extends HttpServlet {
 			}
 			
 			req.setAttribute("reserveList", reserveList);
-			
+
 			
 			String path = "/WEB-INF/views/reservation/list.jsp";
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);

@@ -35,7 +35,7 @@
                         <div>
                             <div class="reserve-no">
                                 <div class="info-name">예약번호</div>
-                                <div class="info-content">0101010</div>
+                                <div class="info-content"></div>
                             </div>
                         
                             <div class="reserve-date">
@@ -102,10 +102,8 @@
                         <div>
                             <div class="info-name">예약상태</div>
                             <div class="info-content">
-                                <span>입금대기</span>
                                 <span>예약완료</span>
                                 <span>예약취소</span>
-                                <span>미입금취소</span>
                             </div>                            
                         </div>
                     </div>

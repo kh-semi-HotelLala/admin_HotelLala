@@ -38,8 +38,8 @@
                         <strong id="reservation">예약</strong>
                         <ul>
                             <li class="board-list"><a href="${contextPath}/reservation/list">예약리스트</a></li>
-                            <li class="board-list"><a href="${contextPath}/reservation/room" >객실관리</a> </li>
-                            <li class="board-list"><a href="${contextPath}/reservation/refund" >환불내역</a></li>
+                            <li class="board-list"><a href="${contextPath}/reservation/room">객실관리</a></li>
+                            <li class="board-list"><a href="${contextPath}/reservation/refund">환불내역</a></li>
                         </ul>
                     </li>
                     

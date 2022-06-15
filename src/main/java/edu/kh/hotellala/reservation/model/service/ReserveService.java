@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.kh.hotellala.reservation.model.dao.ReserveDAO;
-import edu.kh.hotellala.reservation.model.vo.ReserveCheck;
+import edu.kh.hotellala.reservation.model.vo.Reservation;
 
 public class ReserveService {
 	
@@ -19,11 +19,11 @@ public class ReserveService {
 	 * @return reserveList
 	 * @throws Exception
 	 */
-	public List<ReserveCheck> selectReserveAll() throws Exception{
+	public List<Reservation> selectReserveAll() throws Exception{
 		
 		Connection conn = getConnection();
 //		
-		List<ReserveCheck> reserveList = dao.selectReserveAll(conn);
+		List<Reservation> reserveList = dao.selectReserveAll(conn);
 		
 		close(conn);
 		
@@ -39,7 +39,7 @@ public class ReserveService {
 	 * @return searchReserveList
 	 * @throws Exception
 	 */
-	public List<ReserveCheck> searchReserveList(String select, String query) throws Exception{
+	public List<Reservation> searchReserveList(String select, String query) throws Exception{
 		
 		Connection conn = getConnection();
 		
@@ -52,7 +52,7 @@ public class ReserveService {
 		case "member-name" : condition = " AND MEMBER_NM LIKE '%" + query + "%' "; break;
 		}
 		
-		List<ReserveCheck> searchReserveList = dao.searchReserveList(conn, condition);
+		List<Reservation> searchReserveList = dao.searchReserveList(conn, condition);
 		
 		close(conn);
 		
@@ -63,20 +63,62 @@ public class ReserveService {
 
 	/**
 	 * 예약 상세 조회 Service
-	 * @param reservationNo
-	 * @return reserveDetail
+	 * @param requestNo
+	 * @return detail
 	 * @throws Exception
 	 */
-	public List<ReserveCheck> selectReserveDetail(int reservationNo) throws Exception{
+	public Reservation selectReserveDetail(String requestNo) throws Exception{
 		
 		Connection conn = getConnection();
 		
-		List<ReserveCheck> reserveDetail = dao.selectReserveDetail(conn, reservationNo);
+		Reservation detail = dao.selectReserveDetail(conn, requestNo);
 		
 		close(conn);
 		
-		return reserveDetail;
+		return detail;
 	}
+	
+
+	/**
+	 * 층별 객실 조회
+	 * @param roomType
+	 * @return room
+	 * @throws Exception
+	 */
+	public List<Reservation> selectFloor(String roomType) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Reservation> room = dao.selectFloor(conn, roomType);
+		
+		
+		close(conn);
+		
+		return room;
+	}
+
+
+	/**
+	 * 환불 목록 조회 Service
+	 * @return refundList
+	 * @throws Exception
+	 */
+	public List<Reservation> selectRufundAll() throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Reservation> refundDetail = dao.selectRefundAll(conn);
+		
+		close(conn);
+		
+		return refundDetail;
+	}
+
+
+
+
+
+
 
 
 
