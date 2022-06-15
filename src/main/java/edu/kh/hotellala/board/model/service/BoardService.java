@@ -81,7 +81,6 @@ public class BoardService {
 		close(conn);
 		return result;
 	}
-
 	
 	/**QNA검색 
 	 * @param category 
@@ -93,6 +92,24 @@ public class BoardService {
 		Connection conn = getConnection();
 		List<BoardQNA> list = dao.searchQnaList(conn,answer,category);
 		close(conn);
+		return list;
+	}
+
+	public List<Board> searchFaqList(String key)throws Exception{
+		Connection conn = getConnection();
+		int cNo=0;
+		switch(key){
+			case "other":cNo=1; break;
+			case "payment":cNo=3; break;
+			case "reservation":cNo=4; break;
+			case "facilities":cNo=5; break;
+			case "group":cNo=6; break;
+		}
+		
+		List<Board> list = dao.searchQnaList(conn,cNo);
+		
+		close(conn);
+		
 		return list;
 	}
 }

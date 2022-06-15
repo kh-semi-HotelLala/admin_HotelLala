@@ -62,7 +62,6 @@ public class BoardDAO {
 		return qnaList;
 	}
 
-
 	/**모든 FAQ 목록 조회 DAQ
 	 * @param conn
 	 * @return
@@ -89,7 +88,6 @@ public class BoardDAO {
 		}
 		return list;
 	}
-
 
 	/**QNA 상세 조회 DAO
 	 * @param conn
@@ -129,7 +127,6 @@ public class BoardDAO {
 		return qna;
 	}
 
-
 	/**QNA작성을 위한 DAO
 	 * @param conn
 	 * @param no
@@ -156,9 +153,6 @@ public class BoardDAO {
 		}
 		return result;
 	}
-
-
-	
 	
 	/**검색된 QNA전체 리스트 조회
 	 * @param conn
@@ -199,6 +193,35 @@ public class BoardDAO {
 		return qnaList;
 	}
 
+	/**조건에 맞는 FAQ 목록 조회 
+	 * @param conn
+	 * @param cNo
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Board> searchQnaList(Connection conn, int cNo)throws Exception{
+		List<Board> list = new ArrayList<Board>();
+		try {
+			String sql = prop.getProperty("searchQnaList");
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, cNo);
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Board faq = new Board();
+				faq.setBoardNo(rs.getInt(1));
+				faq.setCategory(rs.getString(2));
+				faq.setTitle(rs.getString(3));
+				faq.setContent(rs.getString(4));
+				faq.setCreateDate(rs.getString(5));
+				list.add(faq);
+			}
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return list;
+	}
 
 	
 	

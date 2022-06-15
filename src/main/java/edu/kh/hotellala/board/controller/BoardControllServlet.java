@@ -79,18 +79,28 @@ public class BoardControllServlet extends HttpServlet {
 	 */
 	private Map<String, Object> faqBoard(HttpServletRequest req)throws Exception{
 		Map<String, Object> map = new HashMap<String, Object>();
-		if (req.getQueryString() == null) {
+		
+		if (req.getQueryString() == null&&req.getMethod().equals("GET")) {
 			List<Board> faqList = service.selectFaqList();
 			req.setAttribute("faqList", faqList);
 			map.put("path", "/faq.jsp");
 			map.put("bol", true);
-		}else {
+		} else{
+			String type = req.getParameter("type");
 			
+			switch (type) {
+				case "search":
+					List<Board> faqList = service.searchFaqList(req.getParameter("key"));
+					req.setAttribute("faqList", faqList);
+					map.put("path", "/faq.jsp");
+					map.put("bol", true);
+					break;   
+				case "reservation":break;	
+			
+			}
 		}
-		
 		return map;
 	}
-
 
 	/**QNA 게시판의 경우 수행 함수
 	 * @param req
@@ -146,7 +156,6 @@ public class BoardControllServlet extends HttpServlet {
 		} 
 		return map;
 	}
-
 	
 	// notice 게시판의 경우 수행 함수
 	public Map<String, Object> noticeBoard(HttpServletRequest req)throws Exception{
