@@ -79,6 +79,23 @@ public class ReserveService {
 	}
 	
 
+	/**
+	 * 층별 객실 조회
+	 * @param roomType
+	 * @return room
+	 * @throws Exception
+	 */
+	public List<Reservation> selectFloor(String roomType) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Reservation> room = dao.selectFloor(conn, roomType);
+		
+		
+		close(conn);
+		
+		return room;
+	}
 
 
 	/**
@@ -96,6 +113,9 @@ public class ReserveService {
 		
 		return refundDetail;
 	}
+
+
+
 
 
 

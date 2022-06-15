@@ -45,57 +45,41 @@
 // });
 
 
-// 비동기 통신 이용해서 층별 룸 데이터 불러오기
-const secondFloor = document.getElementById("secondF");
-const thirdFloor = document.getElementById("thirdF");
-const forthFloor = document.getElementById("forthF");
-const fifthFloor = document.getElementById("fifthF");
-const sixthFloor = document.getElementById("sixthF");
-
-// 전역 변수 -> 층 수를 받는 -> 타입으로 받고
-var f = '';
-
-secondF.addEventListener("click", function(){
-    f = "SINGLE";
-    floor();   
-});
-thirdF.addEventListener("click", function(){
-    f = "STANDARD";
-    floor();  
-});
-forthF.addEventListener("click", function(){
-    f = "DELUX";
-    floor();   
-});
-fifthF.addEventListener("click", function(){
-    f = "SUITE";
-    floor();   
-});
-sixthF.addEventListener("click", function(){
-    f = "FAMILY";
-    floor();
-});
 
 
 
-function floor(){
-    
-    //AJAX 코드 작성 (jQuery 방식)
-    $.ajax({
-        url : "/reservation/room", 
-        data : {"floor" : f}, // 전송 파라미터
-        type : "GET", // 전송 방식
-        dataType : "JSON",
-        success : function(){
+const floorBtn = document.getElementsByClassName("floorBtn");
 
-            
-
-        },
-        error : function(request, status, error){
-            
+for(let btn of floorBtn){
+    btn.addEventListener("click", function(){
+        let f = btn.innerText;
+        switch(f){
+        case '2F' : f="SINGLE"; break;
+        case '3F' : f="STANDARD"; break;
+        case '4F' : f="DELUX"; break;
+        case '5F' : f="SUITE"; break;
+        case '6F' : f="FAMILY"; break;
         }
 
+
+        $.ajax({
+            url : "room", 
+            data : {"floor" : f}, // 전송 파라미터
+            type : "POST", // 전송 방식
+            dataType : "JSON",
+            success : function(room){
+    
+                console.log(room);
+
+
+
+    
+            },
+            error : function(request, status, error){
+                console.log('error');
+            }
+    
+        });
     });
 }
 
-// 

@@ -136,6 +136,9 @@ public class ReserveDAO {
 				detail= new Reservation();
 				
 				detail.setRequestNo(rs.getString("REQUEST_NO"));
+				detail.setPaymentDate(rs.getDate("PAYMENT_DT"));
+				
+				
 				
 			}
 			
@@ -149,6 +152,47 @@ public class ReserveDAO {
 	}
 	
 	
+	/**
+	 * 층별 객실 조회 DAO
+	 * @param conn
+	 * @param roomType
+	 * @return room
+	 * @throws Exception
+	 */
+	public List<Reservation> selectFloor(Connection conn, String roomType) throws Exception{
+		
+		List<Reservation> room = new ArrayList<Reservation>();
+		
+		try {
+			
+			String sql = prop.getProperty("selectFloor");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, roomType);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Reservation r = new Reservation();
+				r.setRequestNo(rs.getString(1));
+				r.setCheckIn(rs.getDate(2));
+				r.setCheckOut(rs.getDate(3));
+				r.setDateRange(rs.getString(4));
+				r.setRoomNo(rs.getInt(5));
+				
+				room.add(r);
+				
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return room;
+	}
 	
 
 
@@ -176,6 +220,9 @@ public class ReserveDAO {
 		
 		return refundList;
 	}
+
+
+
 
 
 

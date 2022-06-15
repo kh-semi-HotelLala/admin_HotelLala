@@ -30,11 +30,11 @@
 
             <div class="floor-icon">
                 <div>
-                    <div id="sixthF">6F</div>
-                    <div id="fifthF">5F</div>
-                    <div id="forthF">4F</div>
-                    <div id="thirdF">3F</div>
-                    <div id="secondF">2F</div>
+                    <div class="floorBtn" id="sixthF">6F</div>
+                    <div class="floorBtn" id="fifthF">5F</div>
+                    <div class="floorBtn" id="forthF">4F</div>
+                    <div class="floorBtn" id="thirdF">3F</div>
+                    <div class="floorBtn" id="secondF">2F</div>
                     <div>LOBBY</div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                         <div>103</div>
                         <div>예약가능</div>
                     </div>
-                </div>
+                </div> 
 
         </section>
 

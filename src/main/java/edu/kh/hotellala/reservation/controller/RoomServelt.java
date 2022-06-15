@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+
 import edu.kh.hotellala.reservation.model.service.ReserveService;
 import edu.kh.hotellala.reservation.model.vo.Reservation;
 
@@ -29,8 +31,12 @@ public class RoomServelt extends HttpServlet {
 //			 이때 room.js에서 ajax로 값 받아오고 data를 넘기고
 			ReserveService service = new ReserveService();
 			
-			String floor = getInitParameter("floor");// vs 에서 데이터 얻어옴 
+			String roomType = "SINGLE";
 			
+			List<Reservation> room = service.selectFloor(roomType);
+			
+			
+			req.setAttribute("room", room);
 			
 			
 			String path = "/WEB-INF/views/reservation/room.jsp";
@@ -44,5 +50,31 @@ public class RoomServelt extends HttpServlet {
 		}
 		
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	
+		try {
+					
+			ReserveService service = new ReserveService();
+			
+			String roomType = req.getParameter("floor");
+			
+			List<Reservation> room = service.selectFloor(roomType);
+			
+			
+			req.setAttribute("room", room);
+			
+			
+			new Gson().toJson(room, resp.getWriter());
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	
+	}
+	
+	
+	
 	
 }
