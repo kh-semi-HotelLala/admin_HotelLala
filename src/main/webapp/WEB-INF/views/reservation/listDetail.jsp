@@ -34,57 +34,57 @@
                     <div class="reserve">
                         <div>
                             <div class="reserve-no">
-                                <div class="info-name">예약번호</div>
-                                <div class="info-content"></div>
+                                <div class="info-name">주문번호</div>
+                                <div class="info-content">${detail.requestNo}</div>
                             </div>
                         
                             <div class="reserve-date">
                                 <div class="info-name">예약접수일</div>
-                                <div class="info-content">2022-06-01</div>
+                                <div class="info-content">${detail.paymentDate}</div>
                             </div>
                         </div>
                             
                         <div>    
                             <div class="room-no">
                                 <div class="info-name">객실번호</div>
-                                <div class="info-content">101</div>
+                                <div class="info-content">${detail.roomNo}</div>
                             </div>
                             <div class="check-in">
                                 <div class="info-name">입실일</div>
-                                <div class="info-content">2022.06.03 (수) / 1박</div>
+                                <div class="info-content">${detail.checkIn} / ${detail.dateRange}박</div>
                             </div>
                         </div>   
                             
                         <div>
                             <div class="room-type">
                                 <div class="info-name">객실타입</div>
-                                <div class="info-content">Single</div>
+                                <div class="info-content">${detail.roomType}</div>
                             </div>
                             <div class="people">
                                 <div class="info-name">인원</div>
-                                <div class="info-content">성인 : 2명</div>
+                                <div class="info-content">${detail.adultCount+detail.childCount}명</div>
                             </div>
                         </div>
                         
                         <div>
                             <div class="member-nm">
                                 <div class="info-name">예약자명</div>
-                                <div class="info-content">유저일</div>
+                                <div class="info-content">${detail.memberName}</div>
                             </div>
                             <div class="member-phone">
                                 <div class="info-name">휴대폰번호</div>
-                                <div class="info-content">010-1234-1234</div>
+                                <div class="info-content">${detail.memberTel}</div>
                             </div>
                         </div>
 
                         <div>
                             <div class="birth-day">
                                 <div class="info-name">생년월일</div>
-                                <div class="info-content">1995-06-01</div>
+                                <div class="info-content">${detail.memberBR}</div>
                             </div>
                             <div class="address">
                                 <div class="info-name">주소</div>
-                                <div class="info-content">서울특별시/종로구</div>
+                                <div classs"info-content">${detail.memberAddress}</div>
                             </div>
                         </div>
                     </div>
@@ -92,18 +92,19 @@
                         <div>
                             <div class="info-name">요청사항</div>
                             <div class="info-content">
-                                <div>- 수건 4개</div>
+                                <div>${detail.extraRequest}</div>
                             </div>                            
                         </div>
                     </div>
                 </div>
-
+                ${detail}
                     <div class="reserve-status">
                         <div>
                             <div class="info-name">예약상태</div>
                             <div class="info-content">
-                                <span>예약완료</span>
-                                <span>예약취소</span>
+                                <span id="complete">예약완료</span>
+                                <span id="cancle">예약취소</span>
+                                <input type="hidden" id="temp" value="${status.refundFlag}">
                             </div>                            
                         </div>
                     </div>
@@ -115,18 +116,18 @@
                             <div>
                                 <div>
                                     <div class="info-name">기본가격</div>
-                                    <div class="info-content">230,000원</div>
+                                    <div class="info-content">${payment.roomRates}</div>
 
                                     <!-- 비어있을 수 있음 -->
                                     <div class="info-name">옵션추가</div>
-                                    <div class="info-content">성인 조식 + 2</div>
+                                    <div class="info-content">${payment.extraRequest}</div>
                                 </div>                            
                                 <div>
                                     <!-- 비어있을 수 있음 -->
                                     <div class="info-name">결제수단</div>
-                                    <div class="info-content">신용카드</div>
+                                    <div class="info-content">${payment.payType}</div>
                                     <div class="info-name">결제금액</div>
-                                    <div class="info-content">300,000 원</div>
+                                    <div class="info-content">${payment.paymentAmount}</div>
                                 </div>                                                    
                             </div>
                         </div>
@@ -145,6 +146,8 @@
         
         </section>
     </main>
+
+    <script src="${contextPath}/resources/js/reservation/list.js"></script>
         
 </body>
 </html>

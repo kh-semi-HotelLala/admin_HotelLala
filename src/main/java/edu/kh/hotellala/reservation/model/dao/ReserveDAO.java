@@ -137,15 +137,14 @@ public class ReserveDAO {
 				detail.setCheckIn(rs.getDate(4));
 				detail.setDateRange(rs.getString(5));
 				detail.setRoomType(rs.getString(6));
-				detail.setAdultCount(rs.getInt(7));
-				detail.setChildCount(rs.getInt(8));
+				detail.setAdultCount(rs.getInt(7)+rs.getInt(8));
+				
 				detail.setMemberName(rs.getString(9));
-				detail.setMemberTel(rs.getString(10));
+				detail.setMemberTel((rs.getString(10)).charAt(0));
 				detail.setMemberBR(rs.getString(11));
 				detail.setMemberAddress(rs.getString(12));
 				detail.setExtraRequest(rs.getString(13));
-				detail.setReservationFlag((rs.getString(14)).charAt(0));
-				
+			
 				
 			}
 			
@@ -158,6 +157,87 @@ public class ReserveDAO {
 		return detail;
 	}
 	
+	
+	/**
+	 * 예약 상태 조회 DAO
+	 * @param conn
+	 * @param requestNo
+	 * @return status
+	 * @throws Exception
+	 */
+	public Reservation reserveStatus(Connection conn, String requestNo) throws Exception {
+		
+		Reservation status = null;
+		
+		try {
+			
+			String sql = prop.getProperty("reserveStatus");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, requestNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				status = new Reservation();
+				
+				status.setReservationFlag((rs.getString(1)).charAt(0));
+				status.setRefundFlag((rs.getString(2)).charAt(0));
+				
+			}
+			
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		
+		return status;
+	}
+	
+	
+	
+	/**
+	 * 결제 정보 조회 DAO 
+	 * @param conn
+	 * @param requestNo
+	 * @return payment
+	 * @throws Exception
+	 */
+	public Reservation reservePayment(Connection conn, String requestNo) throws Exception{
+		
+		Reservation payment = null;
+		
+		try {
+			
+			String sql = prop.getProperty("reservePayment");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, requestNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				payment = new Reservation();
+				
+				payment.setRoomRates(rs.getInt(1));
+				payment.setOptionType(rs.getString(2));
+				payment.setPayType(rs.getString(3));
+				payment.setPaymentAmount(rs.getInt(4));
+				
+			}
+			
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		
+		return payment;
+	}
+
 	
 	
 	
@@ -191,7 +271,14 @@ public class ReserveDAO {
 				r.setCheckOut(rs.getDate(3));
 				r.setDateRange(rs.getString(4));
 				r.setRoomNo(rs.getInt(5));
-				r.setMemberName(rs.getString(6));;
+				r.setMemberName(rs.getString(6));
+				r.setPaymentDate(rs.getDate(7));
+				r.setAdultCount(rs.getInt(8));
+				r.setChildCount(rs.getInt(9));
+				r.setMemberTel((rs.getString(10)).charAt(0));
+				r.setReservationFlag((rs.getString(11)).charAt(0));
+				r.setExtraRequest(rs.getString(12));
+				
 				
 				room.add(r);
 				
@@ -235,6 +322,15 @@ public class ReserveDAO {
 		
 		return refundList;
 	}
+
+
+
+	
+
+
+
+
+	
 
 
 

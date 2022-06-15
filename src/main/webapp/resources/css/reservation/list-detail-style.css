@@ -54,7 +54,7 @@
 
 .reserve > div {
     display: flex;
-    height: 30px;
+    height: 40px;
     /* border-bottom: 1px solid black; */
 }
 
@@ -72,7 +72,7 @@
 
 .info-name{
     text-align: center;
-    padding-top: 5px;
+    padding-top: 7px;
     background-color: #003458;
     color: white;
     border-bottom: 1px solid white;
@@ -134,7 +134,7 @@
     padding: 3px;
 }
 
-.reserve-status > div span:nth-of-type(2){
+.reserve-status > div span:nth-of-type(1){
     background-color: #003458;
     color: white;
 }

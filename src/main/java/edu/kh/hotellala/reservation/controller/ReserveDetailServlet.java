@@ -24,15 +24,24 @@ public class ReserveDetailServlet extends HttpServlet{
 			// 1. 파라미터 중 예약번호 얻어오기
 			String requestNo = req.getParameter("no");
 			
+			
 			// 2. 예약 서비스 객체 만들기
 			ReserveService service = new ReserveService(); 
 			
-			// 3-1. 예약정보, 예약상태, 결제정보
+			// 3-1. 예약정보
 			Reservation detail = service.selectReserveDetail(requestNo);
+			// 3-2. 예약상태
+			Reservation status = service.reserveStatus(requestNo);
+			detail.setRefundFlag(status.getRefundFlag());
+			
+			
+			// 3-3. 결제정보 (옵션)
+			Reservation payment = service.reservePayment(requestNo);
 
 			
 			// 4. 예약정보 + 결제 정보를 jsp에서 쓸 수 있도록
 			req.setAttribute("detail", detail);
+			req.setAttribute("payment", payment);
 			
 			String path = "/WEB-INF/views/reservation/listDetail.jsp";
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
