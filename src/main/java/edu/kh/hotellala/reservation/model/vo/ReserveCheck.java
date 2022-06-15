@@ -33,4 +33,9 @@ public class ReserveCheck {
 	private String payType; // 결제방법
 	private int roomRates; // 룸 가격
 	
+	private int refundNo; // 환불번호
+	private char refundAmount; // 환불 금액
+	private Date refundDate; // 환불 요청일
+	private String refundReson; // 환불 사유
+	
 }

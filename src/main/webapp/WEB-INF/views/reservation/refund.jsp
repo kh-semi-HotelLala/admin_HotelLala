@@ -84,7 +84,7 @@
                                         <td>${refund.memberName}</td>
                                         <td>${refund.roomNo}</td>
                                         <td>${refund.paymentDate}</td>
-                                        <td></td>
+                                        <td>${refund.refundDate}</td>
                                         <td></td>
                                         <td></td>
                                     </tr>
