@@ -20,7 +20,7 @@
 
 
 
-<!-- 예약 상세 조회 1 -->
+<!-- 예약 상세 조회 -->
 <entry key="selectReserveDetail">
 	SELECT REQUEST_NO, TO_CHAR(PAYMENT_DT, 'YYYY-MM-DD') PAYMENT_DT, ROOM_NO, 
     TO_CHAR(CHECK_IN, 'YYYY-MM-DD') CHECK_IN, DATE_RANGE, ROOM_TYPE,
@@ -28,14 +28,32 @@
 	FROM RESERVATION R
 	JOIN PAYMENT USING(REQUEST_NO)
 	JOIN MEMBER M ON(R.MEMBER_NO = M.MEMBER_NO)
-	WHERE REQUEST_NO = ?;	
+	WHERE REQUEST_NO = ?	
 </entry>
 
 
-<!-- 결제 상세 조회 -->
-<entry key="selectDetail">
-	
+<!-- 예약 상태 조회  -->
+<entry key="reserveStatus">
+	SELECT RESERVATION_FL, REFUND_FL
+	FROM RESERVATION
+	JOIN PAYMENT USING(REQUEST_NO)
+	JOIN REFUND USING(PAYMENT_NO)
+	WHERE REQUEST_NO = ?
 </entry>
+
+
+<!-- 결제 정보 조회 -->
+<entry key="reservePayment">
+	SELECT ROOM_RATES, OPTION_TYPE, PAYTYPE, PAYMENT_AMOUNT
+	FROM RESERVATION
+	JOIN PAYMENT USING(REQUEST_NO)
+	JOIN OPTION_ORDER USING(REQUEST_NO)
+	JOIN OPTION_TB USING(OPTION_CD)
+	JOIN ROOM_TB USING(ROOM_TYPE)
+	WHERE REQUEST_NO = ?
+</entry>
+
+
 
 
 <!-- 객실 층별 조회 (SYSDATE로 바꿔)-->

@@ -78,6 +78,51 @@ public class ReserveService {
 		return detail;
 	}
 	
+	
+	/**
+	 * 예약 상태 조회 Service 
+	 * @param requestNo
+	 * @return status
+	 * @throws Exception
+	 */
+	public Reservation reserveStatus(String requestNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		Reservation status = dao.reserveStatus(conn, requestNo);
+		
+		close(conn);
+		
+		return status;
+	}
+	
+	
+	/**
+	 * 결제 정보 조회 Service
+	 * @param requestNo
+	 * @return payment
+	 * @throws Exception
+	 */
+	public Reservation reservePayment(String requestNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		Reservation payment = dao.reservePayment(conn, requestNo);
+		
+		close(conn);
+		
+		return payment;
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	/**
 	 * 층별 객실 조회
@@ -115,6 +160,13 @@ public class ReserveService {
 		
 		return refundDetail;
 	}
+
+
+
+	
+
+
+	
 
 	
 

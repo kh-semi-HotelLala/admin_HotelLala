@@ -26,6 +26,7 @@ public class Reservation {
 	private int roomNo;	// 객실 호수	
 	
 	private Date paymentDate; // 결제일
+	private int paymentAmount; // 결제 금액
 
 	private String memberName;//회원이름
 	private String memberTel; //전화번호
@@ -33,10 +34,12 @@ public class Reservation {
 	private String memberAddress; //주소
 	
 	private int optionCode; // 옵션코드 (1=성인,2=어린이,3=엑스트라베드=인원수)
+	private String optionType; // 옵션 종류
 	private String payType; // 결제방법
 	private int roomRates; // 룸 가격
 	
 	private int refundNo; // 환불번호
+	private char refundFlag; // 환불 처리 여부
 	private char refundAmount; // 환불 금액
 	private Date refundDate; // 환불 요청일
 	private String refundReson; // 환불 사유
