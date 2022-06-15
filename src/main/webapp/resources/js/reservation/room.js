@@ -34,10 +34,10 @@ function grantModalEvent(){
             rd.addEventListener("click", function(){
                 modal.classList.toggle('show');
             });
-        }
+        };
 
-    }
-}
+    };
+};
 
 
 

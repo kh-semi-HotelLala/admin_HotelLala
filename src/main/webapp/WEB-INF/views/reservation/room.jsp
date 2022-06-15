@@ -79,7 +79,7 @@
             <div class="modal-content">
                 <div>
                     <div>
-                        <div>예약번호</div>
+                        <div>주문번호</div>
                         <div>01</div>
                     </div>
                     <div>
