@@ -13,7 +13,9 @@ import java.util.Properties;
 
 import javax.servlet.jsp.jstl.sql.Result;
 
-import edu.kh.hotellala.reservation.model.vo.ReserveCheck;
+import edu.kh.hotellala.reservation.model.vo.Member;
+import edu.kh.hotellala.reservation.model.vo.Payment;
+import edu.kh.hotellala.reservation.model.vo.Reservation;
 
 public class ReserveDAO {
 
@@ -47,9 +49,9 @@ public class ReserveDAO {
 	 * @return reserveList
 	 * @throws Exception
 	 */
-	public List<ReserveCheck> selectReserveAll(Connection conn) throws Exception{
+	public List<Reservation> selectReserveAll(Connection conn) throws Exception{
 		
-		List<ReserveCheck> reserveList = new ArrayList<ReserveCheck>();
+		List<Reservation> reserveList = new ArrayList<Reservation>();
 		
 		try {
 			
@@ -60,13 +62,14 @@ public class ReserveDAO {
 			
 			while(rs.next()) {
 				
-				ReserveCheck rc = new ReserveCheck();
+				Reservation rc = new Reservation();
 				
 				rc.setPaymentDate(rs.getDate("PAYMENT_DT"));
 				rc.setMemberName(rs.getString("MEMBER_NM"));
 				rc.setRoomNo(rs.getInt("ROOM_NO"));
 				rc.setCheckIn(rs.getDate("CHECK_IN"));
 				rc.setCheckOut(rs.getDate("CHECK_OUT"));
+				rc.setRequestNo(rs.getString("REQUEST_NO"));
 				
 				reserveList.add(rc);
 			}	
@@ -88,9 +91,9 @@ public class ReserveDAO {
 	 * @return searchReserveList
 	 * @throws Exception
 	 */
-	public List<ReserveCheck> searchReserveList(Connection conn, String condition) throws Exception{
+	public List<Reservation> searchReserveList(Connection conn, String condition) throws Exception{
 		
-		List<ReserveCheck> searchReserveList = new ArrayList<ReserveCheck>();
+		List<Reservation> searchReserveList = new ArrayList<Reservation>();
 		
 		try {
 			
@@ -106,20 +109,63 @@ public class ReserveDAO {
 
 
 
+	
+	
 	/**
-	 * 예약 상세 조회 DAO 
+	 * 예약 상세 조회 DAO
 	 * @param conn
-	 * @param reservationNo
-	 * @return reserveDetail
+	 * @param requestNo
+	 * @return detail
 	 * @throws Exception
 	 */
-	public List<ReserveCheck> selectReserveDetail(Connection conn, int reservationNo) throws Exception {
+	public Reservation selectReserveDetail(Connection conn, String requestNo) throws Exception{
 		
-		List<ReserveCheck> reserveDetail = new ArrayList<ReserveCheck>();
+		Reservation detail = null;
 		
 		try {
 			
 			String sql = prop.getProperty("selectReserveDetail");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, requestNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				detail= new Reservation();
+				
+				detail.setRequestNo(rs.getString("REQUEST_NO"));
+				
+			}
+			
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+		
+		
+		return detail;
+	}
+	
+	
+	
+
+
+
+	/**
+	 *  환불 전체 조회 DAO
+	 * @param conn
+	 * @return refundList
+	 * @throws Exception
+	 */
+	public List<Reservation> selectRefundAll(Connection conn) throws Exception {
+		
+		List<Reservation> refundList = new ArrayList<Reservation>();
+		
+		try {
+			
+			String sql = prop.getProperty("selectRefundAll");
 			
 			
 			
@@ -128,9 +174,11 @@ public class ReserveDAO {
 			
 		}
 		
-		return reserveDetail;
+		return refundList;
 	}
-	
+
+
+
 	
 	
 	
