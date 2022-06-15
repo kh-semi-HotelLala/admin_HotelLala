@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.kh.hotellala.reservation.model.dao.ReserveDAO;
+import edu.kh.hotellala.reservation.model.vo.Payment;
 import edu.kh.hotellala.reservation.model.vo.Reservation;
 
 public class ReserveService {
@@ -98,6 +99,8 @@ public class ReserveService {
 	}
 
 
+
+	
 	/**
 	 * 환불 목록 조회 Service
 	 * @return refundList
@@ -113,14 +116,6 @@ public class ReserveService {
 		
 		return refundDetail;
 	}
-
-
-
-
-
-
-
-
 
 	
 
