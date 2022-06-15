@@ -27,7 +27,6 @@ public class BoardControllServlet extends HttpServlet {
 	BoardService service = new BoardService();
 	
 	
-	
 	/**작성의 경우 요청
 	 *
 	 */
@@ -73,7 +72,7 @@ public class BoardControllServlet extends HttpServlet {
 
 	}
 	
-	
+
 	/**FAQ 게시판의 경우 수행 함수
 	 * @param req
 	 * @throws Exception
@@ -120,7 +119,10 @@ public class BoardControllServlet extends HttpServlet {
 			//둘 모두 가야될 위치를 저장한 변수 path를 
 			//hash Map에 저장에 doGet 메서드에서 사용한다.
 			case "search":   
-				List<BoardQNA> qnaList = service.selectQnaList();
+				//?type=search&answer=Y&category=1
+				char answer = req.getParameter("answer").charAt(0);
+				int category = Integer.parseInt(req.getParameter("category"));
+				List<BoardQNA> qnaList = service.searchQnaList(answer,category);
 				req.setAttribute("qnaList", qnaList);
 				map.put("path", "/qna.jsp");
 				map.put("bol", true); //forward의 경우 true
@@ -136,11 +138,11 @@ public class BoardControllServlet extends HttpServlet {
 			case "insertAnswer":
 				no = Integer.parseInt(req.getParameter("no")); //문의글 번호
 				int result = service.insertAnswer(no,admin.getAdminNo(),req.getParameter("inputAnswer"));
-				map.put("path", "/qna.jsp");
-				map.put("bol", true); //forward의 경우 true
+				if(result>0)session.setAttribute("message", "답변이 작성되었습니다.");
+				map.put("path", "qna");
+				map.put("bol", false); //redirect의 경우 false
 				break;
 			}
-			
 		} 
 		return map;
 	}

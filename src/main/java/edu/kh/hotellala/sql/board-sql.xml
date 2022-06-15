@@ -67,4 +67,21 @@ SET ANSWER = 'Y',
 WHERE QNA_NO=?
 </entry>
 
+<entry key="searchQnaList1">
+SELECT  QNA_NO,
+            CATEGORY_NM,
+            QNA_TITLE,
+            ANSWER,
+            MEMBER_NM,
+            TO_CHAR(CREATE_DT,'YYYY-MM-DD') DT
+FROM QNA_BOARD
+JOIN CATEGORY_TYPE USING(CATEGORY_CD)
+JOIN MEMBER USING(MEMBER_NO)
+LEFT JOIN ADMIN_ACCOUNT USING(ADMIN_NO)
+WHERE  ANSWER=?
+</entry>
+<entry key="searchQnaList2">
+ORDER BY QNA_NO DESC
+</entry>
+
 </properties>

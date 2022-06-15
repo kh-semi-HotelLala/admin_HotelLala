@@ -38,7 +38,7 @@ public class BoardService {
 		return list;
 	}
 
-	/**게시글 상세내용 조회 Service
+	/**QNA 상세내용 조회 Service
 	 * @param parameter
 	 * @return qnaDetail
 	 * @throws Exception
@@ -48,21 +48,32 @@ public class BoardService {
 		
 		BoardQNA qna = dao.selectQnaDetail(conn,no);
 		
-			if(qna != null) {
-				//나중에 추가될 이미지 저장용 객체
-			}
-			
+		qna.setTitle(Util.reverseLineHandling( qna.getTitle()));
+		qna.setContent(Util.reverseLineHandling( qna.getContent()));
+	
+		//만약 답변이 있는 경우에만 답변 개행 처리
+		if(qna.getAnswer()=='Y') {
+			qna.setAnswerContent(Util.reverseLineHandling( qna.getAnswerContent()));
+		}
+		
 		close(conn);
 		
 		return qna;
 	}
 
-	public int insertAnswer(int adminNo, int no, String inputAnswer)throws Exception{
+	/**QNA 답변 작성 Service
+	 * @param no
+	 * @param adminNo
+	 * @param inputAnswer
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertAnswer(int no, int adminNo, String inputAnswer)throws Exception{
 		Connection conn = getConnection();
 		
 		inputAnswer = Util.XssHandling(inputAnswer);
 		inputAnswer = Util.newLineHandling(inputAnswer);
-		int result = dao.insertAnswer(conn,adminNo,inputAnswer,no);
+		int result = dao.insertAnswer(conn,no,adminNo,inputAnswer);
 		
 		if(result>0)commit(conn);
 		
@@ -71,4 +82,17 @@ public class BoardService {
 		return result;
 	}
 
+	
+	/**QNA검색 
+	 * @param category 
+	 * @param answer 
+	 * @return list
+	 * @throws Exception
+	 */
+	public List<BoardQNA> searchQnaList(char answer, int category)throws Exception{
+		Connection conn = getConnection();
+		List<BoardQNA> list = dao.searchQnaList(conn,answer,category);
+		close(conn);
+		return list;
+	}
 }
