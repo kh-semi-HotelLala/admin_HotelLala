@@ -115,14 +115,6 @@ public class ReserveService {
 	}
 
 	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	/**
 	 * 층별 객실 조회

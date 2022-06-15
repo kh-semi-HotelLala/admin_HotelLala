@@ -29,7 +29,7 @@ public class Reservation {
 	private int paymentAmount; // 결제 금액
 
 	private String memberName;//회원이름
-	private String memberTel; //전화번호
+	private	char memberTel; //전화번호
 	private String memberBR;// 생년월일
 	private String memberAddress; //주소
 	

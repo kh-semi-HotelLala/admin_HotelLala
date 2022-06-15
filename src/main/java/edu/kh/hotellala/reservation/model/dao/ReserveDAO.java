@@ -140,7 +140,7 @@ public class ReserveDAO {
 				detail.setAdultCount(rs.getInt(7)+rs.getInt(8));
 				
 				detail.setMemberName(rs.getString(9));
-				detail.setMemberTel(rs.getString(10));
+				detail.setMemberTel((rs.getString(10)).charAt(0));
 				detail.setMemberBR(rs.getString(11));
 				detail.setMemberAddress(rs.getString(12));
 				detail.setExtraRequest(rs.getString(13));
@@ -271,7 +271,14 @@ public class ReserveDAO {
 				r.setCheckOut(rs.getDate(3));
 				r.setDateRange(rs.getString(4));
 				r.setRoomNo(rs.getInt(5));
-				r.setMemberName(rs.getString(6));;
+				r.setMemberName(rs.getString(6));
+				r.setPaymentDate(rs.getDate(7));
+				r.setAdultCount(rs.getInt(8));
+				r.setChildCount(rs.getInt(9));
+				r.setMemberTel((rs.getString(10)).charAt(0));
+				r.setReservationFlag((rs.getString(11)).charAt(0));
+				r.setExtraRequest(rs.getString(12));
+				
 				
 				room.add(r);
 				

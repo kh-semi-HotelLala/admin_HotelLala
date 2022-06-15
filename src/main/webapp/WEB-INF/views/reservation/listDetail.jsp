@@ -145,6 +145,8 @@
         
         </section>
     </main>
+
+    <script src="${contextPath}/resources/js/reservation/list.js"></script>
         
 </body>
 </html>

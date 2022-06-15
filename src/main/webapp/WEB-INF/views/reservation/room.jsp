@@ -80,35 +80,36 @@
                 <div>
                     <div>
                         <div>주문번호</div>
-                        <div>01</div>
+                        <div>${room.requestNo}</div>
                     </div>
                     <div>
                         <div>예약자명</div>
-                        <div>유저일</div>
+                        <div>${room.memberName}</div>
                     </div>
                     <div>
                         <div>예약접수일</div>
-                        <div>2022-06-01 00:00:00</div>
+                        <div>${room.paymentDate}</div>
                     </div>
                     <div>
                         <div>입실일</div>
-                        <div>2022.06.03(수) / 1박</div>
+                        <div>${room.checkIn} / ${room.dateRages} 박</div>
                     </div>
                     <div>
                         <div>인원</div>
-                        <div>성인 : 2명</div>
+                        <div>성인 : ${room.adultCount} 명 / 아이 : ${room.childCount} 명</div>
                     </div>
                     <div>
                         <div>휴대폰번호</div>
-                        <div>010-1234-1234</div>
+                        <div>${room.memberTel}</div>
                     </div>
                     <div>
+                    <!-- 질문사항 -->
                         <div>예약상태</div>
                         <div>예약완료</div>
                     </div>
                     <div>
                         <div>객실 요청 사항</div>
-                        <div>헤어드라이기</div>
+                        <div>${room.extraQuest}</div>
                     </div>
                 </div>
             </div>
