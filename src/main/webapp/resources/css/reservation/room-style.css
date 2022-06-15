@@ -58,8 +58,8 @@
     padding-top: 5px;
 }
 .floor-icon > div > div:nth-of-type(5){
-    background-color: #003458;
-    color: white;
+    /* background-color: #003458;
+    color: white; */
     border-bottom: 1px solid #003458;
     height: 30px;
     padding-top: 5px;
@@ -284,4 +284,13 @@
 
 .modal-btn-area{
     justify-content: center;
+}
+
+
+
+
+
+.floor-select{
+    background-color: #003458;
+    color: white;
 }

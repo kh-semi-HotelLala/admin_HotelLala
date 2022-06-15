@@ -34,7 +34,7 @@
                     <div class="floorBtn" id="fifthF">5F</div>
                     <div class="floorBtn" id="forthF">4F</div>
                     <div class="floorBtn" id="thirdF">3F</div>
-                    <div class="floorBtn" id="secondF">2F</div>
+                    <div class="floorBtn floor-select" id="secondF">2F</div>
                     <div>LOBBY</div>
                 </div>
             </div>
@@ -47,9 +47,7 @@
                         <div>유저일 님</div>
                         <div>22.06.01~(1박)</div>
                         <div>
-                            <a href="#">
-                                <button class="reserve-detail">예약상세</button>
-                            </a>
+                            <button class="reserve-detail">예약상세</button>
                         </div>
                     </div>
                     <div class="room-info In">

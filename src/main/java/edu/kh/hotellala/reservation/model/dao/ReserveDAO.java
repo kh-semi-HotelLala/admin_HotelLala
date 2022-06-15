@@ -181,6 +181,7 @@ public class ReserveDAO {
 				r.setCheckOut(rs.getDate(3));
 				r.setDateRange(rs.getString(4));
 				r.setRoomNo(rs.getInt(5));
+				r.setMemberName(rs.getString(6));;
 				
 				room.add(r);
 				
