@@ -41,36 +41,26 @@ public class BoardDAO {
 	 */
 	public List<BoardQNA> selectQnaList(Connection conn)throws Exception{
 		List<BoardQNA> qnaList = new ArrayList<BoardQNA>();
-		
-		
 		try {
 			String sql = prop.getProperty("selectQnaList");
-			
 			stmt = conn.createStatement();
-			
 			rs = stmt.executeQuery(sql);
-			
 			while(rs.next()) {
 				BoardQNA qna = new BoardQNA();
 				qna.setQnaNo(rs.getInt(1));
 				qna.setCategory(rs.getString(2));
 				qna.setTitle(rs.getString(3));
-				qna.setAnswer(rs.getString(4));
+				qna.setAnswer(rs.getString(4).charAt(0));
 				qna.setMemberName(rs.getString(5));
 				qna.setCreateDt(rs.getString("DT"));
-				
 				qnaList.add(qna);
 			}
-			
 		}finally {
 			close(rs);
 			close(stmt);
 		}
-		
-		
 		return qnaList;
 	}
-
 
 	/**모든 FAQ 목록 조회 DAQ
 	 * @param conn
@@ -99,8 +89,7 @@ public class BoardDAO {
 		return list;
 	}
 
-
-	/**qna 상세 조회 DAO
+	/**QNA 상세 조회 DAO
 	 * @param conn
 	 * @param no
 	 * @return qna
@@ -121,12 +110,13 @@ public class BoardDAO {
 				qna.setQnaNo(rs.getInt(1));
 				qna.setCategory(rs.getString(2));
 				qna.setTitle(rs.getString(3));
-				qna.setAnswer(rs.getString(4));
+				qna.setAnswer(rs.getString(4).charAt(0));
 				qna.setMemberName(rs.getString(5));
 				qna.setCreateDt(rs.getString(6));
 				qna.setContent(rs.getString(7));
 				qna.setMemberTel(rs.getString(8));
 				qna.setMemberEmail(rs.getString(9));
+				qna.setAnswerContent(rs.getString(10));
 			}
 			
 		}finally {
@@ -137,6 +127,101 @@ public class BoardDAO {
 		return qna;
 	}
 
+	/**QNA작성을 위한 DAO
+	 * @param conn
+	 * @param no
+	 * @param adminNo
+	 * @param inputAnswer
+	 * @return
+	 * @throws Exception
+	 */
+	public int insertAnswer(Connection conn,int no, int adminNo, String inputAnswer)throws Exception{
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("insertAnswer");
+
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, adminNo); //답변한 관리자의 번호
+			pstmt.setString(2, inputAnswer); // 답변 내용
+			pstmt.setInt(3, no); //답변해줄 게시글 번호
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	
+	/**검색된 QNA전체 리스트 조회
+	 * @param conn
+	 * @param answer
+	 * @param category
+	 * @return
+	 * @throws Exception
+	 */
+	public List<BoardQNA> searchQnaList(Connection conn, char answer, int category)throws Exception{
+		List<BoardQNA> qnaList = new ArrayList<BoardQNA>();
+		try {
+			String sql = prop.getProperty("searchQnaList1");
+			if(category==0) {				sql += prop.getProperty("searchQnaList2");			}
+			else {				sql += " AND  CATEGORY_CD =? "+prop.getProperty("searchQnaList2");			}
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,String.valueOf(answer));
+			
+			if(category != 0) {
+				pstmt.setInt(2, category);
+			}
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				BoardQNA qna = new BoardQNA();
+				qna.setQnaNo(rs.getInt(1));
+				qna.setCategory(rs.getString(2));
+				qna.setTitle(rs.getString(3));
+				qna.setAnswer(rs.getString(4).charAt(0));
+				qna.setMemberName(rs.getString(5));
+				qna.setCreateDt(rs.getString("DT"));
+				qnaList.add(qna);
+			}
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return qnaList;
+	}
+
+	/**조건에 맞는 FAQ 목록 조회 
+	 * @param conn
+	 * @param cNo
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Board> searchQnaList(Connection conn, int cNo)throws Exception{
+		List<Board> list = new ArrayList<Board>();
+		try {
+			String sql = prop.getProperty("searchQnaList");
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, cNo);
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Board faq = new Board();
+				faq.setBoardNo(rs.getInt(1));
+				faq.setCategory(rs.getString(2));
+				faq.setTitle(rs.getString(3));
+				faq.setContent(rs.getString(4));
+				faq.setCreateDate(rs.getString(5));
+				list.add(faq);
+			}
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return list;
+	}
 
 	
 	

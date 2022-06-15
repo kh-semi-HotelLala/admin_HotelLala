@@ -7,6 +7,7 @@ import static edu.kh.hotellala.common.JDBCTemplate.*;
 import edu.kh.hotellala.board.model.dao.BoardDAO;
 import edu.kh.hotellala.board.model.vo.Board;
 import edu.kh.hotellala.board.model.vo.BoardQNA;
+import edu.kh.hotellala.common.Util;
 
 public class BoardService {
 
@@ -37,7 +38,7 @@ public class BoardService {
 		return list;
 	}
 
-	/**게시글 상세내용 조회 Service
+	/**QNA 상세내용 조회 Service
 	 * @param parameter
 	 * @return qnaDetail
 	 * @throws Exception
@@ -47,27 +48,68 @@ public class BoardService {
 		
 		BoardQNA qna = dao.selectQnaDetail(conn,no);
 		
-			if(qna != null) {
-				//나중에 추가될 이미지 저장용객체
-			}
-			
+		qna.setTitle(Util.reverseLineHandling( qna.getTitle()));
+		qna.setContent(Util.reverseLineHandling( qna.getContent()));
+	
+		//만약 답변이 있는 경우에만 답변 개행 처리
+		if(qna.getAnswer()=='Y') {
+			qna.setAnswerContent(Util.reverseLineHandling( qna.getAnswerContent()));
+		}
+		
 		close(conn);
 		
 		return qna;
 	}
 
-	
-	/*
-	 * public int deleteQNA(int no)throws Exception{ Connection conn =
-	 * getConnection();
-	 * 
-	 * int result = dao.deleteQNA(conn,no);
-	 * 
-	 * if(result>0)commit(conn); else rollback(conn);
-	 * 
-	 * close(conn);
-	 * 
-	 * return result; }
+	/**QNA 답변 작성 Service
+	 * @param no
+	 * @param adminNo
+	 * @param inputAnswer
+	 * @return result
+	 * @throws Exception
 	 */
+	public int insertAnswer(int no, int adminNo, String inputAnswer)throws Exception{
+		Connection conn = getConnection();
+		
+		inputAnswer = Util.XssHandling(inputAnswer);
+		inputAnswer = Util.newLineHandling(inputAnswer);
+		int result = dao.insertAnswer(conn,no,adminNo,inputAnswer);
+		
+		if(result>0)commit(conn);
+		
+		else rollback(conn);;
+		close(conn);
+		return result;
+	}
+	
+	/**QNA검색 
+	 * @param category 
+	 * @param answer 
+	 * @return list
+	 * @throws Exception
+	 */
+	public List<BoardQNA> searchQnaList(char answer, int category)throws Exception{
+		Connection conn = getConnection();
+		List<BoardQNA> list = dao.searchQnaList(conn,answer,category);
+		close(conn);
+		return list;
+	}
 
+	public List<Board> searchFaqList(String key)throws Exception{
+		Connection conn = getConnection();
+		int cNo=0;
+		switch(key){
+			case "other":cNo=1; break;
+			case "payment":cNo=3; break;
+			case "reservation":cNo=4; break;
+			case "facilities":cNo=5; break;
+			case "group":cNo=6; break;
+		}
+		
+		List<Board> list = dao.searchQnaList(conn,cNo);
+		
+		close(conn);
+		
+		return list;
+	}
 }

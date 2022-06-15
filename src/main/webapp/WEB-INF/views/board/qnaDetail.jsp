@@ -14,6 +14,7 @@
 <link rel="stylesheet" 	href="${contextPath}/resources/css/board/qnaDetail-style.css">
 <script src="https://kit.fontawesome.com/ea629e8085.js"
 	crossorigin="anonymous"></script>
+
 </head>
 <body>
 	<main class="container">
@@ -69,11 +70,13 @@
 					<div class="A">
 						<h1 id="answerHeader">답변</h1>
 
+						
+
 						<form action="qna" method="POST" onsubmit="return answerValidate()">
-							<input type="hidden" name="qnaNo" id="qnaNo" value="${qna.qnaNo}">
+							<input type="hidden" name="no" id="qnaNo" value="${qna.qnaNo}">
 							<input type="hidden" name="adminNo" value="${adminLogin.adminNo}">
-							<input type="hidden" name="type" value="answer">
-							<textarea name="inputAnswer" id="answer" cols="30" rows="10"></textarea>
+							<input type="hidden" name="type" value="insertAnswer">
+							<textarea name="inputAnswer" id="answer" cols="30" rows="10">${qna.answerContent}</textarea>
 							<button>답변하기</button>
 						</form>
 					</div>

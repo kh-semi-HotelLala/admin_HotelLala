@@ -14,11 +14,11 @@ public class BoardQNA {
 	private String category;
 	private String title;
 	private String content;
-	private String answer;
+	private char answer;
 	private String adminName;
 	private String memberName;
 	private String createDt;
 	private String memberTel;
 	private String memberEmail;
-	private String answeContent;
+	private String answerContent;
 }
