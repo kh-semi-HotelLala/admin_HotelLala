@@ -35,7 +35,6 @@ public class BoardControllServlet extends HttpServlet {
 		doGet(req, resp);	
 	}
 	
-	
 	/**모든 조회
 	 *
 	 */
@@ -92,7 +91,7 @@ public class BoardControllServlet extends HttpServlet {
 			switch (type) {
 				case "search":
 					
-					List<Board> faqList = service.searchFaqList(req.getParameter("key"));
+					List<Board> faqList = service.searchList(req.getParameter("key"),2);
 					req.setAttribute("faqList", faqList);
 					
 					map.put("path", "/faq.jsp");
@@ -172,6 +171,19 @@ public class BoardControllServlet extends HttpServlet {
 			req.setAttribute("noticeList", noticeList);
 			map.put("path", "/notice.jsp");
 			map.put("bol", true); //forward의 경우 true
+		} else{
+			String type = req.getParameter("type");
+			
+			switch (type) {
+				case "search":
+					List<Board> noticeList = service.searchList(req.getParameter("key"),1);
+					req.setAttribute("noticeList", noticeList);
+					map.put("path", "/notice.jsp");
+					map.put("bol", true);
+					break;   
+				case "reservation":break;	
+			
+			}
 		}
 		
 		return map;

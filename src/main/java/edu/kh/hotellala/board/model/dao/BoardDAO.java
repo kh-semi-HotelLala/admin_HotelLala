@@ -218,18 +218,19 @@ public class BoardDAO {
 		return qnaList;
 	}
 
-	/**조건에 맞는 FAQ 목록 조회 
+	/**조건에 맞는 Noti/FAQ 목록 조회 
 	 * @param conn
 	 * @param cNo
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Board> searchQnaList(Connection conn, int cNo)throws Exception{
+	public List<Board> searchList(Connection conn, int cNo,int boardNo)throws Exception{
 		List<Board> list = new ArrayList<Board>();
 		try {
-			String sql = prop.getProperty("searchQnaList");
+			String sql = prop.getProperty("searchList");
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, cNo);
+			pstmt.setInt(2, boardNo);
 			
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
