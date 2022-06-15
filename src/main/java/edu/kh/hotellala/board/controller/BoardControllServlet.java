@@ -53,6 +53,8 @@ public class BoardControllServlet extends HttpServlet {
 			if (boardType.equals("/faq")) {				map = faqBoard(req);			}
 			// 들어온 요청이 Q&A일 경우
 			if (boardType.equals("/qna")) {				map = qnaBoard(req);			}
+		
+			if (boardType.equals("/write")) {				map = write(req);			}
 
 			
 			if((boolean) map.get("bol")) {
@@ -189,4 +191,27 @@ public class BoardControllServlet extends HttpServlet {
 		return map;
 	}
 	
+
+	/**notice + faq 작성경우 수행 함수
+	 * @param req
+	 * @return map
+	 * @throws Exception
+	 */
+	private Map<String, Object> write(HttpServletRequest req)throws Exception{
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+	if (req.getQueryString() == null&&req.getMethod().equals("GET")) {
+			List<Board> faqList = service.selectFaqList();
+			req.setAttribute("faqList", faqList);
+			map.put("path", "/write.jsp");
+			map.put("bol", true);
+			
+		}else { //게시글 작성 후에 post방식으로 전달
+			
+		}
+		
+		return map;
+	}
+
+
 }
