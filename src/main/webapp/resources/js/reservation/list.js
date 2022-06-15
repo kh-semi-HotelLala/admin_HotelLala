@@ -24,8 +24,12 @@
 // 예약 상태 변경
 (function(){
 
+    const complete = document.getElementById("complete");
+    const cancle = document.getElementById("cancle");
     
+    const temp = document.getElementById("temp");
 
+    console.log(temp);
     
     
 

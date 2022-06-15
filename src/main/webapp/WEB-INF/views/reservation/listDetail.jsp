@@ -84,7 +84,7 @@
                             </div>
                             <div class="address">
                                 <div class="info-name">주소</div>
-                                <div class="info-content">${detail.memberAddress}</div>
+                                <div classs"info-content">${detail.memberAddress}</div>
                             </div>
                         </div>
                     </div>
@@ -97,13 +97,14 @@
                         </div>
                     </div>
                 </div>
-
+                ${detail}
                     <div class="reserve-status">
                         <div>
                             <div class="info-name">예약상태</div>
                             <div class="info-content">
-                                <span>예약완료</span>
-                                <span>예약취소</span>
+                                <span id="complete">예약완료</span>
+                                <span id="cancle">예약취소</span>
+                                <input type="hidden" id="temp" value="${status.refundFlag}">
                             </div>                            
                         </div>
                     </div>
