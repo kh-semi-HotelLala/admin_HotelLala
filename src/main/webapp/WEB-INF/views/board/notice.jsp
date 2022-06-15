@@ -36,7 +36,7 @@ crossorigin="anonymous"></script>
 					<c:forEach var="notice" items="${noticeList}">
 						<li class="notice-list">
 							<div class="notice-header ">
-								<span class="notice-category">${notice.}</span>
+								<span class="notice-category"></span>
 								<span class="notice-category">${notice.category}</span>
 								<span class="notice-title">${notice.title}</span>
 								<span class="notice-createDate">${notice.createDate}</span>
