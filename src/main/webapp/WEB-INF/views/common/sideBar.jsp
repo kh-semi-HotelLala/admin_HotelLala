@@ -35,7 +35,7 @@
                 <div>Menu</div>
                 <ul>
                     <li class="menu">
-                        <strong id="reservation">예약</strong>
+                        <strong id="reservation">Reservation</strong>
                         <ul>
                             <li class="board-list"><a href="${contextPath}/reservation/list">예약리스트</a></li>
                             <li class="board-list"><a href="${contextPath}/reservation/room">객실관리</a></li>
@@ -45,15 +45,14 @@
                     
                     <li class="menu">
                     
-                        <strong id="guest">고객</strong>
+                        <strong id="guest">Info</strong>
                         <ul>
                             <li class="board-list"><a href="${contextPath}/member/AllList" >고객 전체 조회</a></li>
-                            <li class="board-list"><a href="${contextPath}/member/SearchOne" >고객 검색</a> </li>
-                            <li class="board-list"><a href="${contextPath}/admin/signUp">관리자 가입</a> </li>
+                            <li class="board-list"><a href="${contextPath}/admin/signUp">관리자 정보</a> </li>
                         </ul>
                     </li>
                     <li class="menu">
-                        <strong id="board">게시판</strong>
+                        <strong id="board">Board</strong>
                         <ul>
                             <li class="board-list"><a href="${contextPath}/board/notice" >공지사항</a></li>
                             <li class="board-list"><a href="${contextPath}/board/qna" >QNA</a> </li>

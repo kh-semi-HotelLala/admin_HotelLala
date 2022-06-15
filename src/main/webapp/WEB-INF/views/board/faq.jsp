@@ -62,7 +62,6 @@ crossorigin="anonymous"></script>
 						</div>
 					</li>
 				</c:forEach>
-			
 			</ul>
 		</div>
 	</section>

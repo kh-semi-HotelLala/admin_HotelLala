@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="${contextPath}/resources/images/wIcon.ico">
 <title>Q&A</title>
 <link rel="stylesheet"	href="${contextPath}/resources/css/main-style.css">
 <link rel="stylesheet" 	href="${contextPath}/resources/css/sideBar-style.css">
@@ -47,7 +48,7 @@
                         </div>
                             
                         <div class="search-area">
-						     <button type="submit" id="search-btn" >검색</button>
+						     <button type="submit" id="search-btn">검색</button>
 						</div>
                     </div>
                 </form> 
@@ -77,9 +78,9 @@
 								</tr>
 							</c:forEach>
 						</tbody>    
-						
 					</table>
 				</div>
+				
 			</section>
 
 
@@ -88,6 +89,7 @@
 	<!-- jQuery Library 추가 -->
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<!-- singup.js 연결 -->
+
 	<script src="${contextPath}/resources/js/board/qna.js"></script>
 </body>
 </html>

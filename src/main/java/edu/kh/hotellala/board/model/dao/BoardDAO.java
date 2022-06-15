@@ -89,6 +89,31 @@ public class BoardDAO {
 		return list;
 	}
 
+	/**모든 Notice 목록 조회DAO
+	 * @param conn
+	 * @return list
+	 * @throws Exception
+	 */
+	public List<Board> selectNoticeList(Connection conn)throws Exception {
+		List<Board> list = new ArrayList<Board>();
+		try {
+			String sql = prop.getProperty("selectNoticeList");
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				Board faq = new Board();
+				faq.setCategory(rs.getString(1));
+				faq.setTitle(rs.getString(2));
+				faq.setCreateDate(rs.getString(3));
+				list.add(faq);
+			}
+		}finally {
+			close(rs);
+			close(stmt);
+		}
+		return list;
+	}
+	
 	/**QNA 상세 조회 DAO
 	 * @param conn
 	 * @param no
@@ -222,6 +247,8 @@ public class BoardDAO {
 		}
 		return list;
 	}
+
+
 
 	
 	
