@@ -87,6 +87,8 @@
 /* 요청사항 */
 .req > div{
     display: flex;
+    height: 40px;
+    /* border: 1px solid red; */
     /* border-bottom: 1px solid black; */
 }
 
