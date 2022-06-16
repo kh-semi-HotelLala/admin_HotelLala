@@ -1,4 +1,4 @@
-c:if<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -72,7 +72,7 @@ c:if<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding
                 <div>
                     <div>
                         <div>주문번호</div>
-                        <div>${room}</div>
+                        <div></div>
                     </div>
                     <div>
                         <div>예약자명</div>

@@ -88,25 +88,11 @@
                                         <td><span id="wait">대기중</span></td>
 			                            <td>
 			                                <button class="updateBtn">환불처리</button>
-			                            </td>
-                                    
-                                    <!-- 여기 오류! -->
-                                    	<c:choose>
-                                        
-                                        	<c:when test="${refund.refundFlag == 'N'}">
-                                        		<td><span id="wait">대기중</span></td>
-                                        		<button class="updateBtn">환불처리</button>
-                                        	</c:when>
-                                        	
-                                        	<c:otherwise>
-                                        		<td><span id="complete">환불완료</span></td>
-                                        		<button class="deleteBtn">삭제</button>
-                                        	</c:otherwise>
-                                        
-                                        </c:choose>
+                                        </td>
                                     </tr>
-
+                                    
                                 </c:forEach>
+
                                       
                                         
 

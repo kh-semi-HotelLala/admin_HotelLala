@@ -92,6 +92,11 @@ for(let btn of floorBtn){
                     const roomInfo = document.createElement("div");
                     roomInfo.classList.add("room-info");
 
+                    const request = document.createElement("input");
+                    request.setAttribute("type", "hidden");
+                    request.value = room[i].requestNo;
+                    console.log(room[i].requestNo);
+
                     // 객실 번호
                     const roomNo = document.createElement("div");
                     roomNo.innerText = arr[i];
