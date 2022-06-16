@@ -3,14 +3,40 @@ const deleteBtn = document.getElementsByClassName("deleteBtn")[0];
 const modalUpdate = document.getElementById("modalUpdate");
 const modalClose = document.getElementById("modalClose");
 
-updateBtn.addEventListener("click", function(){
+(function(){
+    const modal = document.getElementsByClassName("modal")[0];
+    const closeBtn = modal.querySelector(".modal-close");
+    
+    closeBtn.addEventListener("click", function(){
+        modal.classList.toggle('hide');
+    });
 
-    for(let up of updateBtn){
+    modalBtn.addEventListener("click", function(){
         modal.classList.toggle("show");
-    }
+    });
 
-    modalUpdate.addEventListener("click", function(){
+    updateBtn.addEventListener("click", function(){
         modal.classList.toggle("hide");
     });
 
-});
+    deleteBtn.addEventListener("click", function(){
+        modal.classList.toggle("hide");
+    });
+    
+
+})();
+
+
+
+
+// updateBtn.addEventListener("click", function(){
+
+//     for(let up of updateBtn){
+//         modal.classList.toggle("show");
+//     }
+
+//     modalUpdate.addEventListener("click", function(){
+//         modal.classList.toggle("hide");
+//     });
+
+// });

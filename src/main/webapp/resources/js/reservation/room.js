@@ -10,7 +10,7 @@
         setTimeout(function(){
             modal.classList.toggle('hide');
             modal.classList.toggle('show');
-        },450);
+        },0);
     });
 
     modalBtn.addEventListener("click", function(){
