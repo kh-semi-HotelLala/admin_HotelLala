@@ -60,7 +60,7 @@ public class ReserveDAO {
 				
 				Reservation rc = new Reservation();
 				
-				rc.setPaymentDate(rs.getDate("PAYMENT_DT"));
+				rc.setPaymentDate(rs.getString("PAYMENT_DT"));
 				rc.setMemberName(rs.getString("MEMBER_NM"));
 				rc.setRoomNo(rs.getInt("ROOM_NO"));
 				rc.setCheckIn(rs.getDate("CHECK_IN"));
@@ -132,7 +132,7 @@ public class ReserveDAO {
 				detail= new Reservation();
 				
 				detail.setRequestNo(rs.getString(1));
-				detail.setPaymentDate(rs.getDate(2));
+				detail.setPaymentDate(rs.getString(2));
 				detail.setRoomNo(rs.getInt(3));
 				detail.setCheckIn(rs.getDate(4));
 				detail.setDateRange(rs.getString(5));
@@ -256,6 +256,7 @@ public class ReserveDAO {
 		try {
 			
 			String sql = prop.getProperty("selectFloor");
+			System.out.println(sql);
 			
 			pstmt = conn.prepareStatement(sql);
 			
@@ -266,19 +267,13 @@ public class ReserveDAO {
 			while(rs.next()) {
 				
 				Reservation r = new Reservation();
+				
 				r.setRequestNo(rs.getString(1));
 				r.setCheckIn(rs.getDate(2));
 				r.setCheckOut(rs.getDate(3));
 				r.setDateRange(rs.getString(4));
 				r.setRoomNo(rs.getInt(5));
 				r.setMemberName(rs.getString(6));
-//				r.setPaymentDate(rs.getDate(7));
-//				r.setAdultCount(rs.getInt(8));
-//				r.setChildCount(rs.getInt(9));
-//				r.setMemberTel(rs.getString(10));
-//				r.setReservationFlag((rs.getString(11)).charAt(0));
-//				r.setExtraRequest(rs.getString(12));
-				
 				
 				room.add(r);
 				
@@ -291,10 +286,6 @@ public class ReserveDAO {
 		System.out.println("룸"+room);
 		return room;
 	}
-	
-
-
-	
 	
 	
 	
@@ -323,7 +314,7 @@ public class ReserveDAO {
 				r.setRefundNo(rs.getInt(1));
 				r.setMemberName(rs.getString(2));
 				r.setRoomNo(rs.getInt(3));
-				r.setPaymentDate(rs.getDate(4));
+				r.setPaymentDate(rs.getString(4));
 				r.setRefundDate(rs.getDate(5));
 				r.setRefundFlag(rs.getString(6).charAt(0));
 				

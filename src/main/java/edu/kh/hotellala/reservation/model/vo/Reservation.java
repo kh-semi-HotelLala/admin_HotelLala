@@ -25,7 +25,7 @@ public class Reservation {
 	private char reservationFlag; // 예약상태
 	private int roomNo;	// 객실 호수	
 	
-	private Date paymentDate; // 결제일
+	private String paymentDate; // 결제일
 	private int paymentAmount; // 결제 금액
 
 	private String memberName;//회원이름

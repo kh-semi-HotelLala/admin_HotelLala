@@ -86,13 +86,20 @@
                                         <td>${refund.paymentDate}</td>
                                         <td>${refund.refundDate}</td>
                                         
-                                        <c:if test="${refund.refundFlag == 'N'}">
-                                            <td><span id="wait">대기중</span></td>
-                                            <button class="updateBtn">환불처리</button>
-                                        </c:if>
-                                        <c:if test="${refund.refundFlag == 'Y'}">
-                                            
-                                        </c:if>
+                                    
+                                    	<%-- <c:choose>
+                                        
+                                        	<c:when test="${refund.refundFlag == 'N'}">
+                                        		<td><span id="wait">대기중</span></td>
+                                        		<button class="updateBtn">환불처리</button>
+                                        	</c:when>
+                                        	
+                                        	<c:otherwise>
+                                        		<td><span id="complete">환불완료</span></td>
+                                        		<button class="deleteBtn">삭제</button>
+                                        	</c:otherwise>
+                                        
+                                        </c:choose> --%>
                                     </tr>
 
                                 </c:forEach>
