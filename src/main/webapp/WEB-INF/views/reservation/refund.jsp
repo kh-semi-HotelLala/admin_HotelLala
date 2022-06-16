@@ -133,7 +133,7 @@
 
 
     
-    <div id="modal">
+    <div class="modal">
         <div class="modal-window">
             <div class="modal-close">&times;</div>
             <div class="title">
@@ -147,16 +147,16 @@
                     <div class="content-refund">
                         <div>
                             <div>예약자명</div>
-                            <div>유저일</div>
+                            <div>${refund.memberName}</div>
                         </div>
                         <div>
                             <div>결제 금액</div>
-                            <div>200,000 원</div>
+                            <div>${refund.paymentAmount} 원</div>
                         </div>
                         <div>
                             <div>결제방법</div>
                             <div>
-                                무통장입금
+                                ${refund.paytype}
                             </div>
                         </div>
                     </div>
@@ -166,11 +166,11 @@
                     <div class="content-refund">
                         <div>
                             <div>환불 요청일</div>
-                            <div>2022-05-29</div>
+                            <div>${refund.refundDate}</div>
                         </div>
                         <div>
                             <div>환불 금액</div>
-                            <div>200,000 원</div>
+                            <div>${refund.paymentAmount} 원</div>
                         </div>
                         <div>
                             <div>환불 계좌</div>
@@ -179,8 +179,7 @@
                         <div>
                             <div>환불 사유</div>
                             <div>
-                                환불 사유 
-                                적는 입력란
+                                ${refund.refundReson}
                             </div>
                         </div>
                     </div>

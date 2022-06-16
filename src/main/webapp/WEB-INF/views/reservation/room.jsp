@@ -55,6 +55,7 @@
                         <div class="room-info">
                             <div>203</div>
                             <div>예약가능</div>
+                            <div></div>
                         </div>
                     </div>
                 </c:if>

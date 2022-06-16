@@ -51,7 +51,7 @@ select{
 }
 
 #search-query{
-    padding: 3px;
+    padding: 10px;
     border: 1px solid rgb(194, 194, 194);
     color: #5E6278;
     width: 200px;
@@ -66,18 +66,12 @@ select{
     border-radius: 3px;
     margin-left: 8px;
     height: 30px;
-    width: 40px;
+    width: 50px;
+    color: rgb(68, 68, 68);
     /* border: 1px solid red; */
 }
 
-#date-btn{
-    width: 30px;
-    height: 30px;
-    background-color: white;
-    cursor: pointer;
-    border: 0;
-    /* border: 1px solid red; */
-}
+
 
 
 /* 예약목록조회 */
