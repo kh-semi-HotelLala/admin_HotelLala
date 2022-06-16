@@ -23,6 +23,9 @@ public class RoomServelt extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		req.setAttribute("roomType", "SINGLE");
+		doPost(req, resp);
+		
 		try {
 			
 			ReserveService service = new ReserveService();
@@ -60,10 +63,15 @@ public class RoomServelt extends HttpServlet {
 			
 			//new Gson().toJson(room, resp.getWriter());
 			new GsonBuilder().setDateFormat("yy.MM.dd").create().toJson(room, resp.getWriter());
-		
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		
+		
+		
+		
 	
 	}
 	

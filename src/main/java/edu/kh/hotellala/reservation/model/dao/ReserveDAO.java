@@ -60,7 +60,7 @@ public class ReserveDAO {
 				
 				Reservation rc = new Reservation();
 				
-				rc.setPaymentDate(rs.getDate("PAYMENT_DT"));
+				rc.setPaymentDate(rs.getString("PAYMENT_DT"));
 				rc.setMemberName(rs.getString("MEMBER_NM"));
 				rc.setRoomNo(rs.getInt("ROOM_NO"));
 				rc.setCheckIn(rs.getDate("CHECK_IN"));
@@ -132,7 +132,7 @@ public class ReserveDAO {
 				detail= new Reservation();
 				
 				detail.setRequestNo(rs.getString(1));
-				detail.setPaymentDate(rs.getDate(2));
+				detail.setPaymentDate(rs.getString(2));
 				detail.setRoomNo(rs.getInt(3));
 				detail.setCheckIn(rs.getDate(4));
 				detail.setDateRange(rs.getString(5));
@@ -287,10 +287,6 @@ public class ReserveDAO {
 		return room;
 	}
 	
-
-
-	
-	
 	
 	
 
@@ -318,7 +314,7 @@ public class ReserveDAO {
 				r.setRefundNo(rs.getInt(1));
 				r.setMemberName(rs.getString(2));
 				r.setRoomNo(rs.getInt(3));
-				r.setPaymentDate(rs.getDate(4));
+				r.setPaymentDate(rs.getString(4));
 				r.setRefundDate(rs.getDate(5));
 				r.setRefundFlag(rs.getString(6).charAt(0));
 				
