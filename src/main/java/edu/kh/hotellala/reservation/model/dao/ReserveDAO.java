@@ -184,7 +184,6 @@ public class ReserveDAO {
 				status = new Reservation();
 				
 				status.setReservationFlag((rs.getString(1)).charAt(0));
-				status.setRefundFlag((rs.getString(2)).charAt(0));
 				
 			}
 			
@@ -256,12 +255,10 @@ public class ReserveDAO {
 		try {
 			
 			String sql = prop.getProperty("selectFloor");
-			System.out.println(sql);
 			
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, roomType);
-			System.out.println(sql);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -283,7 +280,7 @@ public class ReserveDAO {
 			close(rs);
 			close(pstmt);
 		}
-		System.out.println("룸"+room);
+		
 		return room;
 	}
 	
