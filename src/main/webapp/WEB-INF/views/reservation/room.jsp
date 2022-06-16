@@ -40,24 +40,17 @@ c:if<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding
             </div>
 
             <div class="room">
-<<<<<<< HEAD
                 <c:if test="${empty room}">
                     <div class="top">
                         <div class="room-info In">
                             <div>201</div>
                             <div>예약가능</div>
                             <div></div>
-                            <div>
-                            
-                            </div>
                         </div>
                         <div class="room-info In">
                             <div>202</div>
                             <div>예약가능</div>
                             <div></div>
-                            <div>
-                    
-                            </div>
                         </div>
                         <div class="room-info">
                             <div>203</div>
@@ -65,36 +58,6 @@ c:if<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding
                         </div>
                     </div>
                 </c:if>
-=======
-                
-                <div class="top">
-                    <div class="room-info In">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div>
-                            <button class="reserve-detail"></button>
-                        </div>
-                    </div>
-                    <div class="room-info In">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div>
-                            <a href="#">
-                                <button class="reserve-detail"></button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="room-info">
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-
->>>>>>> origin/SAY
-            </div>  
-
         </section>
 
     </main>
