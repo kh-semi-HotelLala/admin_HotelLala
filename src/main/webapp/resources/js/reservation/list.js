@@ -29,8 +29,9 @@
     
     const temp = document.getElementById("temp");
 
-    console.log(temp);
-    
-    
-
+    if(temp.value() == 'Y'){
+        cancle.style.backgroundColor = "#003458";
+        cancle.style.color = "white";
+    }
+ 
 })();

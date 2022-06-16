@@ -140,7 +140,7 @@ public class ReserveDAO {
 				detail.setAdultCount(rs.getInt(7)+rs.getInt(8));
 				
 				detail.setMemberName(rs.getString(9));
-				detail.setMemberTel((rs.getString(10)).charAt(0));
+				detail.setMemberTel(rs.getString(10));
 				detail.setMemberBR(rs.getString(11));
 				detail.setMemberAddress(rs.getString(12));
 				detail.setExtraRequest(rs.getString(13));
@@ -272,12 +272,12 @@ public class ReserveDAO {
 				r.setDateRange(rs.getString(4));
 				r.setRoomNo(rs.getInt(5));
 				r.setMemberName(rs.getString(6));
-				r.setPaymentDate(rs.getDate(7));
-				r.setAdultCount(rs.getInt(8));
-				r.setChildCount(rs.getInt(9));
-				r.setMemberTel((rs.getString(10)).charAt(0));
-				r.setReservationFlag((rs.getString(11)).charAt(0));
-				r.setExtraRequest(rs.getString(12));
+//				r.setPaymentDate(rs.getDate(7));
+//				r.setAdultCount(rs.getInt(8));
+//				r.setChildCount(rs.getInt(9));
+//				r.setMemberTel(rs.getString(10));
+//				r.setReservationFlag((rs.getString(11)).charAt(0));
+//				r.setExtraRequest(rs.getString(12));
 				
 				
 				room.add(r);
@@ -288,7 +288,7 @@ public class ReserveDAO {
 			close(rs);
 			close(pstmt);
 		}
-		
+		System.out.println(roomType);
 		return room;
 	}
 	
@@ -313,11 +313,27 @@ public class ReserveDAO {
 			
 			String sql = prop.getProperty("selectRefundAll");
 			
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
 			
-			
+			while(rs.next()) {
+				
+				Reservation r = new Reservation();
+				
+				r.setRefundNo(rs.getInt(1));
+				r.setMemberName(rs.getString(2));
+				r.setRoomNo(rs.getInt(3));
+				r.setPaymentDate(rs.getDate(4));
+				r.setRefundDate(rs.getDate(5));
+				r.setRefundFlag(rs.getString(6).charAt(0));
+				
+				refundList.add(r);
+				
+			}
 			
 		} finally {
-			
+			close(rs);
+			close(stmt);
 		}
 		
 		return refundList;
