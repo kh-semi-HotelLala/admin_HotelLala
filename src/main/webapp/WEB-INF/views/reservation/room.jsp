@@ -43,26 +43,26 @@
                 
                 <div class="top">
                     <div class="room-info In">
-                        <div>101</div>
-                        <div>유저일 님</div>
-                        <div>22.06.01~(1박)</div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                         <div>
-                            <button class="reserve-detail">예약상세</button>
+                            <button class="reserve-detail"></button>
                         </div>
                     </div>
                     <div class="room-info In">
-                        <div>102</div>
-                        <div>유저일 님</div>
-                        <div>22.06.01~(1박)</div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                         <div>
                             <a href="#">
-                                <button class="reserve-detail">예약상세</button>
+                                <button class="reserve-detail"></button>
                             </a>
                         </div>
                     </div>
                     <div class="room-info">
-                        <div>103</div>
-                        <div>예약가능</div>
+                        <div></div>
+                        <div></div>
                     </div>
                 </div>
 
