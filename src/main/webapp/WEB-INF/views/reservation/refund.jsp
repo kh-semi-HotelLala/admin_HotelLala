@@ -68,46 +68,30 @@
 
                     <tbody>
 
-                        <c:choose>
-                            <c:when test="empty refundList">
-                                <tr>
-                                    <td>환불 내역이 없습니다.</td>
-                                </tr>
-                            </c:when>
+    <c:choose>
+        <c:when test="empty refundList">
+            <tr>
+                <td>환불 내역이 없습니다.</td>
+            </tr>
+        </c:when>
 
-                            <c:otherwise>
+        <c:otherwise>
 
-                                <c:forEach var="refund" items="${refundList}">
-
-                                    <tr>
-                                        <td>${refund.refundNo}</td>
-                                        <td>${refund.memberName}</td>
-                                        <td>${refund.roomNo}</td>
-                                        <td>${refund.paymentDate}</td>
-                                        <td>${refund.refundDate}</td>
-                                        
-                                    
-                                    	<%-- <c:choose>
-                                        
-                                        	<c:when test="${refund.refundFlag == 'N'}">
-                                        		<td><span id="wait">대기중</span></td>
-                                        		<button class="updateBtn">환불처리</button>
-                                        	</c:when>
-                                        	
-                                        	<c:otherwise>
-                                        		<td><span id="complete">환불완료</span></td>
-                                        		<button class="deleteBtn">삭제</button>
-                                        	</c:otherwise>
-                                        
-                                        </c:choose> --%>
-                                    </tr>
-
-                                </c:forEach>
-                                      
-                                        
-
-                            </c:otherwise>
-                        </c:choose>
+    <c:forEach var="refund" items="${refundList}">  
+                <tr>
+                    <td>${refund.refundNo}</td>
+                    <td>${refund.memberName}</td>
+                    <td>${refund.roomNo}</td>
+                    <td>${refund.paymentDate}</td>
+                    <td>${refund.refundDate}</td>
+                    <td><span id="wait">대기중</span></td>
+                    <td><button class="updateBtn">환불처리</button></td>
+                               <!-- <td><span id="complete">환불완료</span></td>
+                            <button class="deleteBtn">삭제</button> -->
+                    </tr>
+            </c:forEach>
+        </c:otherwise>
+    </c:choose>
 
                         
                         <!-- <tr>
