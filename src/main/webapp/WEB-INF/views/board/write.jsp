@@ -17,6 +17,13 @@ pageEncoding="UTF-8"%>
 <!-- <link rel="stylesheet" 	href="${contextPath}/resources/css/summernote/summernote-lite.css"> -->
 <script src="https://kit.fontawesome.com/ea629e8085.js"
 crossorigin="anonymous"></script>
+
+<!-- ----------------------------- -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="${contextPath}/resources/js/summernote/summernote-lite.js"></script>
+<script src="${contextPath}/resources/js/summernote/lang/summernote-ko-KR.js"></script>
+<link rel="stylesheet" href="${contextPath}/resources/css/summernote/summernote-lite.css">
+<!-- ----------------------------- -->
 </head>
 <body>
 <main class="container">
@@ -32,7 +39,7 @@ crossorigin="anonymous"></script>
 
 		
 			<div id="write-arer">
-				<form action="" method="post">
+				<form action="" method="post" onsubmit="return inputValidate()">
 					<div id="write-header">
 						<select name="boardType" id="boardType">
 							<option value="1">공지사항</option>
@@ -41,17 +48,20 @@ crossorigin="anonymous"></script>
 						<select name="category" id="category">
 							<option value="1">기타</option>
 							<option value="2">공지사항</option>
-							<option value="3">공지사항</option>
-							<option value="4">공지사항</option>
-							<option value="5">공지사항</option>
-							<option value="6">공지사항</option>
+							<option value="3">결제</option>
+							<option value="4">객실</option>
+							<option value="5">시설</option>
+							<option value="6">단체 이용</option>
 						</select>
-						<h1><input type="text" placeholder="제목을 입력해"></h1>
+					<input type="text" placeholder="제목을 입력해" id="title" name="title">
 					</div>
 
-					<textarea name="summernote" id="summernote" cols="30" rows="10"></textarea>
+					<textarea name="editordata" id="summernote" cols="30" rows="10"></textarea>
+					<input type="hidden" value="${adminLogin.adminNo}" name="adminNo">
+					<button id="submitBtn">작성</button>
 				</form>
 			</div>
+			${adminLogin.adminNo}
 
 		</section>
 
@@ -60,9 +70,9 @@ crossorigin="anonymous"></script>
 </main>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
 <script src="${contextPath}/resources/js/board/qna.js"></script>
 <!-- <script src="${contextPath}/resources/js/summernote/lang/summernote-ko-KR.js"></script>
- -->
+ --><script src="${contextPath}/resources/js/board/write.js"></script>
 </body>
 </html>

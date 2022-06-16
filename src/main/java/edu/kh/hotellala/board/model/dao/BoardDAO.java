@@ -250,6 +250,36 @@ public class BoardDAO {
 	}
 
 
+	/**게시글(공지/faq)삽입을 위한 DAO
+	 * @param conn
+	 * @param board
+	 * @param boardType
+	 * @return result
+	 * @throws Exception
+	 */
+	public int writeBoard(Connection conn, Board board, int boardType)throws Exception{
+		//1.제목 2.내용 3.작성자 4.게시판종류  5.카테고리
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("writeBoard");
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2,board.getContent());
+			pstmt.setInt(3, board.getAdminNo());
+			pstmt.setInt(4, boardType);
+			pstmt.setInt(5, board.getCNo());
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+
 
 	
 	

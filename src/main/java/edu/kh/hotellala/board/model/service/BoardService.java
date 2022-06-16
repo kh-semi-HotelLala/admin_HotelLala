@@ -129,5 +129,35 @@ public class BoardService {
 		return list;
 	}
 
+	/** 게시글을 작성 후 결과에 따라서 작성한 게시판 경로를 반환한다.
+	 * @param board
+	 * @param boardType 
+	 * @return path
+	 * @throws Exception
+	 */
+	public String writeBoard(Board board, int boardType)throws Exception{
+		Connection conn =getConnection();
+		
+		int result = dao.writeBoard(conn,board,boardType);
+		
+		//삽입에 성공하면 트랜잭션 처리와 동시에 경로를 path에 저장함.
+		//실패한 경우 다시 작성 페이지로 이동함
+		String path = "";
+		if(result>0) {
+			commit(conn);
+			switch (boardType) {
+			case 1:path = "notice"; break;
+			case 2:path = "faq";break;
+			}
+		}else {
+			rollback(conn);
+			path = "write";
+		}
+		
+		close(conn);
+		
+		return path;
+	}
+
 	
 }

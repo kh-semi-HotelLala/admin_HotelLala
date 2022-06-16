@@ -96,4 +96,13 @@ WHERE BOARD_ST = 'N'
 AND CATEGORY_CD = ? AND BOARD_TYPE=?
 ORDER BY BOARD_NO DESC
 </entry>
+
+<!-- 게시글 작성 1.제목 2.내용 3.작성자 4.게시판종류  5.카테고리-->
+<entry key ="writeBoard">
+INSERT INTO BOARD VALUES(
+    SEQ_BOARD_NO.NEXTVAL,    ?,    ?,
+    DEFAULT,DEFAULT,?,?,?
+)
+</entry>
+
 </properties>
