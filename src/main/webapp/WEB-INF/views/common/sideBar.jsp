@@ -23,7 +23,8 @@
                     <!-- 프로필 이미지 ... 다시 고르기  -->
                     <div id="admin-img-area">
                         <a href="${contextPath}/info"><img src="${contextPath}/resources/images/user.png"></a>
-                        <a href="${contextPath}/board/qna"><span id="alert">${adminLogin.qnaCount}</span></a>
+                        <c:if test="${adminLogin.qnaCount > 99}"><a href="${contextPath}/board/qna"><span id="alert">99+</span></a></c:if>
+                        <c:if test="${adminLogin.qnaCount <= 99}"><a href="${contextPath}/board/qna"><span id="alert">${adminLogin.qnaCount}</span></a></c:if>
                     </div>
                 </div>
                 <div class="admin-info">
@@ -54,7 +55,7 @@
                     <li class="menu">
                         <strong id="board">Board</strong>
                         <ul>
-                            <li class="board-list"><a href="${contextPath}/board/notice" >공지사항</a></li>
+                            <li class="board-list"><a href="${contextPath}/board/notice" >Notice</a></li>
                             <li class="board-list"><a href="${contextPath}/board/qna" >QNA</a> </li>
                             <li class="board-list"><a href="${contextPath}/board/faq" >FAQ</a></li>
                         </ul>

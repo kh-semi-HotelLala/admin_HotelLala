@@ -12,10 +12,9 @@ import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+//urlPatterns = {"/boarsd/write","/board/delete","/reply/insert","/reply/update","/reply/delete","/member/myPage/*"
 @WebFilter(filterName="loginFilter",
-		urlPatterns = {"/boarsd/write","/board/delete","/reply/insert","/reply/update","/reply/delete",
-						"/member/myPage/*"}		)
+		urlPatterns = {"/board/*","/reservation/*",""})
 public class LoginFilter extends HttpFilter implements Filter {
 	
 	public void init(FilterConfig fConfig) throws ServletException {
@@ -38,7 +37,7 @@ public class LoginFilter extends HttpFilter implements Filter {
 		HttpSession session = req.getSession();
 		
 		//3. 로그인 여부 확인
-		if(session.getAttribute("loginMember")!=null) { //로그인 된 경우.
+		if(session.getAttribute("adminLogin")!=null) { //로그인 된 경우.
 			//정상 동작
 			//다음 필터 호출 , 없으면 servlet으로 이동
 			chain.doFilter(request, response);
