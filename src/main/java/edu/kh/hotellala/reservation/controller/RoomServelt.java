@@ -25,11 +25,6 @@ public class RoomServelt extends HttpServlet {
 		
 		try {
 			
-			// DB에서 roomNo 가져오기?
-			// 층 수 -> type을 vs에서 이클립스로 얻어와야함.
-			// 과정 다시 적어보기
-			// room jsp 에서 층 수를 클릭했을 때 roomNo를 이용해 조회 하려 한다.
-//			 이때 room.js에서 ajax로 값 받아오고 data를 넘기고
 			ReserveService service = new ReserveService();
 			
 			String roomType = "SINGLE";
@@ -38,8 +33,7 @@ public class RoomServelt extends HttpServlet {
 			
 			
 			req.setAttribute("room", room);
-			
-			
+			System.out.println(room+"get방식 요청");
 			String path = "/WEB-INF/views/reservation/room.jsp";
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
@@ -62,7 +56,8 @@ public class RoomServelt extends HttpServlet {
 			String roomType = req.getParameter("floor");
 			
 			List<Reservation> room = service.selectFloor(roomType);
-			
+		
+
 			
 			req.setAttribute("room", room);
 			
@@ -74,6 +69,9 @@ public class RoomServelt extends HttpServlet {
 		}
 	
 	}
+	
+	
+	
 	
 	
 	

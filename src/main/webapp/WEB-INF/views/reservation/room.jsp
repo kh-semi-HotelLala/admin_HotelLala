@@ -64,7 +64,9 @@
                         <div>103</div>
                         <div>예약가능</div>
                     </div>
-                </div> 
+                </div>
+
+            </div>  
 
         </section>
 
@@ -80,27 +82,27 @@
                 <div>
                     <div>
                         <div>주문번호</div>
-                        <div>${room.requestNo}</div>
+                        <div>${room}</div>
                     </div>
                     <div>
                         <div>예약자명</div>
-                        <div>${room.memberName}</div>
+                        <div></div>
                     </div>
                     <div>
                         <div>예약접수일</div>
-                        <div>${room.paymentDate}</div>
+                        <div></div>
                     </div>
                     <div>
                         <div>입실일</div>
-                        <div>${room.checkIn} / ${room.dateRages} 박</div>
+                        <div></div>
                     </div>
                     <div>
                         <div>인원</div>
-                        <div>성인 : ${room.adultCount} 명 / 아이 : ${room.childCount} 명</div>
+                        <div></div>
                     </div>
                     <div>
                         <div>휴대폰번호</div>
-                        <div>${room.memberTel}</div>
+                        <div></div>
                     </div>
                     <div>
                     <!-- 질문사항 -->
@@ -109,7 +111,7 @@
                     </div>
                     <div>
                         <div>객실 요청 사항</div>
-                        <div>${room.extraQuest}</div>
+                        <div></div>
                     </div>
                 </div>
             </div>
