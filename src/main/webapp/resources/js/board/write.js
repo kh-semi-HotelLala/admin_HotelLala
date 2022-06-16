@@ -5,32 +5,38 @@ $(document).ready(function() {
 		  maxHeight: '80%',            // 최대 높이
 		  focus: true,                  // 에디터 로딩후 포커스를 맞출지 여부
 		  lang: "ko-KR",					// 한글 설정
-		  placeholder: '최대 2048자까지 쓸 수 있습니다',	//placeholder 설정
-          resize: false
+          resize: false,
+          toolbar: [
+            // [groupName, [list of button]]
+            ['fontname', ['fontname']],
+            ['fontsize', ['fontsize']],
+            ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
+            ['color', ['forecolor','color']],
+            ['table', ['table']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['insert',['picture','link','video']],
+            ['view', ['fullscreen', 'help']]
+          ],
+        fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋움체','바탕체'],
+        fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
 	});
 });
-
 function inputValidate(){
-    
    const title = document.getElementById("title");
    const note = document.getElementById("summernote");
-
     if(title.value==''){
         alert("제목을 작성해주세요.");
         title.value="";
         title.value.focus();
         return false;   
     }
-
     if(note.value.replace(/<p><br><\/p>/gm,'') == ''){
         alert("게시글을 작성해주세요.");
         note.value="";
         note.value.focus();
         return false;
     }
-
-    
-
     return true;
 }
 

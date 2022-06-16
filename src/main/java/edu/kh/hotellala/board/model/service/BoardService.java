@@ -32,7 +32,11 @@ public class BoardService {
 		Connection conn = getConnection();
 		
 		List<Board> list = dao.selectFaqList(conn);
-
+		
+		for(Board item : list) {
+			item.getContent().replaceAll("(\r\n|\r|\n|\n\r)", " ");
+		}
+		
 		close(conn);
 		
 		return list;
@@ -157,6 +161,18 @@ public class BoardService {
 		close(conn);
 		
 		return path;
+	}
+
+	/**공지 상세조회
+	 * @param i
+	 * @return
+	 */
+	public Board noticeDetail(int i)throws Exception{
+		Connection conn = getConnection();
+		Board notice = dao.noticeDetail(conn,i); 
+		notice.setContent(notice.getContent().replaceAll("(\r\n|\r|\n|\n\r)", " "));
+		close(conn);
+		return notice;
 	}
 
 	

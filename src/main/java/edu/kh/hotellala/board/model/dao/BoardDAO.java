@@ -105,6 +105,7 @@ public class BoardDAO {
 				faq.setCategory(rs.getString(1));
 				faq.setTitle(rs.getString(2));
 				faq.setCreateDate(rs.getString(3));
+				faq.setBoardNo(rs.getInt(4));
 				list.add(faq);
 			}
 		}finally {
@@ -277,6 +278,34 @@ public class BoardDAO {
 		}
 		
 		return result;
+	}
+
+
+	public Board noticeDetail(Connection conn, int i)throws Exception{
+		Board notice = null;
+		
+		try {
+			String sql = prop.getProperty("noticeDetail");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, i);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				notice = new Board();
+				notice.setCategory(rs.getString(1));
+				notice.setTitle(rs.getString(2));
+				notice.setCreateDate(rs.getString(3));;
+				notice.setContent(rs.getString(4));
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return notice;
 	}
 
 

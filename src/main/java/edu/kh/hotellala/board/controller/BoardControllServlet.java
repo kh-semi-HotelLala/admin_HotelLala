@@ -189,7 +189,6 @@ public class BoardControllServlet extends HttpServlet {
 			map.put("bol", true); // forward의 경우 true
 		} else {
 			String type = req.getParameter("type");
-
 			switch (type) {
 			case "search":
 				List<Board> noticeList = service.searchList(req.getParameter("key"), 1);
@@ -197,7 +196,11 @@ public class BoardControllServlet extends HttpServlet {
 				map.put("path", "/notice.jsp");
 				map.put("bol", true);
 				break;
-			case "reservation":
+			case "detail":
+				Board notice = service.noticeDetail(Integer.parseInt(req.getParameter("no")));
+				req.setAttribute("notice", notice);
+				map.put("path", "/noticeDetail.jsp");
+				map.put("bol", true);
 				break;
 
 			}
