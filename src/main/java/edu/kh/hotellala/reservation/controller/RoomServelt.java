@@ -31,10 +31,13 @@ public class RoomServelt extends HttpServlet {
 			
 			List<Reservation> room = service.selectFloor(roomType);
 			
-			
 			req.setAttribute("room", room);
+<<<<<<< HEAD
 
 			System.out.println(room+"get방식 요청");
+=======
+			
+>>>>>>> origin/SAY
 			String path = "/WEB-INF/views/reservation/room.jsp";
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
@@ -58,8 +61,6 @@ public class RoomServelt extends HttpServlet {
 			
 			List<Reservation> room = service.selectFloor(roomType);
 		
-
-			
 			req.setAttribute("room", room);
 			
 			//new Gson().toJson(room, resp.getWriter());

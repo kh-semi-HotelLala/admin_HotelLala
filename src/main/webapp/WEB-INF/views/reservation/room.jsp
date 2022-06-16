@@ -40,6 +40,7 @@ c:if<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding
             </div>
 
             <div class="room">
+<<<<<<< HEAD
                 <c:if test="${empty room}">
                     <div class="top">
                         <div class="room-info In">
@@ -64,6 +65,34 @@ c:if<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding
                         </div>
                     </div>
                 </c:if>
+=======
+                
+                <div class="top">
+                    <div class="room-info In">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div>
+                            <button class="reserve-detail"></button>
+                        </div>
+                    </div>
+                    <div class="room-info In">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div>
+                            <a href="#">
+                                <button class="reserve-detail"></button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="room-info">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+
+>>>>>>> origin/SAY
             </div>  
 
         </section>

@@ -127,7 +127,6 @@ public class ReserveService {
 		
 		List<Reservation> room = dao.selectFloor(conn, roomType);
 		
-		
 		close(conn);
 		
 		return room;
