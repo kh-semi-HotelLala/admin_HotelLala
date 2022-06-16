@@ -49,14 +49,14 @@ crossorigin="anonymous"></script>
 </div>
 <!---------------------검색-영역 끝-------------------------->
 
-
+	
 			<div class="notice-content-area">
 				<ul class="notice-ul">
 					<c:forEach var="notice" items="${noticeList}">
 						<li class="notice-list">
 							<div class="notice-header ">
 								<span class="notice-category">${notice.category}</span>
-								<span class="notice-title">${notice.title}</span>
+								<span class="notice-title"><a href="notice?type=detail&no=${notice.boardNo}">${notice.title}</a></span>
 								<span class="notice-createDate">${notice.createDate}</span>
 							</div>
 						</li>

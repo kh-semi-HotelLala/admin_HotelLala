@@ -105,6 +105,7 @@ public class BoardDAO {
 				faq.setCategory(rs.getString(1));
 				faq.setTitle(rs.getString(2));
 				faq.setCreateDate(rs.getString(3));
+				faq.setBoardNo(rs.getInt(4));
 				list.add(faq);
 			}
 		}finally {
@@ -247,6 +248,64 @@ public class BoardDAO {
 			close(pstmt);
 		}
 		return list;
+	}
+
+
+	/**게시글(공지/faq)삽입을 위한 DAO
+	 * @param conn
+	 * @param board
+	 * @param boardType
+	 * @return result
+	 * @throws Exception
+	 */
+	public int writeBoard(Connection conn, Board board, int boardType)throws Exception{
+		//1.제목 2.내용 3.작성자 4.게시판종류  5.카테고리
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("writeBoard");
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2,board.getContent());
+			pstmt.setInt(3, board.getAdminNo());
+			pstmt.setInt(4, boardType);
+			pstmt.setInt(5, board.getCNo());
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+
+	public Board noticeDetail(Connection conn, int i)throws Exception{
+		Board notice = null;
+		
+		try {
+			String sql = prop.getProperty("noticeDetail");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, i);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				notice = new Board();
+				notice.setCategory(rs.getString(1));
+				notice.setTitle(rs.getString(2));
+				notice.setCreateDate(rs.getString(3));;
+				notice.setContent(rs.getString(4));
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return notice;
 	}
 
 

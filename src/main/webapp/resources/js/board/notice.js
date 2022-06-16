@@ -9,11 +9,9 @@ for(let i of header){
 
 $(document).ready(function() {
 	$('#summernote').summernote({
-        height: 300,
-        toolbar: [
-        ['style', ['bold', 'italic']], //Specific toolbar display
-        ['color', ['color']],
-        ['para', ['ul', 'ol', 'paragraph']]],
-        disableResizeEditor:true
+        height: 500, 
+        disableResizeEditor:true,
+        disbale:true
 	});
 });
+

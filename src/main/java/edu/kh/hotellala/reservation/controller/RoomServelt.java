@@ -35,7 +35,6 @@ public class RoomServelt extends HttpServlet {
 			List<Reservation> room = service.selectFloor(roomType);
 			
 			req.setAttribute("room", room);
-			
 			String path = "/WEB-INF/views/reservation/room.jsp";
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
