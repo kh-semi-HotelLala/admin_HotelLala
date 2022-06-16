@@ -4,13 +4,42 @@
     height: 50px;
     width: 100%;
     flex-wrap: nowrap;
+    margin-top: 50px;
 }
-#write-header select{
-    border: 1px solid #ddd;
+#boardType{
+    border: 1px solid gray;
     background-color: rgb(250, 250, 250);
+    width: 10%;
+    height: 100%;
+    text-align: center;
 }
-#write-header input{
-    height: 80%;
-    width: 70% ;
-
+#category{
+    border: 1px solid gray;
+    background-color: rgb(250, 250, 250);
+    width: 10%;
+    height: 100%;
+    text-align: center;
+}
+#title{
+    height: 100%;
+    width: 80% ;
+    padding-left: 15px;
+}
+#submitBtn{
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    background-color: #003458;;
+    border: 1px solid rgb(250, 250, 250);
+    color: rgb(250, 250, 250);
+}
+#submitBtn:hover{
+    background-color: #ddd;
+    border: 1px solid #003458;;
+    color: #003458;;
+    transition-duration: 0.2s;
+}
+@keyframes show {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }

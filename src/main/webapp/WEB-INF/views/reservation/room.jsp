@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+c:if<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -46,12 +46,10 @@
                             <div>201</div>
                             <div>예약가능</div>
                             <div></div>
-                            <div></div>
                         </div>
                         <div class="room-info In">
                             <div>202</div>
                             <div>예약가능</div>
-                            <div></div>
                             <div></div>
                         </div>
                         <div class="room-info">
@@ -60,8 +58,6 @@
                         </div>
                     </div>
                 </c:if>
-            </div>    
-            
         </section>
 
     </main>
