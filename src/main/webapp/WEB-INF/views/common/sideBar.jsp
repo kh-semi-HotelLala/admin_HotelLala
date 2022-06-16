@@ -47,8 +47,8 @@
                         <strong id="guest">Work set</strong>
                         <ul>
                             <li class="board-list"><a href="${contextPath}/member/AllList" >고객 전체 조회</a></li>
-                            <li class="board-list"><a href="${contextPath}/admin/signUp">관리자 정보</a> </li>
-                            <li class="board-list"><a href="${contextPath}/board/write">게시글 작성 </a> </li>
+                            <li class="board-list"><a href="${contextPath}/admin/signUp">관리자 가입</a> </li>
+                            <li class="board-list"><a href="${contextPath}/board/write">공지사항/FAQ 작성</a> </li>
                         </ul>
                     </li>
                     <li class="menu">
@@ -63,7 +63,7 @@
             </div>
             <div>
                 <a href="${contextPath}/logout" id="logout">로그아웃</a>
-                <a href="hotelLala" id="goToHome">홈페이지</a>
+                <a href="http://localhost:8080/HotelLala/" id="goToHome">홈페이지</a>
             </div>
         </section>
   

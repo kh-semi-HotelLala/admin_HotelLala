@@ -260,7 +260,7 @@ public class ReserveDAO {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, roomType);
-			
+			System.out.println(sql);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -288,7 +288,7 @@ public class ReserveDAO {
 			close(rs);
 			close(pstmt);
 		}
-		System.out.println(roomType);
+		System.out.println("룸"+room);
 		return room;
 	}
 	

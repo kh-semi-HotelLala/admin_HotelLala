@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+c:if<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -40,32 +40,30 @@
             </div>
 
             <div class="room">
-                
-                <div class="top">
-                    <div class="room-info In">
-                        <div>101</div>
-                        <div>유저일 님</div>
-                        <div>22.06.01~(1박)</div>
-                        <div>
-                            <button class="reserve-detail">예약상세</button>
+                <c:if test="${empty room}">
+                    <div class="top">
+                        <div class="room-info In">
+                            <div>201</div>
+                            <div>예약가능</div>
+                            <div></div>
+                            <div>
+                            
+                            </div>
+                        </div>
+                        <div class="room-info In">
+                            <div>202</div>
+                            <div>예약가능</div>
+                            <div></div>
+                            <div>
+                    
+                            </div>
+                        </div>
+                        <div class="room-info">
+                            <div>203</div>
+                            <div>예약가능</div>
                         </div>
                     </div>
-                    <div class="room-info In">
-                        <div>102</div>
-                        <div>유저일 님</div>
-                        <div>22.06.01~(1박)</div>
-                        <div>
-                            <a href="#">
-                                <button class="reserve-detail">예약상세</button>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="room-info">
-                        <div>103</div>
-                        <div>예약가능</div>
-                    </div>
-                </div>
-
+                </c:if>
             </div>  
 
         </section>

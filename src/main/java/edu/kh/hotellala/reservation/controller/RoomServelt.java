@@ -33,6 +33,7 @@ public class RoomServelt extends HttpServlet {
 			
 			
 			req.setAttribute("room", room);
+
 			System.out.println(room+"get방식 요청");
 			String path = "/WEB-INF/views/reservation/room.jsp";
 			

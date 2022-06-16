@@ -16,6 +16,11 @@ pageEncoding="UTF-8"%>
 <link rel="stylesheet" 	href="${contextPath}/resources/css//board/faq-style.css">
 <script src="https://kit.fontawesome.com/ea629e8085.js"
 crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="${contextPath}/resources/js/summernote/summernote-lite.js"></script>
+<script src="${contextPath}/resources/js/summernote/lang/summernote-ko-KR.js"></script>
+<link rel="stylesheet" href="${contextPath}/resources/css/summernote/summernote-lite.css">
+
 </head>
 <body>
 <main class="container">
@@ -58,7 +63,7 @@ crossorigin="anonymous"></script>
 							<span class="faq-createDate">${faq.createDate}</span>
 						</div>
 						<div class="faq-content">
-							<textarea readonly>${faq.content}</textarea>
+							<textarea readonly id="summernote" name="editordata">${faq.content}</textarea>
 						</div>
 					</li>
 				</c:forEach>
@@ -70,9 +75,8 @@ crossorigin="anonymous"></script>
 
 </section>
 </main>
-	<!-- jQuery Library 추가 -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<!-- singup.js 연결 -->
 	<script src="${contextPath}/resources/js/board/faq.js"></script>
+	
 </body>
 </html>
