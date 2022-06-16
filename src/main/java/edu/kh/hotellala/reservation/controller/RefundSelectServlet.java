@@ -37,9 +37,7 @@ public class RefundSelectServlet extends HttpServlet{
 				
 			}
 			
-			
-			
-			
+			req.setAttribute("refundList", refundList);
 			
 			
 			String path = "/WEB-INF/views/reservation/refund.jsp";

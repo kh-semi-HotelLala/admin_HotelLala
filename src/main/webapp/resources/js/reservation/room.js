@@ -40,21 +40,6 @@ function grantModalEvent(){
 };
 
 
-
-// modalBtn.addEventListener("click", function(){
-
-//     modal.style.display = "flex";
-
-// });
-
-// closeBtn.addEventListener("click", function(){
-//     modal.style.display = "none";
-// });
-
-
-
-
-
 const floorBtn = document.getElementsByClassName("floorBtn");
 
 for(let btn of floorBtn){
