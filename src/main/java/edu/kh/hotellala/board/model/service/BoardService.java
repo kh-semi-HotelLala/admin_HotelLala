@@ -175,5 +175,26 @@ public class BoardService {
 		return notice;
 	}
 
+	/**게시글 삭제 30분 -
+	 * @param parseInt
+	 * @return
+	 */
+	public String deleteBoard(int no)throws Exception{
+		Connection conn = getConnection();
+	
+		int result = dao.deleteBoard(conn,no);
+		String val = "";
+		
+		if(result>0) {
+			val = "삭제가 완료되었습니다";
+			commit(conn);
+		}else {
+			val = "삭제에 실패했습니다";
+			rollback(conn);
+		}
+		close(conn);
+		return val;
+	}
+
 	
 }

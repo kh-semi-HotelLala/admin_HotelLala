@@ -126,7 +126,7 @@
 /* 내용 영역 */
 .faq-content{
     width: 100%;
-    height: 100px;
+    height: auto;
     display: none;
     background-color: rgb(250, 250, 250);
     border-top: 3px solid #003458;

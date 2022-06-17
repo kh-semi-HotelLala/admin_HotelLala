@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.mail.Session;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,25 +48,16 @@ public class BoardControllServlet extends HttpServlet {
 		int point = path.lastIndexOf("/");
 		String boardType = path.substring(point);
 		Map<String, Object> map = new HashMap<String, Object>();
-		
-	
+
 		try {
 			// 들어온 요청이 공지사항 일때
-			if (boardType.equals("/notice")) {
-				map = noticeBoard(req);
-			}
+			if (boardType.equals("/notice")) {				map = noticeBoard(req);			}
 			// 들어온 요청이 FAQ 일때
-			if (boardType.equals("/faq")) {
-				map = faqBoard(req);
-			}
+			if (boardType.equals("/faq")) {				map = faqBoard(req);			}
 			// 들어온 요청이 Q&A일 경우
-			if (boardType.equals("/qna")) {
-				map = qnaBoard(req);
-			}
-
-			if (boardType.equals("/write")) {
-				map = write(req);
-			}
+			if (boardType.equals("/qna")) {				map = qnaBoard(req);			}
+			// 게시글 작성
+			if (boardType.equals("/write")) {				map = write(req);			}
 
 			if ((boolean) map.get("bol")) {
 				// 요청 위임해야 하는 경우 Map에 담긴 주소로 forward된다
@@ -181,7 +173,8 @@ public class BoardControllServlet extends HttpServlet {
 	// notice 게시판의 경우 수행 함수
 	public Map<String, Object> noticeBoard(HttpServletRequest req) throws Exception {
 		Map<String, Object> map = new HashMap<String, Object>();
-
+		HttpSession session = req.getSession();
+		
 		if (req.getQueryString() == null) {
 			List<Board> noticeList = service.selectNoticeList();
 			req.setAttribute("noticeList", noticeList);
@@ -201,6 +194,13 @@ public class BoardControllServlet extends HttpServlet {
 				req.setAttribute("notice", notice);
 				map.put("path", "/noticeDetail.jsp");
 				map.put("bol", true);
+				break;
+				//type=delete&no=53
+			case "delete" :
+				String message = service.deleteBoard(Integer.parseInt(req.getParameter("no")));
+				session.setAttribute("message", message);
+				map.put("path", "notice");
+				map.put("bol", false);
 				break;
 
 			}
@@ -225,14 +225,14 @@ public class BoardControllServlet extends HttpServlet {
 			map.put("bol", true);
 		} else { // 게시글 작성 후에 post방식으로 전달
 			Board board = new Board();
-			int boardType= Integer.parseInt(req.getParameter("boardType"));
+			int boardType = Integer.parseInt(req.getParameter("boardType"));
 			board.setCNo(Integer.parseInt(req.getParameter("category")));
 			board.setTitle(req.getParameter("title"));
 			board.setContent(req.getParameter("editordata"));
 			board.setAdminNo(Integer.parseInt(req.getParameter("adminNo")));
 			System.out.println(board);
 			// 결과 반환 후 작성한 게시판으로 이동 작성한 게시판을 service에서 가공해서 반환함
-			String path = service.writeBoard(board,boardType);
+			String path = service.writeBoard(board, boardType);
 			System.out.println(path);
 			if (path != null) {
 				session.setAttribute("message", "게시글이 작성되었습니다.");
