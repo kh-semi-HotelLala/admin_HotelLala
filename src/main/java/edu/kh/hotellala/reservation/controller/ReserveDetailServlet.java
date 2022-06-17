@@ -32,6 +32,7 @@ public class ReserveDetailServlet extends HttpServlet{
 			Reservation detail = service.selectReserveDetail(requestNo);
 			// 3-2. 예약상태
 			Reservation status = service.reserveStatus(requestNo);
+			System.out.println(status);
 			detail.setRefundFlag(status.getRefundFlag());
 			
 			

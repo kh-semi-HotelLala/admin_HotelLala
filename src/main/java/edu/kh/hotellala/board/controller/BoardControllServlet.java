@@ -47,8 +47,7 @@ public class BoardControllServlet extends HttpServlet {
 		int point = path.lastIndexOf("/");
 		String boardType = path.substring(point);
 		Map<String, Object> map = new HashMap<String, Object>();
-		
-	
+
 		try {
 			// 들어온 요청이 공지사항 일때
 			if (boardType.equals("/notice")) {
@@ -225,14 +224,14 @@ public class BoardControllServlet extends HttpServlet {
 			map.put("bol", true);
 		} else { // 게시글 작성 후에 post방식으로 전달
 			Board board = new Board();
-			int boardType= Integer.parseInt(req.getParameter("boardType"));
+			int boardType = Integer.parseInt(req.getParameter("boardType"));
 			board.setCNo(Integer.parseInt(req.getParameter("category")));
 			board.setTitle(req.getParameter("title"));
 			board.setContent(req.getParameter("editordata"));
 			board.setAdminNo(Integer.parseInt(req.getParameter("adminNo")));
 			System.out.println(board);
 			// 결과 반환 후 작성한 게시판으로 이동 작성한 게시판을 service에서 가공해서 반환함
-			String path = service.writeBoard(board,boardType);
+			String path = service.writeBoard(board, boardType);
 			System.out.println(path);
 			if (path != null) {
 				session.setAttribute("message", "게시글이 작성되었습니다.");
