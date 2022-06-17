@@ -33,7 +33,7 @@ public class ReserveDetailServlet extends HttpServlet{
 			// 3-2. 예약상태
 			Reservation status = service.reserveStatus(requestNo);
 			detail.setRefundFlag(status.getRefundFlag());
-			
+			System.out.println(status);
 			
 			// 3-3. 결제정보 (옵션)
 			Reservation payment = service.reservePayment(requestNo);

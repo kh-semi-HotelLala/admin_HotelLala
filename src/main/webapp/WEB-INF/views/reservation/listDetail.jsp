@@ -102,8 +102,6 @@
                             <div class="info-name">예약상태</div>
                             <div class="info-content">
                                 <span id="complete">예약완료</span>
-                                <span id="cancle">예약취소</span>
-                                <input type="hidden" id="temp" value="${detail.refundFlag}">
                             </div>                            
                         </div>
                     </div>
