@@ -280,7 +280,7 @@ public class BoardDAO {
 		return result;
 	}
 
-
+	//게시글 상세조회
 	public Board noticeDetail(Connection conn, int i)throws Exception{
 		Board notice = null;
 		
@@ -306,6 +306,20 @@ public class BoardDAO {
 		}
 		
 		return notice;
+	}
+
+	//게시글 삭제
+	public int deleteBoard(Connection conn, int no)throws Exception{
+		int result = 0;
+		
+		try {
+			String sql = "DELETE FROM BOARD WHERE BOARD_NO='"+no+"'";
+			stmt = conn.createStatement();
+			result = stmt.executeUpdate(sql);
+		}finally {
+			close(stmt);
+		}
+		return result;
 	}
 
 
